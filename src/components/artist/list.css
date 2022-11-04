@@ -1,0 +1,15 @@
+.containerArtist{ 
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+   }
+
+   h2{
+    font-size: 30px;
+    position: relative;
+    left: 1%;
+    margin-top:2%
+   }

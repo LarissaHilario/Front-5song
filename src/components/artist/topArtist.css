@@ -1,0 +1,54 @@
+.container-artist {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    background-size: cover;
+    float: left;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    margin: 10px;
+    align-items: center;
+    align-content: center;
+    background-color: #ffffff;
+    align-items: center;
+    flex-direction: column;
+}
+
+.avatar{
+    width:80px;
+    height:80px;
+    border-radius:20px;
+  object-fit: cover;
+  position:absolute;
+  align-items: center;
+  top: 20px;
+  left: 20px;
+  right: 0;
+  bottom: 0;
+  opacity: 100%;
+}
+
+.name {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.3);
+  opacity: 100%;
+  transition: transform .4s ease 0s;
+}
+
+
+.name h2 {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  color:#D194B6;
+  font-family: 'Montserrat', sans-serif;
+
+}
