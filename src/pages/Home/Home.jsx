@@ -4,6 +4,7 @@ import ListPlaylist from "../../components/playlist-list/ListPlaylist";
 import ListArtist from "../../components/artist/ListArtist";
 import Navbar from "../../layouts/Navbar";
 import '../../components/shared/styles.css'
+import Player from "../../components/Player/Player";
 
 const Home=()=>{
     return(
@@ -22,7 +23,9 @@ const Home=()=>{
         <div className="Playlist">
             <ListPlaylist></ListPlaylist>
         </div>
-        
+        <div className="reproductor">
+            <Player></Player>
+        </div>
         
         
         </div>
