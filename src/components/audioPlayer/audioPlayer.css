@@ -9,20 +9,22 @@ button {
 }
 
 .audio-player {
-    max-width: 350px;
+    max-width: 200px;
+    position: relative;
+    bottom: 20%;
     padding: 24px;
     border-radius: 20px;
     box-shadow: 0 28px 28px rgba(0, 0, 0, 0.2);
-    margin: 0;
-    /* color: var(--white); */
+    margin: 0 300px;
+    color: var(--white);
 }
 
 .artwork {
-    border-radius: 120px;
+    border-radius: 90px;
     display: block;
     margin: auto;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
 }
 
 .track-info {
