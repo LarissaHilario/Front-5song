@@ -13,7 +13,7 @@ const AudioPlayer = ({
     // State
     const [trackProgress, setTrackProgress] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
-    var audioSrc = songs[currentIndex].track;
+    const audioSrc = songs[currentIndex].track;
     // Refs
     const audioRef = useRef(new Audio(audioSrc));
     const intervalRef = useRef();
@@ -34,7 +34,14 @@ const AudioPlayer = ({
             }
         }, [1000]);
     };
-
+    function formatTime(secs) {
+        const t = new Date(1970, 0, 1);
+        t.setSeconds(secs);
+        let s = t.toTimeString().substr(0, 8);
+        if (secs > 86399)
+            s = Math.floor((t - Date.parse("1/1/70")) / 3600000) + s.substr(2);
+        return s.substring(3);
+    }
     const onScrub = (value) => {
         // Clear any timers already running
         clearInterval(intervalRef.current);
@@ -65,25 +72,20 @@ const AudioPlayer = ({
             setCurrentIndex(0);
         }
     };
-    async function playMusic() {
-        try {
-            await audioRef.current.play();
-            setIsPlaying(true);
-            startTimer();
-        } catch (err) {
-            console.log(err);
-        }
-    };
+
     useEffect(() => {
         if (audioRef.current.src) {
             if (isPlaying) {
-                playMusic(audioRef.current);
+                audioRef.current.play().then(() => { }).catch((e) => { audioRef.current.pause(); audioRef.current.currentTime = 0; });
+                startTimer();
             } else {
                 audioRef.current.pause();
             }
         } else if (isPlaying) {
+            setIsPlaying(true);
             audioRef.current = new Audio(audioSrc);
-            playMusic(audioRef.current.play());
+            audioRef.current.play().then(() => { }).catch((e) => { audioRef.current.pause(); audioRef.current.currentTime = 0; });
+            startTimer();
         } else {
             clearInterval(intervalRef.current);
             audioRef.current.pause();
@@ -99,7 +101,9 @@ const AudioPlayer = ({
         setTrackProgress(audioRef.current.currentTime);
 
         if (isReady.current) {
-            playMusic();
+            setIsPlaying(true);
+            audioRef.current.play().then(() => { }).catch((e) => { audioRef.current.pause(); audioRef.current.currentTime = 0; });
+            startTimer();
         } else {
             // Set the isReady ref as true for the next pass
             isReady.current = true;
@@ -113,9 +117,6 @@ const AudioPlayer = ({
             clearInterval(intervalRef.current);
         };
     }, []);
-    const addZero = (n) => {
-        return n > 9 ? "" + n : "0" + n;
-    };
     return (
         <div className="audio-player">
             <div className="track-info">
@@ -125,6 +126,8 @@ const AudioPlayer = ({
                 />
                 <h2 className="title">{songs[currentIndex].name}</h2>
                 <h3 className="artist">{songs[currentIndex].artists}</h3>
+            </div>
+            <div>
                 <AudioControls
                     isPlaying={isPlaying}
                     setIsPlaying={setIsPlaying}
@@ -132,19 +135,23 @@ const AudioPlayer = ({
                     handleNext={handleNext}
                     total={total}
                 />
-                <p className="duration">{trackProgress < "59" ? "0" : "1"}:{addZero(Math.round(trackProgress))}</p>
-                <input
-                    type="range"
-                    value={trackProgress}
-                    step="1"
-                    min="0"
-                    max={duration ? duration : `${duration}`}
-                    className="progress"
-                    onChange={(e) => onScrub(e.target.value)}
-                    onMouseUp={onScrubEnd}
-                    onKeyUp={onScrubEnd}
-                />
             </div>
+            <p >
+                <span className="song-duration flex">{formatTime(trackProgress)}</span>
+                /
+                <span className="song-duration flex">{formatTime(`${duration}`)}</span>
+            </p>
+            <input
+                type="range"
+                value={trackProgress}
+                step="1"
+                min="0"
+                max={duration ? duration : `${duration}`}
+                className="progress"
+                onChange={(e) => onScrub(e.target.value)}
+                onMouseUp={onScrubEnd}
+                onKeyUp={onScrubEnd}
+            />
         </div>
     );
 };
