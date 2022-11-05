@@ -5,7 +5,7 @@ const App=()=> {
 
 
   return (
-    <Home></Home>
+    <Home/>
   )
 }
 
