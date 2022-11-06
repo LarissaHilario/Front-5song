@@ -5,9 +5,8 @@ import ListArtist from "../../components/artist/ListArtist";
 import Navbar from "../../layouts/Navbar";
 import '../../components/shared/styles.css'
 
-const Home=()=>{
-    return(
-        <>
+const Home = () => {
+    return (
         <div className="body">
              <div className="Header">
             <h3>Home</h3>
@@ -26,8 +25,7 @@ const Home=()=>{
         
         
         </div>
-        </>
     )
-   
-} 
+
+}
 export default Home
