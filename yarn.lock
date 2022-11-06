@@ -50,7 +50,7 @@
   dependencies:
     "@babel/types" "^7.20.2"
     "@jridgewell/gen-mapping" "^0.3.2"
-    "jsesc" "^2.5.1"
+    jsesc "^2.5.1"
 
 "@babel/helper-annotate-as-pure@^7.18.6":
   "integrity" "sha512-duORpUiYrEpzKIop6iNbjnwKLAKnJ47csTyRACyEmWj0QdUrm5aqNJGHSSEQSUAvNW0ojX0dOmK9dZduvkfeXA=="
@@ -66,8 +66,8 @@
   dependencies:
     "@babel/compat-data" "^7.20.0"
     "@babel/helper-validator-option" "^7.18.6"
-    "browserslist" "^4.21.3"
-    "semver" "^6.3.0"
+    browserslist "^4.21.3"
+    semver "^6.3.0"
 
 "@babel/helper-environment-visitor@^7.18.9":
   "integrity" "sha512-3r/aACDJ3fhQ/EVgFy0hpj8oHyHpQc+LPtJoY9SzTThAsStm4Ptegq92vqKoE3vD706ZVFWITnMnxucw+S9Ipg=="
@@ -159,8 +159,8 @@
   "version" "7.18.6"
   dependencies:
     "@babel/helper-validator-identifier" "^7.18.6"
-    "chalk" "^2.0.0"
-    "js-tokens" "^4.0.0"
+    chalk "^2.0.0"
+    js-tokens "^4.0.0"
 
 "@babel/parser@^7.18.10", "@babel/parser@^7.19.6":
   "integrity" "sha512-h1IUp81s2JYJ3mRkdxJgs4UvmSsRvDrx5ICSJbPvtWYv5i1nTBGcBpnog+89rAFMwvvru6E5NUHdBe01UeSzYA=="
@@ -374,15 +374,6 @@
   version "0.15.12"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.12.tgz#475b33a2631a3d8ca8aa95ee127f9a61d95bf9c1"
   integrity sha512-tZEowDjvU7O7I04GYvWQOS4yyP9E/7YlsB0jjw1Ycukgr2ycEzKyIk5tms5WnLBymaewc6VmRKnn5IJWgK4eFw==
-=======
-  "integrity" "sha512-M5LK7nAeS6+9j7hAq+b3fQs+pNfUtTGq+yFFfHnauFA8zQtLRfmuipmsKDKKLuyG+wC8ABW43A153YNawNTEtw=="
-  "resolved" "https://registry.npmjs.org/@babel/types/-/types-7.19.4.tgz"
-  "version" "7.19.4"
-  dependencies:
-    "@babel/helper-string-parser" "^7.19.4"
-    "@babel/helper-validator-identifier" "^7.19.1"
-    "to-fast-properties" "^2.0.0"
->>>>>>> d1a8fec8331dfdd74ce063c4f979fd6be8bd58fc
 
 "@fortawesome/fontawesome-svg-core@^6.2.0", "@fortawesome/fontawesome-svg-core@~1 || ~6":
   "integrity" "sha512-HELwwbCz6C1XEcjzyT1Jugmz2NNklMrSPjZOWMlc+ZsHIVk+XOvOXLGGQtFBwSyqfJDNgRq4xBCwWOaZ/d9DEA=="
@@ -644,7 +635,7 @@
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
-    "csstype" "^3.0.2"
+    csstype "^3.0.2"
 
 "@types/scheduler@*":
   "integrity" "sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew=="
@@ -669,7 +660,7 @@
   "resolved" "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz"
   "version" "3.2.1"
   dependencies:
-    "color-convert" "^1.9.0"
+    color-convert "^1.9.0"
 
 "babel-plugin-macros@^3.1.0":
   "integrity" "sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg=="
@@ -694,10 +685,10 @@
   "resolved" "https://registry.npmjs.org/browserslist/-/browserslist-4.21.4.tgz"
   "version" "4.21.4"
   dependencies:
-    "caniuse-lite" "^1.0.30001400"
-    "electron-to-chromium" "^1.4.251"
-    "node-releases" "^2.0.6"
-    "update-browserslist-db" "^1.0.9"
+    caniuse-lite "^1.0.30001400"
+    electron-to-chromium "^1.4.251"
+    node-releases "^2.0.6"
+    update-browserslist-db "^1.0.9"
 
 "callsites@^3.0.0":
   "integrity" "sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ=="
@@ -724,9 +715,9 @@ chalk@^2.0.0:
   "resolved" "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz"
   "version" "2.4.2"
   dependencies:
-    "ansi-styles" "^3.2.1"
-    "escape-string-regexp" "^1.0.5"
-    "supports-color" "^5.3.0"
+    ansi-styles "^3.2.1"
+    escape-string-regexp "^1.0.5"
+    supports-color "^5.3.0"
 
 "clsx@^1.2.1":
   "integrity" "sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg=="
@@ -738,7 +729,7 @@ chalk@^2.0.0:
   "resolved" "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
   "version" "1.9.3"
   dependencies:
-    "color-name" "1.1.3"
+    color-name "1.1.3"
 
 "color-name@1.1.3":
   "integrity" "sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw=="
@@ -779,7 +770,7 @@ chalk@^2.0.0:
   "resolved" "https://registry.npmjs.org/debug/-/debug-4.3.4.tgz"
   "version" "4.3.4"
   dependencies:
-    "ms" "2.1.2"
+    ms "2.1.2"
 
 "dom-helpers@^5.0.1":
   "integrity" "sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA=="
@@ -879,7 +870,7 @@ chalk@^2.0.0:
   "resolved" "https://registry.npmjs.org/has/-/has-1.0.3.tgz"
   "version" "1.0.3"
   dependencies:
-    "function-bind" "^1.1.1"
+    function-bind "^1.1.1"
 
 "hoist-non-react-statics@^3.3.1", "hoist-non-react-statics@^3.3.2":
   "integrity" "sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw=="
@@ -916,7 +907,7 @@ chalk@^2.0.0:
   "resolved" "https://registry.npmjs.org/is-core-module/-/is-core-module-2.11.0.tgz"
   "version" "2.11.0"
   dependencies:
-    "has" "^1.0.3"
+    has "^1.0.3"
 
 "is-in-browser@^1.0.2", "is-in-browser@^1.1.3":
   "integrity" "sha512-FeXIBgG/CPGd/WUxuEyvgGTEfwiG9Z4EKGxjNMRqviiIIfsmgrpnHLffEDdwUHqNva1VEW91o3xBT/m8Elgl9g=="
@@ -1023,16 +1014,15 @@ chalk@^2.0.0:
   "resolved" "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz"
   "version" "1.4.0"
   dependencies:
-    "js-tokens" "^3.0.0 || ^4.0.0"
+    js-tokens "^3.0.0 || ^4.0.0"
 
 "magic-string@^0.26.2":
   "integrity" "sha512-hX9XH3ziStPoPhJxLq1syWuZMxbDvGNbVchfrdCtanC7D13888bMFow61x8axrx+GfHLtVeAx2kxL7tTGRl+Ow=="
   "resolved" "https://registry.npmjs.org/magic-string/-/magic-string-0.26.7.tgz"
   "version" "0.26.7"
   dependencies:
-    "sourcemap-codec" "^1.4.8"
+    sourcemap-codec "^1.4.8"
 
-<<<<<<< HEAD
 ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
@@ -1062,7 +1052,7 @@ parse-json@^5.0.0:
 
 path-parse@^1.0.7:
   version "1.0.7"
-  resolved "https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-type@^4.0.0:
@@ -1075,7 +1065,7 @@ picocolors@^1.0.0:
   resolved "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
 
-postcss@^8.4.16:
+postcss@^8.4.18:
   version "8.4.18"
   resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.18.tgz"
   integrity sha512-Wi8mWhncLJm11GATDaQKobXSNEYGUHeQLiQqDFG1qQ5UTDPTEvKw0Xt5NsTpktGTwLps3ByrWsBrG0rB8YQ9oA==
@@ -1137,9 +1127,8 @@ postcss@^8.4.16:
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.18.tgz"
   "version" "8.4.18"
   dependencies:
-    "nanoid" "^3.3.4"
-    "picocolors" "^1.0.0"
-    "source-map-js" "^1.0.2"
+    loose-envify "^1.1.0"
+    scheduler "^0.23.0"
 
 "prop-types@^15.6.2", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
@@ -1155,8 +1144,7 @@ postcss@^8.4.16:
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
   dependencies:
-    "loose-envify" "^1.1.0"
-    "scheduler" "^0.23.0"
+    loose-envify "^1.1.0"
 
 "react-is@^16.13.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
@@ -1183,8 +1171,9 @@ postcss@^8.4.16:
   "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.4.3.tgz"
   "version" "6.4.3"
   dependencies:
-    "@remix-run/router" "1.0.3"
-    "react-router" "6.4.3"
+    is-core-module "^2.9.0"
+    path-parse "^1.0.7"
+    supports-preserve-symlinks-flag "^1.0.0"
 
 "react-router@6.4.3":
   "integrity" "sha512-BT6DoGn6aV1FVP5yfODMOiieakp3z46P1Fk0RNzJMACzE7C339sFuHebfvWtnB4pzBvXXkHP2vscJzWRuUjTtA=="
@@ -1234,14 +1223,14 @@ postcss@^8.4.16:
   "resolved" "https://registry.npmjs.org/rollup/-/rollup-2.79.1.tgz"
   "version" "2.79.1"
   optionalDependencies:
-    "fsevents" "~2.3.2"
+    fsevents "~2.3.2"
 
 "scheduler@^0.23.0":
   "integrity" "sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw=="
   "resolved" "https://registry.npmjs.org/scheduler/-/scheduler-0.23.0.tgz"
   "version" "0.23.0"
   dependencies:
-    "loose-envify" "^1.1.0"
+    loose-envify "^1.1.0"
 
 "semver@^6.3.0":
   "integrity" "sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw=="
@@ -1285,10 +1274,9 @@ postcss@^8.4.16:
     "shallowequal" "^1.1.0"
     "supports-color" "^5.5.0"
 
-<<<<<<< HEAD
 supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 tiny-warning@^1.0.2:
@@ -1311,7 +1299,8 @@ update-browserslist-db@^1.0.9:
   "resolved" "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz"
   "version" "5.5.0"
   dependencies:
-    "has-flag" "^3.0.0"
+    escalade "^3.1.1"
+    picocolors "^1.0.0"
 
 "supports-preserve-symlinks-flag@^1.0.0":
   "integrity" "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w=="

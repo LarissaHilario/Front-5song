@@ -14,15 +14,15 @@ function Login() {
             <h2>Hola de nuevo</h2>
             </div>
             
-            <div class="input-wrapper">
+            <div className="input-wrapper">
                 <label for="email">Correo</label>
                 <input type="text" placeholder='Email' className='txtBox'/>
             </div>
-            <div class="input-wrapper">
+            <div className="input-wrapper">
                 <label for="email">Contraseña</label>
                 <input type="text" placeholder='Contraseña' className='txtBox'/>
             </div>
-            <div class="input-wrapper">
+            <div className="input-wrapper">
                 <label className='lblCheck'>Recuérdame</label>
                 <input type="checkbox" className="checkBox"/>
             </div>
