@@ -13,8 +13,6 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
-  
-    
     return (
         <div className={styles.container}>
             <nav className={styles.nav}  clicked={click}>
