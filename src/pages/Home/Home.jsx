@@ -6,31 +6,28 @@ import Navbar from "../../layouts/Navbar";
 import '../../components/shared/styles.css'
 import Player from "../../components/Player/Player";
 
-const Home=()=>{
-    return(
-        <>
+const Home = () => {
+    return (
         <div className="body">
-             <div className="Header">
-            <h3>Home</h3>
+            <Navbar/>
+            <div className="Header">
+                <h3>Home</h3>
+            </div>
+            <div className="Card-Home">
+                <Card title={"Explora toda la música en tendencia en estos momentos"}
+                    image={person} button={"Explorar ahora"} />
+            </div>
+            <div className="top">
+                <ListArtist/>
+            </div>
+            <div className="Playlist">
+                <ListPlaylist/>
+            </div>
+            <div className="reproductor">
+                <Player/>
+            </div>
         </div>
-        <div className="Card-Home">
-            <Card title={"Explora toda la música en tendencia en estos momentos"} 
-        image={person} button={"Explorar ahora"}/>
-        </div>
-        <div className="top">
-        <ListArtist></ListArtist>
-        </div>
-        <div className="Playlist">
-            <ListPlaylist></ListPlaylist>
-        </div>
-        <div className="reproductor">
-            <Player></Player>
-        </div>
-        
-        
-        </div>
-        </>
     )
-   
-} 
+
+}
 export default Home

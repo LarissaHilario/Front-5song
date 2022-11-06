@@ -4,56 +4,56 @@ import avatar from '../assets/images/avatar1.jpg'
 import styles from './navbar/styles.css'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
-
+$('span').on('click', function() {
+	$('span').removeClass('active');
+	$(this).addClass('active');
+});
 const Navbar = () => {
     return (
         <div className={styles.container}>
             <nav className={styles.nav}>
                 <ul>
                     <li>
-                        <div className="logo"  width='200px' >
-                            <img src={logo}/>
+                        <div className="logo" width='200px' >
+                            <img src={logo} />
                         </div>
                     </li>
                     <li>
-                        <img src={avatar} width='120px'/>
-                        <br/>
+                        <img src={avatar} width='120px' />
+                        <br />
                         <span className='nav-item'>Hola larissa</span>
                     </li>
-                    <br/>
+                    <br />
                     <li>
-                        <a href="#">
-                         <HomeRoundedIcon/>Home
+                        <span className="nav-item active">
+                        <a href="#" >
+                                <HomeRoundedIcon />Home
                         </a>
-                        </li>
+                        </span>
+                    </li>
                     <li>
                         <a href="#">
-                        <span className="nav-item">Biblioteca</span>
+                            <span className="nav-item">Biblioteca</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                        <i className="fas fa-database"/>
-                        <span className="nav-item">Playlist</span>
-                        </a>
-                        </li>
-                    <li>
-                        <a href="#">
-                        <i className="fas fa-chart-bar"/>
-                        <span className="nav-item">Artistas</span>
+                            <span className="nav-item">Playlist</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                        <i className="fas fa-cog"/>
-                        <span className="nav-item">Álbumes</span>
+                            <span className="nav-item">Artistas</span>
                         </a>
                     </li>
-
+                    <li>
+                        <a href="#">
+                            <span className="nav-item">Álbumes</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="#" className="logout">
-                        <i className="fas fa-sign-out-alt"/>
-                        <span className="nav-item">Salir</span>
+                            <span className="nav-item">Salir</span>
                         </a>
                     </li>
                 </ul>

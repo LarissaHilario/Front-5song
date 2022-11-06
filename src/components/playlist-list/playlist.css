@@ -67,9 +67,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.button{
+.button1{
     background: #FFF;
-    padding: 10px;
     border-radius: 25px;
     text-align: center;
     cursor: pointer; 

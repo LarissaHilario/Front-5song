@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 button {
     background-color: transparent;
     border: none;
@@ -9,34 +5,30 @@ button {
 }
 
 .audio-player {
-    max-width: 200px;
+    display:flow-root;
+    width: 100%;
     position: relative;
-    bottom: 20%;
-    padding: 24px;
-    border-radius: 20px;
-    box-shadow: 0 28px 28px rgba(0, 0, 0, 0.2);
-    margin: 0 300px;
-    color: var(--white);
+    border-radius: 30px;
+    box-shadow: 0 28px 28px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    justify-content: center;
 }
 
 .artwork {
     border-radius: 90px;
     display: block;
     margin: auto;
-    height: 100px;
-    width: 100px;
+    height: 35%;
+    width: 35%;
 }
 
 .track-info {
+    color: white;
     text-align: center;
-    z-index: 1;
-    position: relative;
 }
 
 .audio-controls {
-    justify-content: space-between;
-    /*  */
-    margin: 0 auto 15px;
+    justify-content: space-around;
     align-content: center;
 }
 
@@ -48,6 +40,7 @@ button {
 
 .audio-controls .prev svg :hover,
 .audio-controls .next svg :hover {
+    fill: #FF0080;
     fill-opacity: 1;
 }
 
@@ -58,9 +51,10 @@ button {
 }
 
 .title {
+    margin: 0;
     text-align: center;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 700;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -70,26 +64,21 @@ button {
 }
 
 .artist {
+    margin: 0;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 700;
 }
-
-
 
 .song-duration {
     justify-content: center;
-    align-items: center;
     font-size: 20px;
     font-weight: 700;
-    color: #c4d0e3;
+    color: white;
 }
 
 .progress {
-    width: 265px;
-    height: 4px;
+    justify-self: center;
+    width: 80%;
+    height: 5px;
     border-radius: 15px;
 }
-
-/* .audio-controls path {
-    fill: var(--white);
-} */
