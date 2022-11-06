@@ -10,17 +10,19 @@ nav{
   left: 0;
   width: 280px;
   /* width: 280px; */
-  background: #1e1a3dde;
+  background: #F4258E;
   overflow: hidden;
-  padding-left: 4%;
   position: fixed;
- 
+  outline: none;
+  border: none;
+  text-decoration: none;
 }
 
 .logo{
+  align-items: center;
   text-align: center;
   display: flex;
-  margin: 10px 0 0 10px;
+  margin: 70px 0 0 70px;
   padding-bottom: 3rem;
 }
 
@@ -29,19 +31,15 @@ nav{
   height: 145px;
   border-radius: 50%;
 }
-.logo span{
-  font-weight: bold;
-  padding-left: 15px;
-  font-size: 18px;
-  text-transform: uppercase;
-}
 a{
   position: relative;
+  left: 20%;
+  margin-top: 10%;
   width: 280px;
-  font-size: 14px;
-  color: rgb(85, 83, 83);
+  font-size: 24px;
+  color: rgb(251, 251, 251);
   display: table;
-  padding: 10px;
+  padding: 20px;
 }
 nav .fas{
   position: relative;
@@ -53,21 +51,35 @@ nav .fas{
 }
 .nav-item{
   position: relative;
-  top: 12px;
-  margin-left: 10px;
+  top: 15px;
+  font-size: 20px;
+  color: #FFF;
+  font-weight: 900;
+  margin-left: 40px;
 }
 a:hover{
-  background: #0a0915;
+  background: #0a091593;
 }
-a:hover i{
-  color: #F0C8E8;
+a:hover .icon{
+  color: #E84A9B;
   transition: 0.5s;
 }
 .logout{
-  position: absolute;
+  position: flex end;
+  display: flex;
+ 
   bottom: 0;
 }
 
 .container{
   display: flex;
+}
+
+.avatarNav{
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  position: relative;
+  left: 20px;
+  top:45px;
 }

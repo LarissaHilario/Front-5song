@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "./player.css";
+import "./player.css";
 // import { useLocation } from "react-router-dom";
 import songs from "./tracksTests";
 // import SongCard from "../../components/songCard/SongCard";
@@ -7,21 +7,21 @@ import songs from "./tracksTests";
 import AudioPlayer from "../audioPlayer/AudioPlayer";
 // import Widgets from "../../components/widgets";
 
-const  Player=()=> {
-//   const location = useLocation();
+const Player = () => {
+  //   const location = useLocation();
   const [tracks, setTracks] = useState([]);
   const [currentTrack, setCurrentTrack] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-//     if (location.state) {
-//       apiClient
-//         .get("playlists/" + location.state?.id + "/tracks")
-//         .then((res) => {
-          setTracks(songs);
-          setCurrentTrack(songs);
-//         });
-//     }
+    //     if (location.state) {
+    //       apiClient
+    //         .get("playlists/" + location.state?.id + "/tracks")
+    //         .then((res) => {
+    setTracks(songs);
+    setCurrentTrack(songs);
+    //         });
+    //     }
   });
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const  Player=()=> {
   }, [currentIndex, tracks]);
 
   return (
-    <div className="screen-container flex">
+    <div className="screen-container">
       <div className="left-player-body">
         <AudioPlayer
           currentTrack={currentTrack}
@@ -37,8 +37,7 @@ const  Player=()=> {
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
         />
-        {/* <Widgets artistID={currentTrack?.album?.artists[0]?.id} /> */}
-    </div>
+      </div>
     </div>
   );
 }
