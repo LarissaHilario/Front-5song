@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import Home from './pages/Home/Home'
-import Login from './pages/Login'
+import AppRouters from './routers/AppRouters'
+
 const App=()=> {
 
 
   return (
-    <Home></Home>
+   <AppRouters></AppRouters>
   )
 }
 

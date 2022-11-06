@@ -3,62 +3,62 @@ import logo from '../assets/images/logo.png';
 import avatar from '../assets/images/avatar1.jpg'
 import styles from './navbar/styles.css'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
+import LogoutIcon from '@mui/icons-material/Logout';
+import AlbumIcon from '@mui/icons-material/Album';
+import QueueMusicIcon from '@mui/icons-material/QueueMusic';
+import Face2Icon from '@mui/icons-material/Face2';
 
-
+import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     return (
         <div className={styles.container}>
             <nav className={styles.nav}>
                 <ul>
-                    <li>
-                        <div className="logo"  width='200px' >
+                    
+                        <div className="logo">
                             <img src={logo}/>
                         </div>
-                    </li>
+                    
                     <li>
-                        <img src={avatar} width='120px'/>
-                        <br/>
+                        <img className='avatarNav' src={avatar}/>
                         <span className='nav-item'>Hola larissa</span>
                     </li>
                     <br/>
                     <li>
                         <a href="#">
-                         <HomeRoundedIcon/>Home
+                         <HomeRoundedIcon className='icon'></HomeRoundedIcon>Home
                         </a>
                         </li>
                     <li>
                         <a href="#">
-                        <span className="nav-item">Biblioteca</span>
+                        <LibraryMusicIcon  className='icon'/>Biblioteca
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                        <i className="fas fa-database"/>
-                        <span className="nav-item">Playlist</span>
+                        <QueueMusicIcon className='icon'/>
+                        Playlist
                         </a>
                         </li>
                     <li>
                         <a href="#">
-                        <i className="fas fa-chart-bar"/>
-                        <span className="nav-item">Artistas</span>
+                            <Face2Icon  className='icon'/>Artistas
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                        <i className="fas fa-cog"/>
-                        <span className="nav-item">Álbumes</span>
+                        <AlbumIcon className='icon'/>Álbumes
                         </a>
                     </li>
 
                     <li>
                         <a href="#" className="logout">
-                        <i className="fas fa-sign-out-alt"/>
-                        <span className="nav-item">Salir</span>
+                            <LogoutIcon className='icon'/>Salir
                         </a>
                     </li>
                 </ul>
             </nav>
-
         </div>
     )
 }

@@ -1,6 +1,6 @@
 .container-card {
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
     display: flex;
     background-size: cover;
     float: left;
@@ -42,7 +42,7 @@
 }
 .container-card img{
   transition: transform .8s ease;
-  width: 100vh;
+
 }
 
 .card-title {

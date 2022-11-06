@@ -5,19 +5,19 @@
         font-family: 'Montserrat', sans-serif;
   }
   .body{
-    position: relative;
-    max-width: 81rem;
-    width: 100%;
-    margin: 0 25rem;
-    padding: 0 rem;
+    position: absolute;
+    max-width: 100%;
+    margin: 0 20rem;
     z-index: 10;
+    background-color:#ffffff;
   }
 
   .Header{
-    font-size: 40px;
+    font-size: 30px;
+    font-weight: bolder;
     position: relative;
     margin-top: 5%;
-    left:1%
+    left:1.5%
   }
 
   .top{
