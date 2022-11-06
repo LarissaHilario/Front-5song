@@ -1,10 +1,11 @@
-import React from 'react'
-import './App.css'
-import Player from './components/Player/Player'
-function App() {
+import { useState } from 'react'
+import Home from './pages/Home/Home'
+import Login from './pages/Login'
+const App=()=> {
+
 
   return (
-    <Player/>
+    <Home/>
   )
 }
 

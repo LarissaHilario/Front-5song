@@ -1,20 +1,23 @@
 .left-player-body {
-    width: 200%;
+    width: 100%;
     /* margin-right: 2%; */
     height: 100%;
     text-align: center;
- 
+ position: relative;
+ display:inline;
 }
 
 .screen-container {
+    display: block;
+    position: relative;
     justify-content:center;
-    width: calc(100% - 100px);
-    height: 100%;
+    width: 100%;
+    margin: 0%;
     background-color: #1e2a3e;
     border-radius: 30px;
     opacity: 1;
     background-image: repeating-radial-gradient(circle at center left,
             transparent 0,
-            #DD6FA9 100px),
+            #DD6FA9 50px),
         repeating-linear-gradient(#1e2a3e55, #1e2a3e);
 }

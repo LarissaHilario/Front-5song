@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  box-sizing: content-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.body {
+  /* background-attachment: fixed; */
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  /* padding: 0; */
+  position: absolute;
+}
+
+.Header {
+  font-size: 40px;
+  position: relative;
+  margin-top: 1%;
+  left: 1%;
+  margin: 0%;
+}
+
+.top {}
+
+.reproductor {
+  display: table;
+  position: relative;
+  margin-top: -15%;
+  margin-left: calc(80%);
+
+}

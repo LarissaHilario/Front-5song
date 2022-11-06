@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Comfortaa:wght@500&family=Dancing+Script&family=Lato:ital,wght@1,100&family=Montserrat:wght@300&family=Playfair+Display:ital@1&family=Poppins:ital,wght@1,200&family=Quicksand&family=Roboto&family=Sofia&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: white;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.txtBox {
+    border: 1px solid #F0C8E8;
+    border-radius: 6px;
+    position: relative;
+    width: 527px;
+    margin: 10px;
+    line-height: 6ex;
+    background-color: #fff;
+    color: black;
+}
+.checkBox{
+    width: 20px;
+    height: 15px;
+    border: 1px solid #F0C8E8;
+    background-color: #D194B6;
+}
+label {
+    position: absolute;
+    z-index: 1;
+    left: 2em;
+    background-color: white;
+    padding: 0 5px;
+    color: #F0C8E8;
+}
+
+.lblCheck {
+    background-color: transparent;
+    margin-top: 3px;
+    align-items: center;
+    font-size: 13px;
+    color:black;
+}
+.button{
+    margin-left: 5px;
+    background-color: #D194B6;
+    height: 39px;
+    border-radius: 3px ;
+    border: 0;
+    width: 527px;
+    margin: 10px;
+}
+h4{
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.logo {
+    width: 105px;
+    height: 77px;
+}
+
+.link{
+    display:flex;
+}

@@ -136,11 +136,8 @@ const AudioPlayer = ({
                     total={total}
                 />
             </div>
-            <p >
-                <span className="song-duration flex">{formatTime(trackProgress)}</span>
-                /
-                <span className="song-duration flex">{formatTime(`${duration}`)}</span>
-            </p>
+            <span className="song-duration flex">{formatTime(trackProgress)}/</span>
+            <span className="song-duration flex">{formatTime(`${duration}`)}</span>
             <input
                 type="range"
                 value={trackProgress}
