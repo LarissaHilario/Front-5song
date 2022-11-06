@@ -25,7 +25,8 @@
   }
 
   .reproductor{
-    margin-top: -30%;
-    margin-left: 50%;
-
+    display: table;
+    position: relative;
+    margin-top: -25%;
+    margin-left: calc(80%);
   }
