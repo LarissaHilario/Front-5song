@@ -7,7 +7,7 @@ const Playlist=({title,image,songs})=> {
         <div className="container-card">
             <img className="image" src={image} />
             <div className="card-title">
-                <h2>{title}</h2>
+                <h3>{title}</h3>
             </div>
             <button className="button1"> <p>{songs}</p><PlayCircleFilledIcon/></button>
         </div> 
