@@ -1,7 +1,7 @@
 .container-artist {
-    width: 300px;
+    width: 75%;
     height: 100px;
-    display: flex;
+    display: block;
     background-size: cover;
     float: left;
     border-radius: 15px;
@@ -12,8 +12,8 @@
     align-items: center;
     align-content: center;
     background-color: #ffffff;
-    align-items: center;
     flex-direction: column;
+    padding: 0%;
 }
 
 .avatar{

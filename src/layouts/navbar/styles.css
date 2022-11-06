@@ -1,14 +1,15 @@
 /*  import google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+* {
+  margin: auto;
+  list-style: none;
+  line-height: 1;
+}
 
-nav{
-  
-  top: 0;
-  bottom: 0;
-  height: 100vh;
-  left: 0;
-  width: 280px;
+nav {
+  height: 100%;
+  width: 20%;
   /* width: 280px; */
   background: #F4258E;
   overflow: hidden;
@@ -26,10 +27,12 @@ nav{
   padding-bottom: 3rem;
 }
 
-.logo img{
+.logo img {
+  display: flex;
   width: 140px;
   height: 145px;
   border-radius: 50%;
+  justify-content: center;
 }
 a{
   position: relative;

@@ -14,18 +14,17 @@
 
   .Header{
     font-size: 30px;
-    font-weight: bolder;
+    
     position: relative;
     margin-top: 5%;
     left:1.5%
   }
 
-  .top{
+.top {}
 
-  }
-
-  .reproductor{
-    margin-top: -30%;
-    margin-left: 50%;
-
-  }
+.reproductor {
+  display: table;
+  position: relative;
+  margin-top: -15%;
+  margin-left: calc(80%);
+}
