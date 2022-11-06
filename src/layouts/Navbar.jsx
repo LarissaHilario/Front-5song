@@ -28,13 +28,14 @@ const Navbar = () => {
                         <img className='avatarNav' src={avatar}/>
                         <span className='nav-item'>Hola larissa</span>
                     </li>
-                    <br/>
+                    <br />
                     <li>
                         <a>
                          <HomeRoundedIcon className='icon'></HomeRoundedIcon>
                          <span className='nav-link'>Home</span>
                         </a>
-                        </li>
+                    
+                    </li>
                     <li>
                         <a href="#">
                         <LibraryMusicIcon  className='icon'/>
@@ -62,7 +63,6 @@ const Navbar = () => {
                         <span className='nav-link'>Álbumes</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="#" className="logout">
                             <LogoutIcon className='icon'/>

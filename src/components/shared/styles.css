@@ -20,11 +20,20 @@
     left:1.5%
   }
 
-  .top{
+.Header {
+  font-size: 40px;
+  position: relative;
+  margin-top: 1%;
+  left: 1%;
+  margin: 0%;
+}
 
-  }
+.top {}
 
-  .reproductor{
-    margin-top: -30%;
-    margin-left: 50%;
-  }
+.reproductor {
+  display: table;
+  position: relative;
+  margin-top: -15%;
+  margin-left: calc(80%);
+
+}
