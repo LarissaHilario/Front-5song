@@ -1,0 +1,112 @@
+
+  
+  .wrapper{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 350px;
+  }
+  
+  .checkout_wrapper{
+    width: 600px;
+    height: 450px;
+    display: flex;
+  }
+  
+  
+  
+  .checkout_wrapper .product_info img{
+    
+    margin-top: 50%;
+    margin-left: 50%;
+  }
+  
+  .checkout_wrapper .form{
+    width: 90%;
+    height: 150%;
+    margin-top: 50%;
+    background: rgb(227, 215, 215);
+    padding: 50px 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  :root {
+    --purple: #BE87A5;
+    --darkpurple: #D194B6;
+  }
+  
+  select {
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--darkpurple);
+    background-image: none;
+    cursor: pointer;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #BE87A5;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #BE87A5;
+  }
+
+  .inputText{
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #dddddd;
+  }
+  input[type="text"]:focus{
+    border: 2px solid #BE87A5;
+  }
+  .cancelar {
+    border: none;
+    background-color: inherit;
+    font-size: 16px;
+    cursor: pointer; 
+    letter-spacing: 5px;
+    color: rgb(234, 94, 94);
+    border-radius: 25px;
+    position: absolute;  
+    margin-left: 15%;   
+    margin-top: 40px;
+  }
+  
+ .submit{
+    background: #BE87A5;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer; 
+    margin-top: 30px; 
+    letter-spacing: 5px;
+    border:#e84de3;
+ }

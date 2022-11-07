@@ -1,0 +1,70 @@
+.conteiner-playlist{
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 850px;
+    height: 350px;
+    box-shadow: rgb(106, 99, 99) 0 8px 15px 0;
+}
+.portada {
+    border-radius: 8px;
+    width: 400px;
+    color: black;
+    float: left;
+}
+.portada h2{
+    margin-left: 20px;
+    font-size: 40px;
+}
+.lista {
+    border-radius: 0 8px 8px 0;
+    background-color: #E84A9B;
+    width: 450px;
+    height: 350px;
+    color: whitesmoke;
+    float: right;
+}
+.btnAlbum{
+    border: 0;
+    background-color: transparent;
+    font-size: 14px;
+    margin-top: 5px;
+    color: #1E1A3D;
+    font-weight: bold;
+}
+.lista hr{
+    margin-top: -20px;
+}
+.lista img{
+    width: 80px;
+    height: 80px;
+    margin: 0px 10px;
+    border-radius: 40px;
+}
+.playlist-card span{
+margin-right: 8px;
+}
+.playlist-card{
+    margin: 5px 0px;
+}
+.img-portada{
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.img-portada img{
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.portada button{
+    border-radius: 8px;
+    border: 1px solid #1E1A3D;
+    float: right;
+    margin-top: -65px;
+    margin-right: 20px;
+    font-size: 15px;
+    background-color: #F0C8E8;
+    color: #1E1A3D;
+}

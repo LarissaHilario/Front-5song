@@ -2,7 +2,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
-import Login from '../pages/Login/Login';
+import Login from '.././pages/user/Login/Login';
+import LoginAdmi from '../pages/admi/Login/AdmiLogin';
 
 import DashRoutes from './DashRouters';
 
@@ -23,9 +24,15 @@ const AppRouters = () => {
           path='/*'
           element={
               <DashRoutes />
-           
           }
         />
+         <Route
+          path='/login-admi'
+          element={
+             <LoginAdmi/>
+          }
+        />
+        
       </Routes>
     </BrowserRouter>
   );

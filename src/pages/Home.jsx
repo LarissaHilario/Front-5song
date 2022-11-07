@@ -20,7 +20,6 @@ const Home = () => {
                 <Card title={"Explora toda la música en tendencia en estos momentos"}
                     image={person} button={"Explorar ahora"} />
             </div>
-        
                 <ListArtist/>
             <div className="Playlist">
                 <ListPlaylist/>

@@ -3,16 +3,13 @@ import PersonIcon from '@mui/icons-material/Person';
 import LockIcon from '@mui/icons-material/Lock';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Link } from 'react-router-dom';
+
+
 function Login() {
-
-    const handleSubmit = (e) => {
-        e.preventDefault(); //no reinicie la pagina
-    }
-
+    
     return (
     <>
             <img className="wave" src="images/wave.png"/>
-            <img className='wave' src='images/wave.svg'/>
                 <div className="container">
                     <div className="img-login">
                         <img src="images/audio.svg"/>
@@ -27,23 +24,23 @@ function Login() {
                                             <PersonIcon/>
                                         </i>
                                     </div>
-                                    <div class="div">
+                                    <div className="div">
                                         <h5>Username</h5>
-                                        <input type="text" class="input"/>
+                                        <input type="text" className="input"/>
                                     </div>
                                 </div>
-                                <div class="input-div pass">
-                                    <div class="i">
-                                        <i class="fas fa-lock">
+                                <div className="input-div pass">
+                                    <div className="i">
+                                        <i className="fas fa-lock">
                                             <VisibilityOffIcon/>
                                         </i>
                                     </div>
-                                    <div class="div">
+                                    <div className="div">
                                         <h5>Password</h5>
-                                        <input type="password" class="input"/>
+                                        <input type="password" className="input"/>
                                     </div>
                                 </div>
-                                <a className='link-login' to='/registro'>¿No tienes una cuenta? Regístrate</a>
+                                <Link to='/login-admi'><a className='link-login'>¿Eres un administrador? Inicia Sesión</a></Link>
                                 <Link to='/home'>
                                     <input type="submit" className="buttonlogin" value="Login">
                                     </input></Link>
