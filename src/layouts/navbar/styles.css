@@ -9,7 +9,6 @@
 
 nav {
   height: 100%;
-  
   width: 280px;
   background: #F4258E;
   overflow: hidden;
@@ -34,7 +33,7 @@ nav {
   border-radius: 50%;
   justify-content: center;
 }
-a{
+.a{
   position: relative;
   left: 20%;
   margin-top: 50px;
@@ -42,10 +41,13 @@ a{
   font-size: 24px;
   color: rgb(251, 251, 251);
   display: table;
-  padding: 12px;
   text-decoration: none;
   cursor: pointer;
   
+}
+.a a{
+  text-decoration: none;
+  color: rgb(251, 251, 251);
 }
 .nav-link{
   position: relative;
@@ -59,22 +61,23 @@ a{
   color: #FFF;
   font-weight: 900;
   margin-left: 40px;
+  top: -2px;
 }
-a:hover{
+.a:hover{
   background: #0a091593;
+  height: 30px;
 }
 .icon{
  
 }
-a:hover .icon{
+.a:hover .icon{
   color: #E84A9B;
   transition: 0.5s;
 }
 .logout{
   position: flex end;
   display: flex;
- 
-  bottom: 0;
+  bottom: -10px;
 }
 
 .container{
@@ -87,5 +90,6 @@ a:hover .icon{
   border-radius: 50px;
   position: relative;
   left: 20px;
-  top:45px;
+  top:35px;
 }
+

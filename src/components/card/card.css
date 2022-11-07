@@ -1,5 +1,5 @@
 .card{
-    width: 830px;
+    width: 900px;
     height: 400px;
     display: flex;
     background-size: cover;
@@ -16,7 +16,7 @@
 }
 
 .image{
-  width: 300px;
+  width: 350px;
   height: 400px;
   object-fit: cover;
   position:absolute;
@@ -28,7 +28,7 @@
 
 .card-top {
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 100%;
   transform: scale(1.3);
   opacity: 100%;

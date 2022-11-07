@@ -13,27 +13,33 @@
   }
 
   .Header{
-    font-size: 30px;
-    
     position: relative;
     margin-top: 5%;
-    left:1.5%
   }
-
-.Header {
-  font-size: 40px;
-  position: relative;
-  margin-top: 1%;
-  left: 1%;
-  margin: 0%;
-}
-
-.top {}
+  .Header h3{
+    font-size: 50px;
+    font-weight: bolder;
+    position: relative;
+    left:1.5%;
+  }
+  .buscador{
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 24px;
+    width: 500px;
+    border: transparent;
+    border-bottom: solid 1px #ccc;
+    padding: 10px 0px 10px 30px;
+    position: absolute;
+    outline: none;
+    top: 20%;
+    margin-left: 80%;
+  }
 
 .reproductor {
   display: table;
   position: relative;
-  margin-top: -15%;
-  margin-left: calc(80%);
-
+  margin-top: -33%;
+  left: 105%;
+  width: 400px;
+  height: 400px;
 }

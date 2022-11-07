@@ -1,43 +1,41 @@
+import { useEffect, useState} from "react";
 import TopArtist from "./TopArtist"
 import './list.css';
 const ListArtist=()=>{
+  const [posts, setPosts] = useState([]);
 
-    const artists = [
-        {
-          id:1,
-          name: "Harry Styles",
-          image:'/images/harry (1).jpg'
-        },
-        {
-          id:2,
-          name: "Taylor Swift",
-          image:'/images/harry (3).jpg'
-        },
-        {
-          id:3,
-          name: "Joji",
-          image:'/images/harry (2).jpg'
-        }]
+  useEffect(() => {
+     fetch('http://3.12.108.156:8080/artist/?_limit=7')
+        .then((response) => response.json())
+        .then((data) => {
+           console.log(data.data);
+           setPosts(data.data);
+        })
+        .catch((err) => {
+           console.log(err.message);
+        });
+  }, []);
+ 
     return (
         <>
        
             <div className="containerArtist">
-                 <h2 className="subtitle">Top Artistas</h2> 
-            {artists.map((artist)=> {
+                 <span className="titleartist">Top Artistas</span> 
+                 
+                 {posts.map((post)=> {
                 return (
                     <>
-                    
                    <TopArtist
-                      key={artist.id}
-                      name={artist.name}
-                      avatar={artist.image}
+                      key={post.id}
+                      name={post.name}
+                      avatar={post.photoUrl}
                     /> 
-                    
-                   
-                   </>
+                     </>
                 )
                
             })}  
+                   
+                  
             </div>
             </>
     )

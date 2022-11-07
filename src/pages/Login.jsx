@@ -27,7 +27,7 @@ function Login() {
                 <input type="checkbox" className="checkBox"/>
             </div>
             <button className='button' onClick={handleSubmit}>Iniciar</button>
-            <div className='link'>
+            <div className='link' to>
             <h4>¿No tienes una cuenta?</h4>
             <h4>Registrate</h4>
             </div>

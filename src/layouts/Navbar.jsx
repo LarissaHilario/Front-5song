@@ -8,8 +8,10 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import AlbumIcon from '@mui/icons-material/Album';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 import Face2Icon from '@mui/icons-material/Face2';
+import PodcastsIcon from '@mui/icons-material/Podcasts';
 
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Player from "../components/Player/Player";
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
@@ -28,44 +30,48 @@ const Navbar = () => {
                     </li>
                     <br />
                     <li>
-                        <a>
+                        <div className="a">
+                            <Link to="/home">
                          <HomeRoundedIcon className='icon'></HomeRoundedIcon>
                          <span className='nav-link'>Home</span>
-                        </a>
+                        </Link></div>
                     
                     </li>
                     <li>
-                        <a href="#">
+                        <div className="a">
                         <LibraryMusicIcon  className='icon'/>
                         <span className='nav-link'>Biblioteca</span>
-                        </a>
+                        </div>
                     </li>
                     <li>
-                        <a  component={NavLink} onClick={() => setClick(false)}
-                          activeClassName="active"
-                          to="/playlist">
+
+                        <div className="a">
+                        <Link to="/playlist">   
                         <QueueMusicIcon className='icon'
                         />
-                        <span className='nav-link' clicked={click}>Playlist</span>
-                        </a>
+                        <span className='nav-link'>Playlist</span>
+                        </Link>
+                        </div>
                         </li>
                     <li>
-                        <a href="#">
-                            <Face2Icon  className='icon'/>
-                            <span className='nav-link'>Artistas</span>
-                        </a>
+                        <div className="a">
+                            <PodcastsIcon className='icon'/>
+                            <span className='nav-link'>Podcast</span>
+                        </div>
                     </li>
                     <li>
-                        <a href="#">
+                        <div className='a'>
                         <AlbumIcon className='icon'/>
                         <span className='nav-link'>Álbumes</span>
-                        </a>
+                        </div>
                     </li>
+
+                    <Player className='playerNav'></Player>
                     <li>
-                        <a href="#" className="logout">
+                        <div className="a">
                             <LogoutIcon className='icon'/>
                             <span className='nav-link'>Salir</span>
-                        </a>
+                        </div>
                     </li>
                 </ul>
             </nav>

@@ -1,6 +1,6 @@
 .container-card {
-    width: 190px;
-    height: 190px;
+    width: 210px;
+    height: 290px;
     display: flex;
     background-size: cover;
     float: left;
@@ -11,21 +11,21 @@
     margin: 10px;
     align-items: center;
     align-content: center;
-    background-color: #F4258E;
+    background-color: #f4258d;
     align-items: center;
 }
 
-.img{
-  max-width: 100%;
-  height: auto;
+.imagePlay{
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   position:absolute;
   align-items: center;
-  top: 0;
-  left: 0;
+  top: 5%;
+  left: 15%;
   right: 0;
   bottom: 0;
-  opacity: 60%;
+  opacity: 90%;
 }
 .container-card:hover .card {
   opacity: 3;
@@ -57,7 +57,7 @@
 
 .card-title h2 {
   position: absolute;
-  top: 30%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: bold;
@@ -69,15 +69,15 @@
 
 .button1{
     background: #FFF;
-    border-radius: 25px;
+    border-radius: 20px;
     text-align: center;
     cursor: pointer; 
-    margin-top: 20%; 
+    margin-top: 90%; 
     margin-left:15%;
     margin-right: 15%;
     letter-spacing: 3px;
-    color: #F4258E;
-    font-size: 15px;
+    color: #f4258d;
+    font-size: 20px;
     align-items: center;
     border: none;
 }

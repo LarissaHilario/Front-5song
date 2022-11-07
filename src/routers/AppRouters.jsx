@@ -16,15 +16,12 @@ const AppRouters = () => {
         <Route
           path='/login'
           element={
-            
               <Login />
-           
           }
         />
         <Route
           path='/*'
           element={
-            
               <DashRoutes />
            
           }
