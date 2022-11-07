@@ -1,12 +1,10 @@
+import React from 'react';
 import '../assets/styles/login.css'
 import logo from '../assets/img/logo.png'
+import { Link } from 'react-router-dom';
 
-function Login() {
-
-    const handleSubmit = (e) => {
-        e.preventDefault(); //no reinicie la pagina
-    }
-
+class Login extends React.Component{
+    render() {
     return (
         <form>
             <div className='logo-Conteiner'>
@@ -15,24 +13,24 @@ function Login() {
             </div>
             
             <div className="input-wrapper">
-                <label for="email">Correo</label>
+                <label htmlFor="email">Correo</label>
                 <input type="text" placeholder='Email' className='txtBox'/>
             </div>
             <div className="input-wrapper">
-                <label for="email">Contraseña</label>
+                <label htmlFor="email">Contraseña</label>
                 <input type="text" placeholder='Contraseña' className='txtBox'/>
             </div>
             <div className="input-wrapper">
                 <label className='lblCheck'>Recuérdame</label>
                 <input type="checkbox" className="checkBox"/>
             </div>
-            <button className='button' onClick={handleSubmit}>Iniciar</button>
+            <button className='button'><Link to={'/Home'}>Iniciar</Link> </button>
             <div className='link'>
             <h4>¿No tienes una cuenta?</h4>
-            <h4>Registrate</h4>
+            <Link to={'/Registro'}>Registrate</Link>
             </div>
         </form>
     )
-
+    }
 }
 export default Login;

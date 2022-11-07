@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
-import Navbar from '../layouts/Navbar';
+import React from 'react';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home';
 import Playlist from '../pages/user/Playlist';
 import HomePage from '../pages/admi/Home'
 
 const DashRoutes = () => {
-  const [currentPage, setCurrentPage] = useState('');
   return (
     <>
       <Routes>
@@ -22,8 +20,7 @@ const DashRoutes = () => {
           element={<Navigate to={('/login')} />}
         />
       </Routes>
-    
-    </>
+    </BrowserRouter>
   );
 };
 
