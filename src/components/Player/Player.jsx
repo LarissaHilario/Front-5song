@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./player.css";
 // import { useLocation } from "react-router-dom";
 // import songs from "./tracksTests";
@@ -8,6 +8,7 @@ import AudioPlayer from "../audioPlayer/AudioPlayer";
 // import Widgets from "../../components/widgets";
 
 const Player = () => {
+  const userId = useContext(userId);
   //   const location = useLocation();
   const [tracks, setTracks] = useState([]);
   const [currentTrack, setCurrentTrack] = useState({});

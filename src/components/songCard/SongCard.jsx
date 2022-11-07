@@ -1,14 +1,13 @@
-import React from 'react'
-import AlbumImage from './AlbumImage.jsx';
-import AlbumInfo from './AlbumInfo.jsx';
-import './songCard.css';
-const SongCard = (album) => {
-    return (
-        <div className="songCard-body flex">
-          <AlbumImage url={album} />
-          <AlbumInfo album={album} />
-        </div>
-      );
-}
+import React from "react";
+import AlbumImage from "./albumImage";
+import AlbumInfo from "./albumInfo";
+import "./songCard.css";
 
-export default SongCard;
+export default function SongCard({ album }) {
+  return (
+    <div className="songCard-body flex">
+      <AlbumImage url={album?.images[0]?.url} />
+      <AlbumInfo album={album} />
+    </div>
+  );
+}
