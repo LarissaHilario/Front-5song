@@ -1,6 +1,13 @@
+import Header from "../components/Header/Header"
+
 const Playlist =()=>{
     return(
-        <h1>Hola ejemplo de ruta</h1>
+        <>
+        <div className="Header">
+                <Header title={'Playlists'}></Header>
+            </div>
+        
+        </>
     )
 }
 export default Playlist
