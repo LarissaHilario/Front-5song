@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {  useState } from 'react';
 import '../assets/styles/login.css'
 import logo from '../assets/img/logo.png'
 import { Link } from 'react-router-dom';
-
-class Login extends React.Component{
+import Home from './Home';
+import Registro from './Registro';
+class Login extends React.Component {
     render() {
     return (
         <form>

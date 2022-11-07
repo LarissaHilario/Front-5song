@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import songs from '../Player/tracksTests.js';
 import AudioControls from './AudioControls.jsx';
 import './audioPlayer.css';
 
@@ -13,9 +12,9 @@ const AudioPlayer = ({
     // State
     const [trackProgress, setTrackProgress] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
-    const audioSrc = songs[currentIndex].track;
-    // Refs
-    const audioRef = useRef(new Audio(audioSrc));
+    var audioSrc = total[currentIndex].track.preview_url;
+
+    const audioRef = useRef(new Audio(total[0].track.preview_url));
     const intervalRef = useRef();
     const isReady = useRef(false);
 
@@ -59,14 +58,14 @@ const AudioPlayer = ({
 
     const handlePrev = () => {
         if (currentIndex - 1 < 0) {
-            setCurrentIndex(songs.length - 1);
+            setCurrentIndex(total.length - 1);
         } else {
             setCurrentIndex(currentIndex - 1);
         }
     };
 
     const handleNext = () => {
-        if (currentIndex < songs.length - 1) {
+        if (currentIndex < total.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {
             setCurrentIndex(0);
@@ -117,15 +116,19 @@ const AudioPlayer = ({
             clearInterval(intervalRef.current);
         };
     }, []);
+    const artists = [];
+    currentTrack.album.artists.forEach((artist) => {
+        artists.push(artist.name);
+    });
     return (
         <div className="audio-player">
             <div className="track-info">
                 <img
                     className="artwork"
-                    src={songs[currentIndex].album.image}
+                    src={currentTrack.album.images[0]?.url}
                 />
-                <h2 className="title">{songs[currentIndex].name}</h2>
-                <h3 className="artist">{songs[currentIndex].artists}</h3>
+                <h2 className="title">{currentTrack.name}</h2>
+                <h3 className="artist">{artists.join(" | ")}</h3>
             </div>
             <div>
                 <AudioControls
