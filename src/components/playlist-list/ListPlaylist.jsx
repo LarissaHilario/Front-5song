@@ -7,7 +7,7 @@ function ListPlaylist() {
   const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
-     fetch('http://3.12.108.156:8080/playlist/')
+     fetch('http://3.135.19.149:8080/playlist')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);
@@ -27,8 +27,8 @@ function ListPlaylist() {
                     <Playlist
                       key={play.id}
                       title={play.name}
-                      songs={play.songs}
-                      image={play.image}
+                      songs={play.duration}
+                      image={play.photoUrl}
                     />
                    
                 )

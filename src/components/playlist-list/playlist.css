@@ -1,6 +1,6 @@
 .container-card {
     width: 210px;
-    height: 290px;
+    height: 320px;
     display: flex;
     background-size: cover;
     float: left;
@@ -56,12 +56,13 @@
 
 
 .card-title h2 {
+  text-transform: capitalize;
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: 'Montserrat', sans-serif;
@@ -69,15 +70,16 @@
 
 .button1{
     background: #FFF;
-    border-radius: 20px;
+    border-radius: 15px;
     text-align: center;
     cursor: pointer; 
-    margin-top: 90%; 
+    margin-top: 105%; 
     margin-left:15%;
+    
     margin-right: 15%;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: #f4258d;
-    font-size: 20px;
+    font-size: 16px;
     align-items: center;
     border: none;
 }

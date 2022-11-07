@@ -1,5 +1,5 @@
 /*  import google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
 
 * {
   margin: auto;
@@ -22,14 +22,14 @@ nav {
   align-items: center;
   text-align: center;
   display: flex;
-  margin: 70px 0 0 70px;
+  margin: 10px 0 0 80px;
   padding-bottom: 3rem;
 }
 
 .logo img {
   display: flex;
-  width: 140px;
-  height: 145px;
+  width: 100px;
+  height: 90px;
   border-radius: 50%;
   justify-content: center;
 }
@@ -59,9 +59,9 @@ nav {
   top: 15px;
   font-size: 20px;
   color: #FFF;
-  font-weight: 900;
+  font-weight: 600;
   margin-left: 40px;
-  top: -2px;
+  top: -40px;
 }
 .a:hover{
   background: #0a091593;
@@ -90,6 +90,6 @@ nav {
   border-radius: 50px;
   position: relative;
   left: 20px;
-  top:35px;
+  top:-5px;
 }
 

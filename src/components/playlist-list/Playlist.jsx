@@ -8,7 +8,7 @@ const Playlist=({title,image,songs})=> {
             <div className="card-title">
                 <h2>{title}</h2>
             </div>
-            <button className="button1"> <p>{songs}</p><PlayCircleFilledIcon/></button>
+            <button className="button1"> <span><br/>Duración:{songs}</span><PlayCircleFilledIcon/></button>
         </div> 
     )
     }

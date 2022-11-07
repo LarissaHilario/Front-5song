@@ -69,8 +69,10 @@ const Navbar = () => {
                     <Player className='playerNav'></Player>
                     <li>
                         <div className="a">
+                            <Link to="/login">  
                             <LogoutIcon className='icon'/>
                             <span className='nav-link'>Salir</span>
+                            </Link>
                         </div>
                     </li>
                 </ul>
