@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import AppRouters from './routers/AppRouters'
+import React from 'react'
+import DashRoutes from './routers/DashRouters'
 
 const App=()=> {
 
 
   return (
-   <AppRouters></AppRouters>
+   <DashRoutes/>
   )
 }
 

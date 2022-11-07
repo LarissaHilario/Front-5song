@@ -12,15 +12,15 @@ nav {
   width: 280px;
   background: #ffedf6;
   overflow: hidden;
-  position: fixed;
+  /* position: fixed; */
   outline: none;
   border: none;
   text-decoration: none;
 }
 
 .logo{
+  justify-content: center;
   align-items: center;
-  text-align: center;
   display: flex;
   margin: 10px 0 0 80px;
   padding-bottom: 3rem;
@@ -56,7 +56,6 @@ nav {
 }
 .nav-item{
   position: relative;
-  top: 15px;
   font-size: 20px;
   color: #FFF;
   font-weight: 600;
@@ -74,14 +73,14 @@ nav {
   color: #E84A9B;
   transition: 0.5s;
 }
-.logout{
+/* .logout{
   position: flex end;
   display: flex;
   bottom: -10px;
 }
 
 .container{
-  display: flex;
+  display: inline-block;
 }
 
 .avatarNav{

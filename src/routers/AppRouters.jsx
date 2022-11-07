@@ -59,7 +59,7 @@ const AppRouters = () => {
     </BrowserRouter>
     </ThemeProvider>
   );
-};
+}
 
 export default AppRouters;
 
