@@ -1,5 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
-
+import './Header.css'
 
 const Header=({title})=>{
     return(

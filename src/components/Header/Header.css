@@ -1,16 +1,3 @@
-*{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: 'Montserrat', sans-serif;
-  }
-  .body{
-    position: absolute;
-    max-width: 100%;
-    margin: 0 20rem;
-    z-index: 10;
-    background-color:#ffffff;
-  }
 
   .Header{
     position: relative;
@@ -21,7 +8,6 @@
     font-weight: bolder;
     position: relative;
     left:1.5%;
-    color: rgb(31, 28, 28);
   }
   .buscador{
     background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
@@ -33,13 +19,5 @@
     position: absolute;
     outline: none;
     top: 20%;
+    left: 80%;
   }
-
-.reproductor {
-  display: table;
-  position: relative;
-  margin-top: -33%;
-  left: 105%;
-  width: 400px;
-  height: 400px;
-}
