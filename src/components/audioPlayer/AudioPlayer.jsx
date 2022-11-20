@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
-import songs from '../Player/tracksTests.js';
+import songs1 from '../Player/tracksTests.js';
+import albumDefault from "../../assets/images/globos.jpg"
 import AudioControls from './AudioControls.jsx';
 import './audioPlayer.css';
 
 const AudioPlayer = ({
-    currentTrack,
+    songs,
     currentIndex,
     setCurrentIndex,
     total
 }) => {
-
     // State
     const [trackProgress, setTrackProgress] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
-    const audioSrc = songs[currentIndex].track;
+    const audioSrc = songs[currentIndex].songUrl;
     // Refs
     const audioRef = useRef(new Audio(audioSrc));
     const intervalRef = useRef();
@@ -122,7 +122,7 @@ const AudioPlayer = ({
             <div className="track-info">
                 <img
                     className="artwork"
-                    src={songs[currentIndex].album.image}
+                    src={songs[currentIndex].photoUrl!=null?songs[currentIndex].album.photoUrl: albumDefault}
                 />
                 <h2 className="title">{songs[currentIndex].name}</h2>
                 <h3 className="artist">{songs[currentIndex].artists}</h3>

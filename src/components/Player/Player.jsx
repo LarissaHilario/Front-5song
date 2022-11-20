@@ -9,40 +9,41 @@ import AudioPlayer from "../audioPlayer/AudioPlayer";
 
 const Player = () => {
   //   const location = useLocation();
-  const [tracks, setTracks] = useState([]);
-  const [currentTrack, setCurrentTrack] = useState({});
+  const [tracks, setTracks] = useState([{}]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentTrack, setCurrentTrack] = useState(tracks[currentIndex]);
 
-      useEffect(() => {
-     fetch('http://3.135.19.149:8080/song')
-        .then((response) => response.json())
-        .then((data) => {
-           console.log(data.data);
-           setTracks(data.data);
-        })
-        .catch((err) => {
-           console.log(err.message);
-        });
-  }, []);
+  useEffect(() => {
+    fetch("http://18.119.120.75:8080/song")
+      .then((response) => response.json())
+      .then((data) => {
+        setTracks(data.data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [])
 
   useEffect(() => {
     setCurrentTrack(tracks.at());
   }, [currentIndex, tracks]);
 
+
+
   return (
     <div className="screen-container">
       <div className="left-player-body">
-      {/* {tracks.map((track)=> { */}
+        {/* {tracks.map((track)=> { */}
         <AudioPlayer
-          currentTrack={currentTrack}
+          songs={tracks}
           total={tracks.length}
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
         />
-      {/* })} */}
+        {/* })} */}
       </div>
     </div>
   );
-}
+};
 
 export default Player;
