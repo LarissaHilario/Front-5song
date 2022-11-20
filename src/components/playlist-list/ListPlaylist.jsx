@@ -7,7 +7,7 @@ function ListPlaylist() {
   const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
-     fetch('http://3.135.19.149:8080/playlist')
+     fetch('http://18.119.120.75:8080/playlist')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);
