@@ -1,0 +1,86 @@
+.container-card {
+    width: 210px;
+    height: 320px;
+    display: flex;
+    background-size: cover;
+    float: left;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    margin: 10px;
+    align-items: center;
+    align-content: center;
+    background-color: #f4258d;
+    align-items: center;
+}
+
+.imagePlay{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  position:absolute;
+  align-items: center;
+  top: 5%;
+  left: 15%;
+  right: 0;
+  bottom: 0;
+  opacity: 90%;
+}
+.container-card:hover .card {
+  opacity: 3;
+  transform: scale(1);
+}
+.container-card img {
+  object-fit: cover;
+  transition: transform .8s ease;
+  
+}
+
+.container-card:hover img {
+  transform: scale(1.1);
+}
+.container-card img{
+  transition: transform .8s ease;
+
+}
+
+.card-title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.3);
+  opacity: 100%;
+  transition: transform .4s ease 0s;
+}
+
+
+.card-title h2 {
+  text-transform: capitalize;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.button1{
+    background: #FFF;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer; 
+    margin-top: 105%; 
+    margin-left:15%;
+    
+    margin-right: 15%;
+    letter-spacing: 2px;
+    color: #f4258d;
+    font-size: 16px;
+    align-items: center;
+    border: none;
+}
+

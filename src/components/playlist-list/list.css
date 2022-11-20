@@ -1,0 +1,14 @@
+.containerPlay{ 
+    display: flex; 
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+   }
+   .namePlaylist {
+    
+    font-size: 40px;
+    font-weight: bolder;
+    position: relative;
+    left:10px;
+    margin-top: -10%;
+   }

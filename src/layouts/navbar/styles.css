@@ -1,0 +1,95 @@
+/*  import google fonts */
+
+
+* {
+  margin: auto;
+  list-style: none;
+  line-height: 1;
+}
+
+nav {
+  height: 100%;
+  width: 280px;
+  background: #F4258E;
+  overflow: hidden;
+  position: fixed;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+.logo{
+  align-items: center;
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 80px;
+  padding-bottom: 3rem;
+}
+
+.logo img {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  border-radius: 50%;
+  justify-content: center;
+}
+.a{
+  position: relative;
+  left: 20%;
+  margin-top: 50px;
+  width: 280px;
+  font-size: 24px;
+  color: rgb(251, 251, 251);
+  display: table;
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+.a a{
+  text-decoration: none;
+  color: rgb(251, 251, 251);
+}
+.nav-link{
+  position: relative;
+  top: -4px;
+  margin-left: 20px;
+}
+.nav-item{
+  position: relative;
+  top: 15px;
+  font-size: 20px;
+  color: #FFF;
+  font-weight: 600;
+  margin-left: 40px;
+  top: -40px;
+}
+.a:hover{
+  background: #0a091593;
+  height: 30px;
+}
+.icon{
+ 
+}
+.a:hover .icon{
+  color: #E84A9B;
+  transition: 0.5s;
+}
+.logout{
+  position: flex end;
+  display: flex;
+  bottom: -10px;
+}
+
+.container{
+  display: flex;
+}
+
+.avatarNav{
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  position: relative;
+  left: 20px;
+  top:-5px;
+}
+
