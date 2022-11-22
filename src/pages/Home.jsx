@@ -10,6 +10,7 @@ import Header from '../components/Header/Header';
 
 const Home = () => {
     return (
+        <div className='contenedor'>
         <div className="body">
             <div className="Header">
                 <Header title={'Home'}></Header>
@@ -24,6 +25,7 @@ const Home = () => {
             <div className="Playlist">
                 <ListPlaylist/>
             </div>
+        </div>
         </div>
     )
 

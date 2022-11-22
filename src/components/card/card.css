@@ -1,6 +1,6 @@
 .card{
-    width: 900px;
-    height: 400px;
+    width: 35vw;
+    height: 35vh;
     display: flex;
     background-size: cover;
     float: left;
@@ -8,7 +8,7 @@
     position: relative;
     overflow: hidden;
     background-position: center;
-    margin: 10px;
+    margin-left: 1.5%;
     align-items: center;
     align-content: center;
     background-color:  #F4258E;

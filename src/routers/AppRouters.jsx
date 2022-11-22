@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
-import Login from '.././pages/user/Login/Login';
+import Login from '.././pages/user/Login/Login1';
 import LoginAdmi from '../pages/admi/Login/AdmiLogin';
 
 import DashRoutes from './DashRouters';

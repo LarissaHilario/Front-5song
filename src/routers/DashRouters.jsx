@@ -10,9 +10,12 @@ const DashRoutes = () => {
   const [currentPage, setCurrentPage] = useState('');
   return (
     <>
-      <Navbar currentPage={ currentPage }/>
       <Routes>
         <Route path='/home' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
+        <Route path='/podcast' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
+        <Route path='/album' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
+        <Route path='/library' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
+        <Route path='/browser' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
         <Route path='/playlist' element={<Playlist onChangeCurrentPage={setCurrentPage}/>} />
         <Route path='/home-admi' element={<HomePage onChangeCurrentPage={setCurrentPage} />}/>
         <Route
