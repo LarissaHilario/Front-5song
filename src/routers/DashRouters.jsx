@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Navbar from '../layouts/Navbar';
 import Home from '../pages/Home';
-import Playlist from '../pages/Playlist';
+import Playlist from '../pages/user/Playlist';
 
-
+import HomePage from '../pages/admi/Home'
 
 const DashRoutes = () => {
   const [currentPage, setCurrentPage] = useState('');

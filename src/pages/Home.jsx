@@ -12,19 +12,10 @@ const Home = () => {
     return (
         <div className="body">
             <div className="Header">
-                <Header title={'Home'}></Header>
-            </div>
-           <br></br>
-           <br></br>
-            <div className="Card-Home">
-                <Card title={"Explora toda la música en tendencia en estos momentos"}
-                    image={person} button={"Explorar ahora"} />
-            </div>
-        
-                <ListArtist/>
-            <div className="Playlist">
-                <ListPlaylist/>
-            </div>
+                <Header title={'Home'} Name={'Larissa'} avatar={person}></Header>
+                <Card image={person} button={'Explorar ahora'} title={'Explora toda la música relevante en este momento'}></Card>
+            
+        </div>
         </div>
     )
 
