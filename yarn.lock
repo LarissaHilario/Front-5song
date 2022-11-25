@@ -220,7 +220,15 @@
     "@babel/plugin-syntax-jsx" "^7.18.6"
     "@babel/types" "^7.19.0"
 
+<<<<<<< HEAD
 "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.19.0", "@babel/runtime@^7.20.1", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.7":
+=======
+<<<<<<< HEAD
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.19.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.7":
+=======
+"@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.19.0", "@babel/runtime@^7.20.1", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.7":
+>>>>>>> ffca08d (add login and signup)
+>>>>>>> ddf75d13b76de36c344888bcb853cdae46e8a58c
   version "7.20.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.1.tgz#1148bb33ab252b165a06698fde7576092a78b4a9"
   integrity sha512-mrzLkl6U9YLF8qpqI7TB82PESyEGjm/0Ly91jG575eVxMMlb8fYfOXFZIJ8XfLrJZQbm7dlKry2bJmXBUEkdFg==
@@ -1105,7 +1113,15 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+<<<<<<< HEAD
 hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
+=======
+<<<<<<< HEAD
+hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
+=======
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
+>>>>>>> ffca08d (add login and signup)
+>>>>>>> ddf75d13b76de36c344888bcb853cdae46e8a58c
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -1256,6 +1272,16 @@ magic-string@^0.26.2:
   dependencies:
     sourcemap-codec "^1.4.8"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+material-icons@^1.12.2:
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/material-icons/-/material-icons-1.12.2.tgz#68dbf74309ebfbd791eea75b5fec2d74b07d558f"
+  integrity sha512-z17mvWzcQBp9O1wgJcmLDJLSR54VssccCYbB/ZgV7DzLxxy4cpfoc/MNH9fabO1wlowWCzSQM8/KA5EPTsN4qQ==
+
+>>>>>>> ddf75d13b76de36c344888bcb853cdae46e8a58c
 mime-db@1.52.0:
   version "1.52.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
@@ -1268,6 +1294,10 @@ mime-types@^2.1.12:
   dependencies:
     mime-db "1.52.0"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 2852512 (update se salvó todo creo)
+>>>>>>> ddf75d13b76de36c344888bcb853cdae46e8a58c
 ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"

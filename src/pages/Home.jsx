@@ -11,11 +11,12 @@ import { Typography } from '@mui/material';
 
 const Home = () => {
     return (
-        <div className={styles.container}>
-            <Header>
-                
-            </Header>
-
+        <div className="body">
+            <div className="Header">
+                <Header title={'Home'} Name={'Larissa'} avatar={person}></Header>
+                <Card image={person} button={'Explorar ahora'} title={'Explora toda la música relevante en este momento'}></Card>
+            
+        </div>
         </div>
     )
 

@@ -1,6 +1,5 @@
 .card{
-    width: 35vw;
-    height: 35vh;
+    
     display: flex;
     background-size: cover;
     float: left;

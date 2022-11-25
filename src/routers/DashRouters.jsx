@@ -3,7 +3,6 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Navbar from '../layouts/Navbar';
 import Home from '../pages/Home';
 import Playlist from '../pages/user/Playlist';
-import Registro from '../pages/user/Registro';
 import HomePage from '../pages/admi/Home'
 
 const DashRoutes = () => {
