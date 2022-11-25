@@ -27,7 +27,7 @@ function Form() {
           })
       }
 
-      fetch ('"http://18.119.120.75:8080/upload/song', option)
+      fetch ('"http://18.116.50.13:8080/upload/song', option)
       .then(response=> response.json())
       .then (data=> data.status ?
           setSong(data.data): console.log('ha ocurrido un error'))
@@ -54,7 +54,7 @@ function Form() {
   }, []);
 
   useEffect(() => {
-    fetch("http://18.119.120.75:8080/artist")
+    fetch("http://18.116.50.13:8080/artist")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.data);
