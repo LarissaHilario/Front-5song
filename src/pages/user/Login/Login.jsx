@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import "./login.css";
 import {
   TextField,
   Button,
@@ -15,9 +14,12 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import "./login.module.css"
+import "./login.css"
 
 function Login() {
   const [values, setValues] = useState({
+    name:"",
     password: "",
     showPassword: false,
   });
@@ -25,6 +27,7 @@ function Login() {
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
+    console.log(values)
   };
 
   const handleClickShowPassword = () => {
@@ -38,24 +41,14 @@ function Login() {
     event.preventDefault();
   };
 
-const handleClick = () => {
-    navigate('/signUp/');
-  };
+  const handleClick = () => {
+      navigate('/signUp');
+    };
 
   const handleClickRedux=()=>{
-    navigate('/home');
+    navigate('/home'); //no encontre la logica para usarlo :c
   }
 
-  const[name, setName]=useState('');
-  const[password, setPassword]=useState('');
-
-  const handleChangeName=(e)=>{
-    setName(e.target.value);
-  }
-
-  const handleChangePassword=(e)=>{
-      setPassword(e.target.value);
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -66,8 +59,8 @@ const handleClick = () => {
           'Content-Type' : 'application/json'
       },
       body : JSON.stringify({
-          name: name,
-          password: password
+          name: values.name,
+          password: values.password
       }) 
   }
 
@@ -84,7 +77,7 @@ const handleClick = () => {
           <img src="images/audio (2).svg" />
         </div>
         <div className="login-content">
-          <form>
+          <form onSubmit={handleSubmit}>
             <img src="images/logo.png" />
             <Typography
               variant="h2"
@@ -96,11 +89,11 @@ const handleClick = () => {
             </Typography>
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
               <InputLabel fullWidth>
-                Email
+                Name
               </InputLabel>
               <FilledInput
-                value={values.username}
-                onChange={handleChangeName}
+                value={values.name}
+                onChange={handleChange("name")}
                 id="input-with-icon-adornment"
                 endAdornment={
                     
@@ -108,9 +101,10 @@ const handleClick = () => {
                         <AccountCircleIcon />
                       </InputAdornment>
                     }
-                    ></FilledInput>
+                ></FilledInput>
 
             </FormControl>
+            
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
               <InputLabel fullWidth>
                 Contraseña
@@ -119,8 +113,7 @@ const handleClick = () => {
                 id="filled-adornment-password"
                 type={values.showPassword ? "text" : "password"}
                 value={values.password}
-               
-                onChange={handleChangePassword}
+                onChange={handleChange("password")}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -140,7 +133,7 @@ const handleClick = () => {
             sx={ { marginLeft:22.3, marginRight:0 }} 
             align='left' textSizeSmall
             onClick={handleClick}>¿No tienes una cuenta? Regístrate aquí</Button>
-            <Button sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit" onClick={handleClickRedux}>
+            <Button sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
               Iniciar Sesión
             </Button>
           </form>

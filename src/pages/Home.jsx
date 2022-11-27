@@ -16,7 +16,7 @@ const Home = () => {
                 <Header title={'Home'} Name={'Larissa'} avatar={person}></Header>
                 <Card image={person} button={'Explorar ahora'} title={'Explora toda la música relevante en este momento'}></Card>
             
-        </div>
+            </div>
         </div>
     )
 

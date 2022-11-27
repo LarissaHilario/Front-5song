@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import styles from "./signUp.module.css";
 import {
   TextField,
   Button,
@@ -16,18 +15,22 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import "./signUp.module.css"
 
 function SignUp() {
   const navigate= useNavigate();
   const [values, setValues] = useState({
     password: "",
+    passwordConfirm:"",
     email:"",
-    username:"",
+    name:"",
     showPassword: false,
+    showPasswordConfirm:false
   });
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
+    console.log(values)
   };
 
   const handleClickShowPassword = () => {
@@ -36,14 +39,50 @@ function SignUp() {
       showPassword: !values.showPassword,
     });
   };
+  const handleClickShowPasswordConfirm = () => {
+    setValues({
+      ...values,
+      showPasswordConfirm: !values.showPasswordConfirm,
+    });
+  };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
   const handleClick = () => {
-    navigate('/login/');
+    navigate('/login');
   };
 
+  const verifypass=()=>{
+    return values.password === values.passwordConfirm;
+  }
+
+  const registerUser=()=>{
+    const option={
+      method: 'POST',
+      headers: {
+          'Accept' : 'application/json',
+          'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify({
+          name: values.name,
+          password: values.password,
+          email: values.email,
+          photoUrl:"https://musicawsbucket.s3.us-east-2.amazonaws.com/FdaInFzakAEMwqj.jpg"
+      }) 
+  }
+
+    fetch('http://18.116.50.13:8080/user', option)
+    .then(response=> response.json())
+    .then( data=>data.success ? navigate("/login"):alert("Fallo"))
+    .catch(err=>console.log(err))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    verifypass()? registerUser(): alert("contraseña incorrecta");
+    
+  };
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg"/>
@@ -52,7 +91,7 @@ function SignUp() {
           <img src="images/audioos.svg" />
         </div>
         <div className="login-content">
-          <form>
+          <form onSubmit={handleSubmit}>
             <img src="images/logo.png" />
             <Typography
               variant="h2"
@@ -68,6 +107,7 @@ function SignUp() {
               </InputLabel>
               <FilledInput
                 value={values.email}
+                onChange={handleChange("email")}
                
                 id="input-with-icon-adornment"
                 endAdornment={
@@ -83,7 +123,9 @@ function SignUp() {
                 Nombre de usuario
               </InputLabel>
               <FilledInput
-                value={values.username}
+                value={values.name}
+                onChange={handleChange("name")}
+                type={"text"}
                
                 id="input-with-icon-adornment"
                 endAdornment={
@@ -123,18 +165,18 @@ function SignUp() {
               </InputLabel>
               <FilledInput
                 id="filled"
-                type={values.showPassword ? "text" : "password"}
-                value={values.password}
-                onChange={handleChange("password")}
+                type={values.showPasswordConfirm ? "text" : "password"}
+                value={values.passwordConfirm}
+                onChange={handleChange("passwordConfirm")}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
+                      onClick={handleClickShowPasswordConfirm}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                      {values.showPasswordConfirm ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 }
