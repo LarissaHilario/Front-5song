@@ -10,7 +10,7 @@
 nav {
   height: 100%;
   width: 280px;
-  background: #F4258E;
+  background: #ffedf6;
   overflow: hidden;
   position: fixed;
   outline: none;
@@ -39,7 +39,7 @@ nav {
   margin-top: 50px;
   width: 280px;
   font-size: 24px;
-  color: rgb(251, 251, 251);
+  color: rgb(35, 31, 31);
   display: table;
   text-decoration: none;
   cursor: pointer;
@@ -47,7 +47,7 @@ nav {
 }
 .a a{
   text-decoration: none;
-  color: rgb(251, 251, 251);
+  color: rgb(41, 40, 40);
 }
 .nav-link{
   position: relative;
