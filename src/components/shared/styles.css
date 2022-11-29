@@ -3,28 +3,25 @@
         margin: 0;
         box-sizing: border-box;
         font-family: 'Montserrat', sans-serif;
-}
-
+  }
   .body{
-    
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    max-width: 100%;
     margin: 0 20rem;
     z-index: 10;
-    
-    /*background-image: linear-gradient(to bottom, #fffcdcd3, #fff7dfc8, #fff4e5, #fff2ec, #fff1f1, #fdf2f3, #f5e8eb, #ffdfe7, #ffdfe7, #ffdfe7, #ffdfe7, #f0b8cd);
-  }*/}
+    background-color:#ffffff;
+  }
+
   .Header{
     position: relative;
-    margin-top:2%;
+    margin-top: 5%;
   }
   .Header h3{
-    font-size: 1.5em;
+    font-size: 50px;
     font-weight: bolder;
     position: relative;
     left:1.5%;
-    color: #323031;
+    color: rgb(31, 28, 28);
   }
   .buscador{
     background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
@@ -45,8 +42,4 @@
   left: 105%;
   width: 400px;
   height: 400px;
-}
-
-.Card-Home{
-  z-index: 1;
 }

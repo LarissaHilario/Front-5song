@@ -1,0 +1,27 @@
+.containerArtist{
+    display: flex;
+    width: 900px;
+    height: 250px;
+    background-color: #f3258e;
+    font-family: "American Typewriter", serif;
+    border-radius: 40px;
+    margin-top: 5%;
+    color: white;
+}
+
+.photoArtist{
+    width: 27.8%;
+    margin-right: 0;
+    border-radius: 40px;
+
+}
+
+.nameArtist{
+    font-size: xxx-large;
+    margin-top: 10%;
+    margin-left: 0;
+}
+
+.containerSong{
+
+}

@@ -27,7 +27,7 @@ function Form() {
           })
       }
 
-      fetch ('"http://18.189.143.169:8080/upload/song', option)
+      fetch ('"http://18.116.50.13:8080/upload/song', option)
       .then(response=> response.json())
       .then (data=> data.status ?
           setSong(data.data): console.log('ha ocurrido un error'))
