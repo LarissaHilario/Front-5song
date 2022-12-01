@@ -15,7 +15,7 @@ const Home=()=>{
         
         <div className="body">
              <div className="Header">
-            <h1>Home</h1>
+            <h1>s</h1>
         </div>
         <div className="Card-Home">
            
