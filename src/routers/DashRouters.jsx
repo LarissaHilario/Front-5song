@@ -9,7 +9,7 @@ const DashRoutes = () => {
   const [currentPage, setCurrentPage] = useState('');
   return (
     <>
-    
+     <Navbar currentPage={ currentPage }/>
       <Routes>
         <Route path='/home' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
         <Route path='/podcast' element={<Home onChangeCurrentPage={setCurrentPage} />}/>

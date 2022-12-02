@@ -7,10 +7,9 @@
   line-height: 1;
 }
 
-nav {
+.nav {
   height: 100%;
-  width: 280px;
-  background: #ffedf6;
+  background: #ff2d96;
   overflow: hidden;
   position: fixed;
   outline: none;
@@ -93,3 +92,7 @@ nav {
   top:-5px;
 }
 
+.list{
+  color: #1E1A3D;
+
+}
