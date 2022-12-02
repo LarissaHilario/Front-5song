@@ -1,5 +1,6 @@
 import "../playlist-list/playlist.css"
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
+//<button className="button1"> <span><br/>Duración:{songs}</span><PlayCircleFilledIcon/></button>
 
 const Playlist=({title,image,songs})=> {
     return (
@@ -8,7 +9,7 @@ const Playlist=({title,image,songs})=> {
             <div className="card-title">
                 <h2>{title}</h2>
             </div>
-            <button className="button1"> <span><br/>Duración:{songs}</span><PlayCircleFilledIcon/></button>
+            
         </div> 
     )
     }

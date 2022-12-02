@@ -65,7 +65,7 @@ const renderListItem = (text, icon, link, index) => (
           <List>
             {[
               { text: 'Inicio', icon: <HomeRoundedIcon />, link: '/home' },
-              { text: 'Explorar', icon: <PetsIcon />, link: '/browser/' },
+              { text: 'Explorar', icon:<Face2Icon></Face2Icon>, link: '/browser' },
               { text: 'Biblioteca', icon: <LibraryMusicIcon />, link: '/library' },
               { text: 'Playlist', icon: <QueueMusicIcon />, link: '/playlist' },
               {

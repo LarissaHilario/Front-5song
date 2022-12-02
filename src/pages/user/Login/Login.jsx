@@ -15,50 +15,36 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Alert from '@mui/material/Alert';
 
 function Login() {
-  const [values, setValues] = useState({
-    password: "",
-    showPassword: false,
-  });
+
+  const [showPassword, setShowPassword]= useState(false);
+  
   const navigate = useNavigate();
 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
-
   const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
+      setShowPassword( !showPassword)
   };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
 
-const handleClick = () => {
-    navigate('/signUp/');
+  const handleClick = () => {
+    navigate('/signUp');
   };
 
   const handleClickRedux=()=>{
     navigate('/home');
   }
+  
+  
 
-  const[name, setName]=useState('');
-  const[password, setPassword]=useState('');
-
-  const handleChangeName=(e)=>{
-    setName(e.target.value);
-  }
-
-  const handleChangePassword=(e)=>{
-      setPassword(e.target.value);
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const {name,password}=event.target;
     const option={
       method: 'POST',
       headers: {
@@ -66,14 +52,14 @@ const handleClick = () => {
           'Content-Type' : 'application/json'
       },
       body : JSON.stringify({
-          name: name,
-          password: password
+          name: name.value,
+          password: password.value
       }) 
   }
 
     fetch('http://18.116.50.13:8080/user/login', option)
     .then(response=> response.json())
-    .then( data=>data.success ? navigate("/home"):alert("Fallo"))
+    .then( data=>data.success ? navigate("/home"):alert("error"))
     .catch(err=>console.log(err))
   };
   return (
@@ -84,7 +70,7 @@ const handleClick = () => {
           <img src="images/audio (2).svg" />
         </div>
         <div className="login-content">
-          <form>
+          <form onSubmit={handleSubmit}>
             <img src="images/logo.png" />
             <Typography
               variant="h2"
@@ -95,15 +81,13 @@ const handleClick = () => {
               Inicia Sesión
             </Typography>
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>
+              <InputLabel  htmlFor="input-with-icon-adornment">
                 Email
               </InputLabel>
               <FilledInput
-                value={values.username}
-                onChange={handleChangeName}
+                 name='name'
                 id="input-with-icon-adornment"
                 endAdornment={
-                    
                       <InputAdornment edge="end">
                         <AccountCircleIcon />
                       </InputAdornment>
@@ -115,12 +99,10 @@ const handleClick = () => {
               <InputLabel fullWidth>
                 Contraseña
               </InputLabel>
-              <FilledInput
+              <FilledInput 
+              name='password'
                 id="filled-adornment-password"
-                type={values.showPassword ? "text" : "password"}
-                value={values.password}
-               
-                onChange={handleChangePassword}
+                type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -129,7 +111,7 @@ const handleClick = () => {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showPassword ? <Visibility />:  <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -140,7 +122,7 @@ const handleClick = () => {
             sx={ { marginLeft:22.3, marginRight:0 }} 
             align='left' textSizeSmall
             onClick={handleClick}>¿No tienes una cuenta? Regístrate aquí</Button>
-            <Button sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit" onClick={handleClickRedux}>
+            <Button sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
               Iniciar Sesión
             </Button>
           </form>
