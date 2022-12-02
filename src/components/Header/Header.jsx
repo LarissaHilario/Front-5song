@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { useState } from "react";
+import { useState, } from "react";
+import { useNavigate } from 'react-router-dom';
 import SearchIcon from "@mui/icons-material/Search";
 import { Typography, Avatar, Stack, TextField, InputAdornment, Divider} from "@mui/material";
 import styles from "./Header.module.css";
@@ -14,7 +15,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 
 const Header = ({ title,alt, avatar,Name}) => {
-
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -23,6 +24,9 @@ const Header = ({ title,alt, avatar,Name}) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleClickRedux=()=>{
+    navigate('/login');
+  }
 
   return (
     <>
@@ -89,11 +93,12 @@ const Header = ({ title,alt, avatar,Name}) => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       
        >
-        <MenuItem>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Logout
+        <MenuItem  onClick={handleClickRedux}>
+          <IconButton onClick={handleClickRedux}>
+            <Logout fontSize="small" /> 
+            
+          </IconButton>
+          Cerrar Sesión
         </MenuItem>
       </Menu>
 

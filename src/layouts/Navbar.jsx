@@ -75,7 +75,7 @@ const Navbar = ({ currentPage }, props) => {
           }}
         >
           <img src="images/logo2.png" alt='logo' width='150px' />
-          <Typography variant='h4' fontWeight={800} align='center' color={'white'}>
+          <Typography variant='h4' fontWeight={800} align='center' color={'#FFF5F5'}>
            5SONG
           </Typography>
         </Box>

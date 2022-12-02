@@ -9,15 +9,14 @@ import AudioPlayer from "../audioPlayer/AudioPlayer";
 
 const Player = () => {
   //   const location = useLocation();
-  const [tracks, setTracks] = useState([]);
-  const [currentTrack, setCurrentTrack] = useState({});
+  const [tracks, setTracks] = useState([{}]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentTrack, setCurrentTrack] = useState(tracks[currentIndex]);
 
       useEffect(() => {
-     fetch('http://3.135.19.149:8080/song')
+     fetch('http://18.116.50.13:8080/song')
         .then((response) => response.json())
         .then((data) => {
-           console.log(data.data);
            setTracks(data.data);
         })
         .catch((err) => {
@@ -29,12 +28,13 @@ const Player = () => {
     setCurrentTrack(tracks.at());
   }, [currentIndex, tracks]);
 
+
   return (
     <div className="screen-container">
       <div className="left-player-body">
       {/* {tracks.map((track)=> { */}
         <AudioPlayer
-          currentTrack={currentTrack}
+          songs={tracks}
           total={tracks.length}
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
