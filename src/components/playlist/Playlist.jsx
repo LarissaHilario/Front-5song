@@ -1,17 +1,20 @@
 
 import { useState, useEffect } from 'react';
-import './album.css'
+import './playlist.css'
 import Card2 from './Card2';
 
 function Playlist1() {
     const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
-     fetch('http://3.135.19.149:8080/song')
+     fetch('http://3.135.19.149:8080/song',{
+        mode: 'no-cors', 
+     })
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);
            setPlaylist(data.data);
+           
         })
         .catch((err) => {
            console.log(err.message);
@@ -21,28 +24,7 @@ function Playlist1() {
     return (
         <>
         <div className="conteiner-playlist">
-            <div className='portada'>
-                <div className='img-portada'>
-                
-                </div>
-                <h2 className='tituloP'>Aylin</h2>
-                <button>+ Agregar Cancion</button>
-            </div>
             
-            <div className="lista">   
-            <button className='btnAlbum'>← Back</button>
-            {playlist.map((user) => {
-                return (
-                    <Card2
-                        key={user.id}
-                        autor={user.artist}
-                        title={user.name}
-                        img={user.photoUrl}
-                        duration={user.duration}
-                    />
-                );
-            })}
-            </div>
             </div>
             
         </>
