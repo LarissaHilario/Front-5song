@@ -21,8 +21,8 @@ function SignUp() {
   const navigate= useNavigate();
   const [values, setValues] = useState({
     password: "",
-    email:"",
-    username:"",
+    email: "",
+    username: "",
     showPassword: false,
   });
 
@@ -41,7 +41,7 @@ function SignUp() {
     event.preventDefault();
   };
   const handleClick = () => {
-    navigate('/login/');
+    navigate('/login');
   };
 
   return (

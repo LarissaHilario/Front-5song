@@ -1,22 +1,19 @@
 
 .container{
   position: relative;
-  margin-top: 7%;
+  margin-top: 2%;
 }
 
 .avatar{
   position: relative;
-  margin-top: -25%;
-  margin-left: 100%;
+  margin-top: -3.5%;
+  margin-left: 40%;
+
 }
 
 .search{
   position: relative;
-  margin-top: -25%;
-  left: 200%;
+  margin-top: -3%;
+  left: 50%;
 }
 
-.name{
-  position: relative;
-  margin-top: 50%;
-}
