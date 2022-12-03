@@ -20,7 +20,7 @@ const ListArtist=()=>{
         <>
        
             <div className="containerArtist">
-                 <span className="titleartist">Top Artistas</span> 
+                 <span className="titleartist">Top</span> 
                  
                  {posts.map((post)=> {
                 return (
