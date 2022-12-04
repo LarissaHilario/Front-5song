@@ -1,0 +1,54 @@
+.card-admin {
+  width: 25%;
+  height: 400px;
+  display: flex;
+  background-size: cover;
+  float: left;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  margin: 4em;
+  align-items: center;
+  align-content: center;
+  background-color: #f4258e;
+  align-items: center;
+  margin-top: 13%;
+  margin-left: 2%;
+}
+
+.image {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  position: absolute;
+  right: 30%;
+  opacity: 100%;
+}
+
+.card-admin-bottom p {
+  position: absolute;
+  bottom: 2%;
+  left: 55%;
+  transform: translate(-70%, -50%);
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: left;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn-card-admin {
+  background: #fff;
+  padding: 10px;
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20%;
+  margin-left: -85%;
+  letter-spacing: 3px;
+  color: #f4258e;
+  font-size: 15px;
+  border: none;
+  z-index: 1;
+}

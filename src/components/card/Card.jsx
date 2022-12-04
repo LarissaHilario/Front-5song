@@ -1,5 +1,5 @@
-import { Button, Typography,Box, CardContent, } from "@mui/material";
-import "../card/card.css"
+
+import "./card.css"
 
 const Card=({title,image,button})=> {
     return (

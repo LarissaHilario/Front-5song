@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import "./login.css";
+import "./loginadmi.css";
 import {
   TextField,
   Button,
@@ -42,11 +42,7 @@ function Login() {
   };
 
   const handleClick = () => {
-    navigate("/signUp");
-  };
-
-  const handleClickAdmin = () => {
-    navigate("/sing-in-admin");
+    navigate("/login");
   };
 
   const handleSubmit = (event) => {
@@ -66,27 +62,27 @@ function Login() {
 
     fetch("http://18.116.50.13:8080/user/login", option)
       .then((response) => response.json())
-      .then((data) => (data.success ? navigate("/home") : alert("error")))
+      .then((data) => (data.success ? navigate("/home-admin") : alert("error")))
       .catch((err) => console.log(err));
   };
 
   return (
     <>
-      <img className="wave" src="images/wave-haikei (7).svg" />
-      <div className="container">
+      <img className="wave1" src="images/wave 11.png" />x
+      <div className="container1">
         <div className="img-login">
-          <img src="images/audio (2).svg" />
+          <img src="images/admi.svg" />
         </div>
         <div className="login-content">
           <form onSubmit={handleSubmit}>
             <img src="images/logo.png" />
             <Typography
               variant="h2"
-              fontSize="3em"
+              fontSize="2em"
               fontWeight={500}
               align="center"
             >
-              Inicia Sesión
+              Login Admin
             </Typography>
             <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
               <InputLabel htmlFor="input-with-icon-adornment">
@@ -122,6 +118,7 @@ function Login() {
                 }
               />
             </FormControl>
+
             <Button
               color="secondary"
               style={{ fontSize: ".75em" }}
@@ -130,17 +127,7 @@ function Login() {
               textSizeSmall
               onClick={handleClick}
             >
-              ¿No tienes una cuenta? Regístrate aquí
-            </Button>
-            <Button
-              color="secondary"
-              style={{ fontSize: ".75em" }}
-              sx={{ marginLeft: 22.3, marginRight: 0 }}
-              align="left"
-              textSizeSmall
-              onClick={handleClickAdmin}
-            >
-              solo para admin
+              Regresar a login user
             </Button>
             <Button
               sx={{ my: 2 }}
@@ -149,7 +136,7 @@ function Login() {
               fullWidth
               type="submit"
             >
-              Iniciar Sesión
+              Iniciar Sesión como admin
             </Button>
           </form>
         </div>

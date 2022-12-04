@@ -46,13 +46,6 @@ const Navbar = ({ currentPage }, props) => {
   const dispatch = useDispatch();
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
 
-  /*const handleLogout = () => {
-    dispatch(logout());
-    dispatch(cleanLivestocks());
-    dispatch(cleanRazas());
-    deleteToken();
-  };*/
-
   const list = () => {
     return (
       <div className="nav">
