@@ -69,6 +69,7 @@ function Login() {
     .catch(err=>console.log(err))
   };
 
+
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg" />

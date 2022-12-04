@@ -13,9 +13,6 @@ const Theme = createTheme({
   },
    fourth:{
     main: '#ff2d96',
-   },
-   fifth:{
-    main: '#A570BE'
    }
   },
   breakpoints: {
