@@ -59,14 +59,14 @@
 }
 
 
-.card-title h2 {
+.card-title h3 {
   text-transform: capitalize;
   position: absolute;
   top: 60%;
-  left: 50%;
+  left: 30%;
   transform: translate(-50%, -50%);
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: 'Montserrat', sans-serif;

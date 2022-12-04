@@ -7,7 +7,7 @@ const Playlist=({title,image,songs})=> {
         <div className="container-card">
             <img className="imagePlay" src={image} />
             <div className="card-title">
-                <h2>{title}</h2>
+                <h3>{title}</h3>
             </div>
             
         </div> 

@@ -34,10 +34,11 @@ const renderListItem = (text, icon, link, index) => (
     <ListItemButton>
       <ListItemIcon>{icon}</ListItemIcon>
       <ListItemText primary={text} primaryTypographyProps={{
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: 'medium',
                   letterSpacing: 0,
-                }}/>
+                }}
+               />
     </ListItemButton>
   </ListItem>
 );
@@ -52,6 +53,29 @@ const Navbar = ({ currentPage }, props) => {
     dispatch(cleanRazas());
     deleteToken();
   };*/
+
+
+  const list1=()=>{
+    return(
+      <>
+
+        <List className="list" >
+
+       
+        {[
+          { text: 'Artistas', icon: <Face2Icon color="third"/>, link: '/artist/' },
+          
+           
+          { text: 'Podcast', icon: <PodcastsIcon color="third"/>, link: '/podcast' },
+          {text: ' Playlist',icon: <QueueMusicIcon color="third"/>,link: '/playlist',
+          }
+        ].map((text, index) =>
+        renderListItem(text.text, text.icon, text.link, index)
+      )}
+       </List>
+       </>
+    )
+  }
 
   const list = () => {
     return (
@@ -79,23 +103,26 @@ const Navbar = ({ currentPage }, props) => {
            5SONG
           </Typography>
         </Box>
-        <Divider />
+        <Divider>
+          <Typography variant='subtitle1' fontWeight={600} color={'#1E1A3D'}>
+          Menú
+        </Typography>
+        </Divider>
+        
         <List className="list">
           {[
             { text: 'Inicio', icon: <HomeRoundedIcon color="third"/>, link: '/home' },
-            { text: 'Biblioteca', icon: <LibraryMusicIcon color="third"/>, link: '/library' },
-            { text: 'Artistas', icon: <Face2Icon color="third"/>, link: '/artist/' },
-          
-           
-            { text: 'Podcast', icon: <PodcastsIcon color="third"/>, link: '/podcast' },
-            {text: ' Playlist',icon: <QueueMusicIcon color="third"/>,link: '/playlist',
-            }
-             
+            { text: 'Biblioteca', icon: <LibraryMusicIcon color="third"/>, link: '/library' }       
            
           ].map((text, index) =>
             renderListItem(text.text, text.icon, text.link, index)
           )}
         </List>
+        <Divider>
+        <Typography variant='subtitle1' fontWeight={600} color={'#1E1A3D'}>
+          Categorías
+        </Typography></Divider>
+        {list1()}
       </Box>
       <Player className='playerNav'></Player>
       </div>
@@ -122,6 +149,7 @@ const Navbar = ({ currentPage }, props) => {
 
       >
         {list()}
+       
       </Drawer>
       
             <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>

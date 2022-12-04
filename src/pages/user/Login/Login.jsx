@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import "./login.css";
 import {
@@ -16,11 +16,12 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Alert from '@mui/material/Alert';
+import { checkinAuthentication } from "../../../store/slices/Auth/thunks";
 
 function Login() {
 
   const [showPassword, setShowPassword]= useState(false);
-  
+  const dispatch=useDispatch();
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
@@ -59,7 +60,8 @@ function Login() {
 
     fetch('http://18.116.50.13:8080/user/login', option)
     .then(response=> response.json())
-    .then( data=>data.success ? navigate("/home"):alert("error"))
+    .then( data=>data.success )
+    dispatch(checkinAuthentication)
     .catch(err=>console.log(err))
   };
   return (
