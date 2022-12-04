@@ -44,7 +44,7 @@ const renderListItem = (text, icon, link, index) => (
 );
 
 const Navbar = ({ currentPage }, props) => {
-  const dispatch = useDispatch();
+ // const dispatch = useDispatch();
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
 
   /*const handleLogout = () => {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import "./login.css";
@@ -16,13 +17,16 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Alert from '@mui/material/Alert';
-import { checkinAuthentication } from "../../../store/slices/Auth/thunks";
+//import { checkingAuthentication } from "../../../store/slices/Auth/thunks";
+//import { startGoogleSignIn,startLoginWithEmailPassword } from "../../../store/slices/Auth/thunks";
 
 function Login() {
 
   const [showPassword, setShowPassword]= useState(false);
-  const dispatch=useDispatch();
+ 
   const navigate = useNavigate();
+
+  
 
   const handleClickShowPassword = () => {
       setShowPassword( !showPassword)
@@ -61,9 +65,11 @@ function Login() {
     fetch('http://18.116.50.13:8080/user/login', option)
     .then(response=> response.json())
     .then( data=>data.success )
-    dispatch(checkinAuthentication)
+    
     .catch(err=>console.log(err))
   };
+
+
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg" />
@@ -124,8 +130,11 @@ function Login() {
             sx={ { marginLeft:22.3, marginRight:0 }} 
             align='left' textSizeSmall
             onClick={handleClick}>¿No tienes una cuenta? Regístrate aquí</Button>
-            <Button sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
+            <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
               Iniciar Sesión
+            </Button>
+            <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit"  onClick={ onGoogleSignIn }>
+              GOOGLE
             </Button>
           </form>
         </div>

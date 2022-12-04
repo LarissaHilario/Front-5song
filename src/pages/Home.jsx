@@ -8,6 +8,7 @@ import ListPlaylist from '../components/playlist-list/ListPlaylist';
 import Player from '../components/Player/Player';
 import Header from '../components/Header/Header';
 import { Typography } from '@mui/material';
+import PlaylistHome from '../components/playlist-list/PlaylistHome';
 
 const Home = () => {
     return (
@@ -26,7 +27,8 @@ const Home = () => {
                
                     <ListArtist/>
                 <div className="Playlist">
-                    <ListPlaylist/>
+                <h2 className="namePlaylist">Playlist</h2> 
+                    <PlaylistHome/>
                 </div>
             </div>
         

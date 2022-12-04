@@ -10,7 +10,10 @@ const Theme = createTheme({
   },
   third:{
    main:'#1E1A3D'
-  }
+  },
+   fourth:{
+    main: '#ff2d96',
+   }
   },
   breakpoints: {
     values: {

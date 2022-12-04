@@ -13,10 +13,11 @@ import { useSelector } from 'react-redux';
 import SignUp from '../pages/user/SignUp/SignUp';
 import { ThemeProvider } from '@mui/material';
 import Theme from '../themes/theme'
+//import { useCheckAuth } from '../hooks/useCheckAuth';
 
 
 const AppRouters = () => {
-  
+
 
   return (
 
@@ -41,6 +42,7 @@ const AppRouters = () => {
             
           }
         />
+        
         <Route
           path='/*'
           element={

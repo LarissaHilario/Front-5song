@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import "./list.css"
 import Playlist from "./Playlist";
 import globos from '../../assets/images/globos.jpg'
-function ListPlaylist() {
+function PlaylistHome() {
  
   const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
-     fetch('http://18.116.50.13:8080/playlist')
+     fetch('http://18.116.50.13:8080/playlist?_limit=4')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);
@@ -40,4 +40,4 @@ function ListPlaylist() {
   }
   
 
-  export default ListPlaylist;
+  export default PlaylistHome;

@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
-import "./list.css"
-import Playlist from "./Playlist";
-import globos from '../../assets/images/globos.jpg'
-function ListPlaylist() {
+
+import Cards from "./Cards";
+
+function CardArtist() {
  
-  const [playlist, setPlaylist] = useState([]);
+  const [artist, setArtist] = useState([]);
 
   useEffect(() => {
-     fetch('http://18.116.50.13:8080/playlist')
+     fetch('http://18.116.50.13:8080/artist')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);
-           setPlaylist(data.data);
+           setArtist(data.data);
         })
         .catch((err) => {
            console.log(err.message);
@@ -22,13 +22,12 @@ function ListPlaylist() {
         
            
            <br></br> <div className="containerPlay">
-            {playlist.map((play)=> {
+            {artist.map((play)=> {
                 return (
-                    <Playlist
+                    <Cards
                       key={play.id}
-                      title={play.name}
-                      songs={play.duration}
-                      image={play.photoUrl}
+                      name={play.name}
+                      img={play.photoUrl}
                     />
                    
                 )
@@ -39,5 +38,4 @@ function ListPlaylist() {
     );
   }
   
-
-  export default ListPlaylist;
+export default CardArtist
