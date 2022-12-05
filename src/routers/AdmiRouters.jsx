@@ -18,7 +18,7 @@ const AdmiRoutes = () => {
         <Route path='/song' element={<Songs onChangeCurrentPage={setCurrentPage} />}/>*/
         <Route
           path='/*'
-          element={<Navigate to={('/login-admi')} />}
+          element={<Navigate to={('/loginAdmi')} />}
         />
       </Routes>
     

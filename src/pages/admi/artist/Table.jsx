@@ -1,19 +1,14 @@
 
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import FirstPageIcon from '@mui/icons-material/FirstPage';
-import LastPageIcon from '@mui/icons-material/LastPage';
-import { Button, CardMedia, Divider, TableHead } from '@mui/material';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
+
+import { Button, CardMedia, TableHead } from '@mui/material';
+
 import Paper from '@mui/material/Paper';
-import { useTheme } from '@mui/material/styles';
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableFooter from '@mui/material/TableFooter';
-import TablePagination from '@mui/material/TablePagination';
+
 import TableRow from '@mui/material/TableRow';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from 'react';
@@ -42,7 +37,6 @@ const Tables =()=>{
     return(
        <div>
       <br></br>
-
       <br></br>
       <div className={styles.tableContainer}>
         <Paper sx={{ width: '100%' }}>
@@ -75,7 +69,13 @@ const Tables =()=>{
                             sx={{ width: 60, height:60}}
                             image={ row.photoUrl}>
                         </CardMedia></TableCell>
-                    <TableCell><Button variant="outlined" color="fifth"startIcon={<DeleteIcon />}>Eliminar</Button></TableCell>
+                    <TableCell>
+                        <Button variant="outlined" 
+                                color="fifth"
+                                startIcon={<DeleteIcon />}>
+                         Eliminar
+                        </Button>
+                    </TableCell>
                   </TableRow>
 ))}
               </TableBody>

@@ -1,7 +1,7 @@
-import { Button } from "@mui/material"
+
+import DialogPlaylist from "../../../components/Dialogs/DialogPlaylist"
 import Header from "../../../components/Header/Header"
-import ListPlaylist from "../../../components/playlist-list/ListPlaylist"
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+
 
 const PlaylistPage=()=>{
     return(
@@ -12,12 +12,7 @@ const PlaylistPage=()=>{
                 </div>
                 </section>
                <br></br>
-                <Button variant="outlined" startIcon={<AddCircleIcon />} size="large">
-                Crear playlist
-                </Button>
-                <div className="Playlist">
-                    <ListPlaylist/>
-                </div>
+                <DialogPlaylist/>
             </div>
             )
    

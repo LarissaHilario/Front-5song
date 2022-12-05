@@ -6,7 +6,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import "./formDialog.css"
-
+import ListPlaylist from "../playlist-list/ListPlaylist";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 export default function DialogPlaylist() {
 
     const [open, setOpen] = React.useState(false);
@@ -27,10 +28,13 @@ export default function DialogPlaylist() {
 
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen}>
-                Crear Playlist
-            </Button>
-            <Dialog open={open} onClose={handleClose} sx={{width:500, marginLeft:60, borderRadius:4}} >
+            <Button variant="outlined" startIcon={<AddCircleIcon />} size="large" onClick={handleClickOpen}>
+                Crear playlist
+                </Button>
+                <div className="Playlist">
+                    <ListPlaylist/>
+                </div>
+            <Dialog open={open} sx={{width:500, marginLeft:60, borderRadius:4}} >
                 <DialogTitle>Nueva Playlist</DialogTitle>
                 <DialogContent>
                     <img src={file} className='img-conteiner' />
