@@ -8,11 +8,11 @@ import TableRow from '@mui/material/TableRow';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from 'react';
 
-import styles from './table.module.css'
-const TableSong =()=>{
+//import styles from './table.module.css'
+const TableSongs =()=>{
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-       fetch('http://3.137.200.76:8080/song')
+       fetch('http://3.137.200.76:8080/song?_limit=5')
           .then((response) => response.json())
           .then((data) => {
              console.log(data.data);
@@ -28,20 +28,17 @@ const TableSong =()=>{
       <br></br>
 
       <br></br>
-      <div className={styles.tableContainer}>
-        <Paper sx={{ width: '70%' }}>
+      <div >
+        <Paper sx={{ width: '70%', height:'50%' }}>
           <TableContainer >
             <Table
-              sx={{ minWidth: 500 }}
+              sx={{ minWidth: 400 }}
             >
               <TableHead style={{ backgroundColor: '##A570BE' }}>
                 <TableRow>
-                  <TableCell>ID</TableCell>
                   <TableCell>Nombre</TableCell>
                   <TableCell>Duracion</TableCell>
                   <TableCell>Artista</TableCell>
-                  <TableCell>Imagen</TableCell>
-                  <TableCell>.</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody >
@@ -52,16 +49,11 @@ const TableSong =()=>{
                     style={{ minWidth: row.minWidth }}
                    
                   >
-                    <TableCell>{row.id} </TableCell>
+               
                     <TableCell>{row.name}</TableCell>
                     <TableCell>{row.duration}</TableCell>
                     <TableCell>{row.artist.name}</TableCell>
-                    <TableCell > 
-                         <CardMedia  component="img"
-                            sx={{ width: 60, height:60}}
-                            image={ row.photoUrl}>
-                        </CardMedia></TableCell>
-                    <TableCell><Button variant="outlined" color="fifth"startIcon={<DeleteIcon />}>Eliminar</Button></TableCell>
+                   
                   </TableRow>
 ))}
               </TableBody>
@@ -75,4 +67,4 @@ const TableSong =()=>{
   );
 };
 
-export default TableSong;
+export default TableSongs;

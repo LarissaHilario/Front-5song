@@ -62,7 +62,7 @@ function Login() {
       }),
     };
 
-    fetch('http://18.116.50.13:8080/user/login', option)
+    fetch('http://3.137.200.76:8080/user/login', option)
     .then(response=> response.json())
     .then( data=>data.success )
     

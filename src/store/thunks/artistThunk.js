@@ -4,7 +4,7 @@ import { addArtist, addArtistas } from '../slices/artistSlice'
 
 export const chargingArtist = () => {
   return dispatch => {
-    fetch('http://18.116.50.13:8080/artist')
+    fetch('http://3.137.200.76:8080/artist')
       .then(({ data }) => {
         dispatch(addArtistas({ artist: data }));
       })
