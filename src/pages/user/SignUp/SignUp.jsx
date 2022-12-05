@@ -21,9 +21,11 @@ function SignUp() {
   const navigate= useNavigate();
   const [values, setValues] = useState({
     password: "",
+    passwordConfirm:"",
     email: "",
     username: "",
     showPassword: false,
+    showPasswordConfirm: false
   });
 
   const handleChange = (prop) => (event) => {
@@ -37,11 +39,45 @@ function SignUp() {
     });
   };
 
+  const handleClickShowPasswordCofirm = () => {
+    setValues({
+      ...values,
+      showPasswordConfirm: !values.showPasswordConfirm,
+    });
+  };
+
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
   const handleClick = () => {
     navigate('/login');
+  };
+  
+  const submit=(option)=>{
+    fetch('http://18.116.50.13:8080/user', option)
+    .then(response=> response.json())
+    .then( data=>data.success ? navigate("/login"):alert("error"))
+    .catch(err=>console.log(err))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const option={
+      method: 'POST',
+      headers: {
+          'Accept' : 'application/json',
+          'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify({
+          name: values.name,
+          email: values.email,
+          password: values.password
+      }) 
+
+      (values.password===values.passwordConfirm)?  submit(option):console.log("error")
+  }
+
+
   };
 
   return (
@@ -49,10 +85,10 @@ function SignUp() {
       <img className="wave" src="images/wave-haikei (7).svg"/>
       <div className="container">
         <div className="img-login">
-          <img src="images/audioos.svg" />
+          <img src="images/audioos.svg"/>
         </div>
         <div className="login-content">
-          <form>
+          <form onSubmit={handleSubmit}>
             <img src="images/logo.png" />
             <Typography
               variant="h2"
@@ -122,18 +158,18 @@ function SignUp() {
               </InputLabel>
               <FilledInput
                 id="filled"
-                type={values.showPassword ? "text" : "password"}
-                value={values.password}
-                onChange={handleChange("password")}
+                type={values.showPasswordConfirm ? "text" : "password"}
+                value={values.passwordConfirm}
+                onChange={handleChange("passwordConfirm")}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
+                      onClick={handleClickShowPasswordCofirm}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                      {values.showPasswordConfirm ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 }

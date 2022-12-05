@@ -9,10 +9,10 @@ import PodcastPage from '../pages/user/podcast/PodcastPage';
 import ArtistPage from '../pages/user/artist/artistPage';
 
 const DashRoutes = () => {
-  const [currentPage, setCurrentPage] = useState('');
+  const [currentPage, setCurrentPage] = useState("");
   return (
     <>
-     <Navbar currentPage={ currentPage }/>
+      <Navbar currentPage={currentPage} />
       <Routes>
         <Route path='/home' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
         <Route path='/podcast' element={<PodcastPage onChangeCurrentPage={setCurrentPage} />}/>
@@ -20,12 +20,9 @@ const DashRoutes = () => {
         <Route path='/artist' element={<ArtistPage onChangeCurrentPage={setCurrentPage} />}/>
         <Route path='/playlist' element={<PlaylistPage onChangeCurrentPage={setCurrentPage}/>}/>
         <Route path='/home-admi' element={<HomePage onChangeCurrentPage={setCurrentPage} />}/>
-        <Route
-          path='/*'
-          element={<Navigate to={('/login')} />}
-        />
+        
+        <Route path="/*" element={<Navigate to={"/login"} />} />
       </Routes>
-    
     </>
   );
 };

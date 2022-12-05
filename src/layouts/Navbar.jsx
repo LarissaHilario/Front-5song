@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import Player from "../components/Player/Player";
-
-import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 //styles
 import styles from './navbar/styles.css'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-import LogoutIcon from '@mui/icons-material/Logout';
-import AlbumIcon from '@mui/icons-material/Album';
-import MenuIcon from '@mui/icons-material/Menu';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 import Face2Icon from '@mui/icons-material/Face2';
 import PodcastsIcon from '@mui/icons-material/Podcasts';
@@ -25,6 +20,7 @@ import {
   ListItemIcon,
   ListItemText,
   Box}from '@mui/material'
+
   //images
 
 
@@ -44,11 +40,6 @@ const renderListItem = (text, icon, link, index) => (
 );
 
 const Navbar = ({ currentPage }, props) => {
- // const dispatch = useDispatch();
-  const [isDrawerOpen, setIsDrawerOpen] = useState(true);
-
- 
-
 
   const list1=()=>{
     return(

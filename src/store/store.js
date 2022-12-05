@@ -1,10 +1,10 @@
-/*import { configureStore } from '@reduxjs/toolkit'
-import { authSlice } from './slices/Auth/authSlice'
+import { configureStore } from '@reduxjs/toolkit'
+import { artistSlice } from './slices/artistSlice'
 
 const store=configureStore({
     reducer: {
-        auth: authSlice.reducer,
+       artistas: artistSlice.reducer
     }
 })
 
-export default store*/
+export default store

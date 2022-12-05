@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import "./login.css";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import "./loginadmi.css";
 import {
   TextField,
   Button,
@@ -15,16 +14,21 @@ import {
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Alert from '@mui/material/Alert';
-//import { checkingAuthentication } from "../../../store/slices/Auth/thunks";
-//import { startGoogleSignIn,startLoginWithEmailPassword } from "../../../store/slices/Auth/thunks";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Alert from "@mui/material/Alert";
 
 function Login() {
-
-  const [showPassword, setShowPassword]= useState(false);
- 
   const navigate = useNavigate();
+
+  const [values, setValues] = useState({
+    name: "",
+    password: "",
+    showPassword: false,
+  });
+
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
 
   const handleClickShowPassword = () => {
     setValues({
@@ -38,11 +42,7 @@ function Login() {
   };
 
   const handleClick = () => {
-    navigate("/signUp");
-  };
-
-  const handleClickAdmin = () => {
-    navigate("/sing-in-admin");
+    navigate("/login");
   };
 
   const handleSubmit = (event) => {
@@ -60,51 +60,51 @@ function Login() {
       }),
     };
 
-    fetch('http://18.116.50.13:8080/user/login', option)
-    .then(response=> response.json())
-    .then( data=>data.success )
-    
-    .catch(err=>console.log(err))
+    fetch("http://18.116.50.13:8080/user/login", option)
+      .then((response) => response.json())
+      .then((data) => (data.success ? navigate("/home-admin") : alert("error")))
+      .catch((err) => console.log(err));
   };
-
 
   return (
     <>
-      <img className="wave" src="images/wave-haikei (7).svg" />
-      <div className="container">
+      <img className="wave1" src="images/wave-admin.png" />
+      <div className="container1">
         <div className="img-login">
-          <img src="images/audio (2).svg" />
+          <img src="images/undraw_admin.svg" />
         </div>
         <div className="login-content">
           <form onSubmit={handleSubmit}>
             <img src="images/logo.png" />
             <Typography
               variant="h2"
-              fontSize="3em"
+              fontSize="2em"
               fontWeight={500}
               align="center"
             >
-              Inicia Sesión
+              Login Admin
             </Typography>
             <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
-              <InputLabel htmlFor="input-with-icon-adornment">
+              <InputLabel htmlFor="input-with-icon-adornment" color="fifth">
                 Username
               </InputLabel>
               <FilledInput
                 name="name"
                 id="input-with-icon-adornment"
+                color="fifth"
                 endAdornment={
-                  <InputAdornment edge="end">
+                  <InputAdornment edge="end" >
                     <AccountCircleIcon />
                   </InputAdornment>
                 }
               ></FilledInput>
             </FormControl>
             <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>Contraseña</InputLabel>
+              <InputLabel fullWidth color="fifth">Contraseña</InputLabel>
               <FilledInput
                 name="password"
                 id="filled-adornment-password"
+                color="fifth"
                 type={values.showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
@@ -120,16 +120,25 @@ function Login() {
                 }
               />
             </FormControl>
-            <Button color="secondary" 
-            style={{ fontSize: '.75em'}} 
-            sx={ { marginLeft:22.3, marginRight:0 }} 
-            align='left' textSizeSmall
-            onClick={handleClick}>¿No tienes una cuenta? Regístrate aquí</Button>
-            <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
-              Iniciar Sesión
+
+            <Button
+              color="fifth"
+              style={{ fontSize: ".75em" }}
+              sx={{ marginLeft: 22.3, marginRight: 0 }}
+              align="left"
+              textSizeSmall
+              onClick={handleClick}
+            >
+              Regresar a login user
             </Button>
-            <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit"  onClick={ onGoogleSignIn }>
-              GOOGLE
+            <Button
+              sx={{ my: 2 }}
+              variant="contained"
+              color="fifth"
+              fullWidth
+              type="submit"
+            >
+              Iniciar Sesión como admin
             </Button>
           </form>
         </div>

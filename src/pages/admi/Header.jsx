@@ -25,7 +25,7 @@ const Header = ({ title,alt, avatar,Name}) => {
     setAnchorEl(null);
   };
   const handleClickRedux=()=>{
-    navigate('/login');
+    navigate('/loginAdmi');
   }
 
   return (
