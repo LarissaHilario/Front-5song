@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import styles from "./signUp.module.css";
 import {
   TextField,
   Button,
@@ -16,6 +15,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import "./signUp.module.css"
 
 function SignUp() {
   const navigate= useNavigate();
@@ -30,12 +30,19 @@ function SignUp() {
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
+    console.log(values)
   };
 
   const handleClickShowPassword = () => {
     setValues({
       ...values,
       showPassword: !values.showPassword,
+    });
+  };
+  const handleClickShowPasswordConfirm = () => {
+    setValues({
+      ...values,
+      showPasswordConfirm: !values.showPasswordConfirm,
     });
   };
 
@@ -79,6 +86,32 @@ function SignUp() {
 
   };
 
+  const verifypass=()=>{
+    return values.password === values.passwordConfirm;
+  }
+
+  const registerUser=()=>{
+    const option={
+      method: 'POST',
+      headers: {
+          'Accept' : 'application/json',
+          'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify({
+          name: values.name,
+          password: values.password,
+          email: values.email,
+          photoUrl:"https://musicawsbucket.s3.us-east-2.amazonaws.com/FdaInFzakAEMwqj.jpg"
+      }) 
+  }
+
+    fetch('http://18.116.50.13:8080/user', option)
+    .then(response=> response.json())
+    .then( data=>data.success ? navigate("/login"):alert("Fallo"))
+    .catch(err=>console.log(err))
+  }
+
+ 
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg"/>

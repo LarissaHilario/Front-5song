@@ -1,4 +1,4 @@
-/*import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -11,7 +11,7 @@ export const authSlice = createSlice({
       state.accessToken = action.payload.accessToken;
       state.isAuthenticathed = true;
     },
-    logout: (state /* action ) => {
+    logout: (state /* action */) => {
       localStorage.removeItem('accessToken');
       state.accessToken = null;
       state.isAuthenticathed = false;
@@ -21,4 +21,3 @@ export const authSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { login, logout } = authSlice.actions;
-*/
