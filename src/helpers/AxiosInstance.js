@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-  baseURL: 
-  'http://3.12.108.156:8080/',
+  baseURL: 'http://18.116.50.13:8080/',
   headers: {
     'Content-type': 'application/json',
+    Authorization: 'Bearer ' + localStorage.getItem('accessToken'),
   },
 });

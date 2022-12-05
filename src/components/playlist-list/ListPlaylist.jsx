@@ -19,7 +19,7 @@ function ListPlaylist() {
     return (
         <>
         
-            <h2 className="namePlaylist">Playlist</h2> 
+           
            <br></br> <div className="containerPlay">
             {playlist.map((play)=> {
                 return (

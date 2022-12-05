@@ -21,10 +21,11 @@ function SignUp() {
   const navigate= useNavigate();
   const [values, setValues] = useState({
     password: "",
+    passwordConfirm:"",
     email: "",
     username: "",
     showPassword: false,
-    showPasswordConfirm:false
+    showPasswordConfirm: false
   });
 
   const handleChange = (prop) => (event) => {
@@ -38,12 +39,6 @@ function SignUp() {
       showPassword: !values.showPassword,
     });
   };
-  const handleClickShowPasswordConfirm = () => {
-    setValues({
-      ...values,
-      showPasswordConfirm: !values.showPasswordConfirm,
-    });
-  };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -52,36 +47,6 @@ function SignUp() {
     navigate('/login');
   };
 
-  const verifypass=()=>{
-    return values.password === values.passwordConfirm;
-  }
-
-  const registerUser=()=>{
-    const option={
-      method: 'POST',
-      headers: {
-          'Accept' : 'application/json',
-          'Content-Type' : 'application/json'
-      },
-      body : JSON.stringify({
-          name: values.name,
-          password: values.password,
-          email: values.email,
-          photoUrl:"https://musicawsbucket.s3.us-east-2.amazonaws.com/FdaInFzakAEMwqj.jpg"
-      }) 
-  }
-
-    fetch('http://18.116.50.13:8080/user', option)
-    .then(response=> response.json())
-    .then( data=>data.success ? navigate("/login"):alert("Fallo"))
-    .catch(err=>console.log(err))
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    verifypass()? registerUser(): alert("contraseña incorrecta");
-    
-  };
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg"/>
@@ -101,14 +66,14 @@ function SignUp() {
               Registro
             </Typography>
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>
+              <InputLabel htmlFor="input-email">
                 Email
               </InputLabel>
               <FilledInput
-                value={values.email}
+                name="name"
+                type={"email"}
                 onChange={handleChange("email")}
-               
-                id="input-with-icon-adornment"
+                id="input-email"
                 endAdornment={
                     
                       <InputAdornment >
@@ -122,10 +87,9 @@ function SignUp() {
                 Nombre de usuario
               </InputLabel>
               <FilledInput
-                value={values.name}
-                onChange={handleChange("name")}
+                value={values.username}
                 type={"text"}
-               
+                onChange={handleChange("username")}
                 id="input-with-icon-adornment"
                 endAdornment={
                     

@@ -1,0 +1,17 @@
+
+  
+  .nav {
+    height: 100%;
+    background: #A570BE;
+    overflow: hidden;
+    position: fixed;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+  
+
+  .list{
+    color: #1E1A3D;
+  
+  }

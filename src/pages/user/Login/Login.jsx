@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useSelector } from 'react-redux';
+import { useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
   TextField,
@@ -17,6 +18,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import "./login.module.css"
 import "./login.css"
 import Alert from '@mui/material/Alert';
+//import { checkingAuthentication } from "../../../store/slices/Auth/thunks";
+//import { startGoogleSignIn,startLoginWithEmailPassword } from "../../../store/slices/Auth/thunks";
 
 function Login() {
   const [values, setValues] = useState({
@@ -26,16 +29,16 @@ function Login() {
   });
 
   const [showPassword, setShowPassword]= useState(false);
-  
+ 
   const navigate = useNavigate();
 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-    console.log(values)
-  };
+  
 
   const handleClickShowPassword = () => {
-      setShowPassword( !showPassword)
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
   };
 
   const handleMouseDownPassword = (event) => {
@@ -43,36 +46,36 @@ function Login() {
   };
 
   const handleClick = () => {
-    navigate('/signUp');
+    navigate("/signUp");
   };
 
-  const handleClickRedux=()=>{
-    navigate('/home');
-  }
-  
-  
-
+  const handleClickAdmin = () => {
+    navigate("/sing-in-admin");
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const {name,password}=event.target;
-    const option={
-      method: 'POST',
+    const { name, password } = event.target;
+    const option = {
+      method: "POST",
       headers: {
-          'Accept' : 'application/json',
-          'Content-Type' : 'application/json'
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body : JSON.stringify({
-          name: name.value,
-          password: password.value
-      }) 
-  }
+      body: JSON.stringify({
+        name: name.value,
+        password: password.value,
+      }),
+    };
 
     fetch('http://18.116.50.13:8080/user/login', option)
     .then(response=> response.json())
-    .then( data=>data.success ? navigate("/home"):alert("error"))
+    .then( data=>data.success )
+    
     .catch(err=>console.log(err))
   };
+
+
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg" />
@@ -91,30 +94,26 @@ function Login() {
             >
               Inicia Sesión
             </Typography>
-            <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel  htmlFor="input-with-icon-adornment">
-                Email
+            <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
+              <InputLabel htmlFor="input-with-icon-adornment">
+                Username
               </InputLabel>
               <FilledInput
-                 name='name'
+                name="name"
                 id="input-with-icon-adornment"
                 endAdornment={
-                      <InputAdornment edge="end">
-                        <AccountCircleIcon />
-                      </InputAdornment>
-                    }
-                ></FilledInput>
-
+                  <InputAdornment edge="end">
+                    <AccountCircleIcon />
+                  </InputAdornment>
+                }
+              ></FilledInput>
             </FormControl>
-            
-            <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>
-                Contraseña
-              </InputLabel>
-              <FilledInput 
-              name='password'
+            <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
+              <InputLabel fullWidth>Contraseña</InputLabel>
+              <FilledInput
+                name="password"
                 id="filled-adornment-password"
-                type={showPassword ? "text" : "password"}
+                type={values.showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -123,7 +122,7 @@ function Login() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <Visibility />:  <VisibilityOff />}
+                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -134,8 +133,11 @@ function Login() {
             sx={ { marginLeft:22.3, marginRight:0 }} 
             align='left' textSizeSmall
             onClick={handleClick}>¿No tienes una cuenta? Regístrate aquí</Button>
-            <Button sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
+            <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
               Iniciar Sesión
+            </Button>
+            <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit"  onClick={ onGoogleSignIn }>
+              GOOGLE
             </Button>
           </form>
         </div>

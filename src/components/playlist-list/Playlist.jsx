@@ -6,6 +6,7 @@ const Playlist=(props)=> {
             <img className="imagePlay" src={image} />
             <div className="card-title">
                 <h2>{props.title}</h2>
+                <h3>{title}</h3>
             </div>
             
         </div> 

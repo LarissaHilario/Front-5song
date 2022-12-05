@@ -3,20 +3,18 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 import Login from '.././pages/user/Login/Login';
-import LoginAdmi from '../pages/admi/Login/AdmiLogin';
+import SingInAdmin from '../pages/admi/Login/SingInAdmin';
 
 import DashRoutes from './DashRouters';
 
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 
 import SignUp from '../pages/user/SignUp/SignUp';
-import { ThemeProvider } from '@mui/material';
-import Theme from '../themes/theme'
+import AdmiRoutes from './AdmiRouters';
+//import { useCheckAuth } from '../hooks/useCheckAuth';
 
 
 const AppRouters = () => {
-  
+
 
   return (
 
@@ -24,13 +22,10 @@ const AppRouters = () => {
     
     <BrowserRouter>
       <Routes>
-        {/* <Route path='/login' element={<LoginPage />} /> */}
         <Route
           path='/login'
           element={
-           
               <Login/>
-           
           }
         />
         <Route
@@ -41,11 +36,18 @@ const AppRouters = () => {
             
           }
         />
+        
         <Route
           path='/*'
           element={
-            
-            <DashRoutes></DashRoutes>
+        <AdmiRoutes></AdmiRoutes>
+          }
+        />
+        
+         <Route
+          path='/loginAdmi'
+          element={
+             <SingInAdmin/>
           }
         />
         
