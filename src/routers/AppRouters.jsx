@@ -19,7 +19,7 @@ const AppRouters = () => {
   
 
   return (
-    <ThemeProvider theme={Theme}>
+
 
     
     <BrowserRouter>
@@ -37,7 +37,7 @@ const AppRouters = () => {
           path='/signUp'
           element={
             
-              <SignUp></SignUp>
+              <SignUp/>
             
           }
         />
@@ -48,16 +48,10 @@ const AppRouters = () => {
             <DashRoutes></DashRoutes>
           }
         />
-         <Route
-          path='/login-admi'
-          element={
-             <LoginAdmi/>
-          }
-        />
         
       </Routes>
     </BrowserRouter>
-    </ThemeProvider>
+   
   );
 }
 

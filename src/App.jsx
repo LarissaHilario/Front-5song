@@ -1,11 +1,15 @@
-import React from 'react'
-import DashRoutes from './routers/DashRouters'
-
+import { useState } from 'react'
+import AppRouters from './routers/AppRouters';
+import { ThemeProvider } from '@mui/material' 
+import Theme from './themes/theme'
 const App=()=> {
 
 
   return (
-   <DashRoutes/>
+  <ThemeProvider theme={Theme}>
+   <AppRouters></AppRouters>
+   </ThemeProvider>
+  
   )
 }
 

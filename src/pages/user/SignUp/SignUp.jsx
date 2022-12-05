@@ -21,9 +21,8 @@ function SignUp() {
   const navigate= useNavigate();
   const [values, setValues] = useState({
     password: "",
-    passwordConfirm:"",
-    email:"",
-    name:"",
+    email: "",
+    username: "",
     showPassword: false,
     showPasswordConfirm:false
   });

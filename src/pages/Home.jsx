@@ -19,13 +19,26 @@ const Home = () => {
     //     }, [playing]);
 
     return (
-        <div className="body">
-            <div className="Header">
-                <Header title={'Home'} Name={'Larissa'} avatar={person}></Header>
-                <Card image={person} button={'Explorar ahora'} title={'Explora toda la música relevante en este momento'}></Card>
-            
+       
+            <div className="body">
+                <section>
+                     <div className="Header">
+                    <Header title={'Home'} avatar={person} Name={"larissa"}></Header>
+                </div>
+                </section>
+                <div className="Card-Home">
+                <Card title={"Explora toda la música en tendencia en estos momentos"}
+                    image={person} button={"Explorar ahora"} />
             </div>
-        </div>
+              
+               
+                    <ListArtist/>
+                <div className="Playlist">
+                    <ListPlaylist/>
+                </div>
+            </div>
+        
+    
     )
 }
 export default Home

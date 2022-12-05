@@ -16,6 +16,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import "./login.module.css"
 import "./login.css"
+import Alert from '@mui/material/Alert';
 
 function Login() {
   const [values, setValues] = useState({
@@ -23,6 +24,9 @@ function Login() {
     password: "",
     showPassword: false,
   });
+
+  const [showPassword, setShowPassword]= useState(false);
+  
   const navigate = useNavigate();
 
   const handleChange = (prop) => (event) => {
@@ -31,10 +35,7 @@ function Login() {
   };
 
   const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
+      setShowPassword( !showPassword)
   };
 
   const handleMouseDownPassword = (event) => {
@@ -42,16 +43,19 @@ function Login() {
   };
 
   const handleClick = () => {
-      navigate('/signUp');
-    };
+    navigate('/signUp');
+  };
 
   const handleClickRedux=()=>{
-    navigate('/home'); //no encontre la logica para usarlo :c
+    navigate('/home');
   }
+  
+  
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const {name,password}=event.target;
     const option={
       method: 'POST',
       headers: {
@@ -59,14 +63,14 @@ function Login() {
           'Content-Type' : 'application/json'
       },
       body : JSON.stringify({
-          name: values.name,
-          password: values.password
+          name: name.value,
+          password: password.value
       }) 
   }
 
     fetch('http://18.116.50.13:8080/user/login', option)
     .then(response=> response.json())
-    .then( data=>data.success ? navigate("/home"):alert("Fallo"))
+    .then( data=>data.success ? navigate("/home"):alert("error"))
     .catch(err=>console.log(err))
   };
   return (
@@ -88,15 +92,13 @@ function Login() {
               Inicia Sesión
             </Typography>
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>
-                Name
+              <InputLabel  htmlFor="input-with-icon-adornment">
+                Email
               </InputLabel>
               <FilledInput
-                value={values.name}
-                onChange={handleChange("name")}
+                 name='name'
                 id="input-with-icon-adornment"
                 endAdornment={
-                    
                       <InputAdornment edge="end">
                         <AccountCircleIcon />
                       </InputAdornment>
@@ -109,11 +111,10 @@ function Login() {
               <InputLabel fullWidth>
                 Contraseña
               </InputLabel>
-              <FilledInput
+              <FilledInput 
+              name='password'
                 id="filled-adornment-password"
-                type={values.showPassword ? "text" : "password"}
-                value={values.password}
-                onChange={handleChange("password")}
+                type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -122,7 +123,7 @@ function Login() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showPassword ? <Visibility />:  <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
