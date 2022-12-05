@@ -48,7 +48,7 @@ const AppRouters = () => {
         <Route
           path='/*'
           element={
-          <DashRoutes></DashRoutes>
+          <AdmiRoutes></AdmiRoutes>
           }
         />
          <Route

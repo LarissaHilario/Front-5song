@@ -26,8 +26,6 @@ function Login() {
  
   const navigate = useNavigate();
 
-  
-
   const handleClickShowPassword = () => {
       setShowPassword( !showPassword)
   };

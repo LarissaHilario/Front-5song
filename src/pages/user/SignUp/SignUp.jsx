@@ -63,13 +63,12 @@ function SignUp() {
               Registro
             </Typography>
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>
+              <InputLabel htmlFor="input-with-icon-adornment-up">
                 Email
               </InputLabel>
               <FilledInput
-                value={values.email}
-               
-                id="input-with-icon-adornment"
+                email='email'
+                id="input-with-icon-adornment-up"
                 endAdornment={
                     
                       <InputAdornment >
@@ -79,13 +78,13 @@ function SignUp() {
                     ></FilledInput>
             </FormControl>
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>
+              <InputLabel htmlFor="input-with-icon-adornment-name"  fullWidth>
                 Nombre de usuario
               </InputLabel>
               <FilledInput
-                value={values.username}
+                username='username'
                
-                id="input-with-icon-adornment"
+                id="input-with-icon-adornment-name"
                 endAdornment={
                     
                       <InputAdornment edge="end">
