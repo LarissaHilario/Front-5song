@@ -8,8 +8,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import "./formDialog.css"
 
 export default function DialogPlaylist() {
-
+    const [name, setName] = useState('')
     const [open, setOpen] = React.useState(false);
+
+    const handleChangeName = (event) => setName(event.target.value)
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -24,13 +26,30 @@ export default function DialogPlaylist() {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
     }
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
+        const option = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body : JSON.stringify({
+                name: name
+            })
+        }
+        fetch('http://18.116.50.13:8080/playlist', option)
+        .then (response => response.json())
+        .then ( data => data.status ? alert('Registro exitoso') : alert('Ha ocurrido un error'))
+        .catch (err => console.log(err))
+    }
     return (
         <div>
             <Button variant="outlined" onClick={handleClickOpen}>
                 Crear Playlist
             </Button>
-            <Dialog open={open} onClose={handleClose} sx={{width:500, marginLeft:60, borderRadius:4}} >
+            <Dialog open={open} sx={{width:500, marginLeft:60, borderRadius:4}} >
                 <DialogTitle>Nueva Playlist</DialogTitle>
                 <DialogContent>
                     <img src={file} className='img-conteiner' />
@@ -42,7 +61,8 @@ export default function DialogPlaylist() {
                         fullWidth
                         variant="standard"
                         color={'primary'}
-                        
+                        value={name} 
+                        onChange={handleChangeName}
                     />
                     <Button variant="contained" component="label" sx={{marginTop:2,marginLeft:16}}>
                         Subir imagen
@@ -52,7 +72,7 @@ export default function DialogPlaylist() {
                 
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Crear</Button>
+                    <Button onClick={handleClose} onSubmit={handleSubmit}>Crear</Button>
                 </DialogActions>
             </Dialog>
         </div>
