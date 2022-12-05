@@ -10,6 +10,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Input from '@mui/material/Input';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import TablePodcast from "../../pages/admi/podcast/TablePodcast";
 
 export default function DialogPodcast() {
 
@@ -37,10 +39,14 @@ export default function DialogPodcast() {
 
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen}>
-                Subir podcast
-            </Button>
-            <Dialog open={open} onClose={handleClose} sx={{ width: 500, marginLeft: 60, borderRadius: 4 }} >
+           <Button variant="outlined" startIcon={<AddCircleIcon />} color="fifth" size="large" onClick={handleClickOpen}>
+                Añadir Podcast
+                </Button>
+
+                <br/>
+                <TablePodcast/>
+
+            <Dialog open={open} onClose={handleClose} sx={{ width: 500, marginLeft: 70, borderRadius: 4 }} >
                 <DialogTitle>Subir Podcast</DialogTitle>
                 <DialogContent>
                     <img src={file} className='img-conteiner' />

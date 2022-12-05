@@ -1,7 +1,7 @@
-import { Button } from "@mui/material"
+
 
 import Header from "../Header"
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import DialogSong from "../../../components/Dialogs/DialogSong";
 
 const Songs=()=>{
     return(
@@ -13,9 +13,7 @@ const Songs=()=>{
                 </div>
                 </section>
                 <br></br>
-                <Button variant="outlined" startIcon={<AddCircleIcon />} color="fifth" size="large">
-                Añadir Canción
-                </Button>
+                <DialogSong/>
                 
             </div>
         </>

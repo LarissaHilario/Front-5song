@@ -19,11 +19,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from 'react';
 
 import styles from './table.module.css'
-const Tables =()=>{
+
+const TablePodcast =()=>{
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-       fetch('http://18.116.50.13:8080/artist')
+       fetch('http://18.116.50.13:8080/podcast')
           .then((response) => response.json())
           .then((data) => {
              console.log(data.data);
@@ -51,8 +52,10 @@ const Tables =()=>{
                 <TableRow>
                   <TableCell>ID</TableCell>
                   <TableCell>Nombre</TableCell>
-                  <TableCell>Oyentes</TableCell>
-                  <TableCell>Imagenes</TableCell>
+                  <TableCell>Descripcion</TableCell>
+                  <TableCell>Categoria</TableCell>
+                  <TableCell>Fecha</TableCell>
+                  <TableCell>Imagen</TableCell>
                   <TableCell>.</TableCell>
                 </TableRow>
               </TableHead>
@@ -66,7 +69,9 @@ const Tables =()=>{
                   >
                     <TableCell>{row.id} </TableCell>
                     <TableCell>{row.name}</TableCell>
-                    <TableCell>{row.listener}</TableCell>
+                    <TableCell>{row.description}</TableCell>
+                    <TableCell>{row.category}</TableCell>
+                    <TableCell>{row.creationDate}</TableCell>
                     <TableCell > 
                          <CardMedia  component="img"
                             sx={{ width: 60, height:60}}
@@ -85,4 +90,4 @@ const Tables =()=>{
   );
 };
 
-export default Tables;
+export default TablePodcast;

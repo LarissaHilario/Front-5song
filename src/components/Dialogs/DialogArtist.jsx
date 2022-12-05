@@ -9,6 +9,7 @@ import "./formDialog.css"
 
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Tables from "../../pages/admi/artist/Table";
+
 export default function DialogArtist() {
 
     const [open, setOpen] = React.useState(false);
@@ -35,7 +36,7 @@ export default function DialogArtist() {
 
                 <br/>
                 <Tables></Tables>
-            <Dialog open={open} sx={{width:500, marginLeft:60, borderRadius:4}} >
+            <Dialog open={open} sx={{width:500, marginLeft:70, borderRadius:4}} >
                 <DialogTitle>Nuevo Artista</DialogTitle>
                 <DialogContent>
                     <img src={file} className='img-conteiner' />
