@@ -1,7 +1,7 @@
 import { Button } from "@mui/material"
 import Header from "../Header"
-import Tables from "./Table"
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+
+import DialogArtist from "../../../components/Dialogs/DialogArtist";
 const UploadArtist=()=>{
     return(
         <>
@@ -13,12 +13,8 @@ const UploadArtist=()=>{
                
                 </section> 
                 <br></br>
-                <Button variant="outlined" startIcon={<AddCircleIcon />} color="fifth" size="large">
-                Añadir Artista
-                </Button>
-
-                <br/>
-                <Tables></Tables>
+                
+                <DialogArtist></DialogArtist>
                 
             </div>
         </>

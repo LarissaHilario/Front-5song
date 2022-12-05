@@ -1,5 +1,16 @@
+
 .card-playlist{
-    width: 240px;
     height: 240px;
-    background-color: #dc3290;
+    width: 240px;
+    background-color: #ff2d96;
+    border-radius: 10px;
+}
+.card-playlist img{
+    width: auto;
+    height: 50%;
+}
+.card-info {
+    display: grid;
+    align-items: end;
+    font-size: 20px;
 }
