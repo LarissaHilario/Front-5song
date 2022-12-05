@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { artistSlice } from './slices/artistSlice'
 
-const store=configureStore({
+export const store=configureStore({
     reducer: {
-       artistas: artistSlice.reducer
+       artist: artistSlice.reducer
     }
 })
 
-export default store

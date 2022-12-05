@@ -69,8 +69,7 @@ function SignUp() {
           'Content-Type' : 'application/json'
       },
       body : JSON.stringify({
-          name: values.name,
-          email: values.email,
+          name: name.value,
           password: values.password
       }) 
 
@@ -99,14 +98,14 @@ function SignUp() {
               Registro
             </Typography>
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>
+              <InputLabel htmlFor="input-email">
                 Email
               </InputLabel>
               <FilledInput
-                value={values.email}
+                name="name"
                 type={"email"}
                 onChange={handleChange("email")}
-                id="input-with-icon-adornment"
+                id="input-email"
                 endAdornment={
                     
                       <InputAdornment >

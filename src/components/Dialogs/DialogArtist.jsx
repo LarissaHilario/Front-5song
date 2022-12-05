@@ -7,12 +7,12 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import "./formDialog.css"
-import { addNewArtist } from '../../store/thunks/artistThunk';
+//import { addNewArtist } from '../../store/thunks/artistThunk';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Tables from "../../pages/admi/artist/Table";
 
 export default function DialogArtist() {
-    const dispatch = useDispatch();
+   
     const [artist, setArtist] = useState('');
     const [open, setOpen] = React.useState(false);
 
@@ -29,15 +29,7 @@ export default function DialogArtist() {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
     }
-    const handleSubmit = () => {
-        if ( artist!== '') {
-          dispatch(addNewArtist({ artista: artist }));
-          setOpen(false);
-          setArtist('');
-        } else {
-          console.log('No has ingresad nada');
-        }
-      };
+  
       const handleChangeArtist = e => {
         setArtist(e.target.value);
       };
@@ -73,7 +65,7 @@ export default function DialogArtist() {
                 
                 <DialogActions>
                     <Button onClick={handleClose} color="fifth">Cancel</Button>
-                    <Button color="fifth" disabled={artist === ''} onClick={handleSubmit}>Subir</Button>
+                    <Button color="fifth" disabled={artist === ''} >Subir</Button>
                 </DialogActions>
             </Dialog>
         </div>

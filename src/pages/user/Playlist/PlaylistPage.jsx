@@ -1,7 +1,7 @@
 
 import DialogPlaylist from "../../../components/Dialogs/DialogPlaylist"
 import Header from "../../../components/Header/Header"
-
+import ListPlaylist from "../../../components/playlist-list/ListPlaylist"
 
 const PlaylistPage=()=>{
     return(
@@ -13,6 +13,9 @@ const PlaylistPage=()=>{
                 </section>
                <br></br>
                 <DialogPlaylist/>
+                <div className="Playlist">
+                    <ListPlaylist/>
+                </div>
             </div>
             )
    

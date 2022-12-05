@@ -9,8 +9,10 @@ import "./formDialog.css"
 import ListPlaylist from "../playlist-list/ListPlaylist";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 export default function DialogPlaylist() {
+    const [name, setName] = useState('')
+    const [open, setOpen] = useState(false);
 
-    const [open, setOpen] = React.useState(false);
+    const handleChangeName = (event) => setName(event.target.value)
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -25,15 +27,12 @@ export default function DialogPlaylist() {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
     }
-
+    
     return (
         <div>
-            <Button variant="outlined" startIcon={<AddCircleIcon />} size="large" onClick={handleClickOpen}>
-                Crear playlist
-                </Button>
-                <div className="Playlist">
-                    <ListPlaylist/>
-                </div>
+            <Button variant="outlined" onClick={handleClickOpen}>
+                Crear Playlist
+            </Button>
             <Dialog open={open} sx={{width:500, marginLeft:60, borderRadius:4}} >
                 <DialogTitle>Nueva Playlist</DialogTitle>
                 <DialogContent>
@@ -46,7 +45,8 @@ export default function DialogPlaylist() {
                         fullWidth
                         variant="standard"
                         color={'primary'}
-                        
+                        value={name} 
+                        onChange={handleChangeName}
                     />
                     <Button variant="contained" component="label" sx={{marginTop:2,marginLeft:16}}>
                         Subir imagen
