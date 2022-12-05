@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import SearchIcon from "@mui/icons-material/Search";
 import { Typography, Avatar, Stack, TextField, InputAdornment, Divider} from "@mui/material";
 import styles from "./Header.module.css";
-import Box from '@mui/material/Box';
+
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';

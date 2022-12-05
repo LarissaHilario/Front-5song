@@ -48,12 +48,6 @@ const AppRouters = () => {
             <DashRoutes></DashRoutes>
           }
         />
-         <Route
-          path='/login-admi'
-          element={
-             <LoginAdmi/>
-          }
-        />
         
       </Routes>
     </BrowserRouter>
