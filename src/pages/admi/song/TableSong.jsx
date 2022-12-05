@@ -11,7 +11,6 @@ import { useEffect, useState } from 'react';
 import styles from './table.module.css'
 const TableSong =()=>{
     const [posts, setPosts] = useState([]);
-
     useEffect(() => {
        fetch('http://18.116.50.13:8080/song')
           .then((response) => response.json())
@@ -56,7 +55,7 @@ const TableSong =()=>{
                     <TableCell>{row.id} </TableCell>
                     <TableCell>{row.name}</TableCell>
                     <TableCell>{row.duration}</TableCell>
-                    <TableCell>{row.artist}</TableCell>
+                    <TableCell>{row.artist.name}</TableCell>
                     <TableCell > 
                          <CardMedia  component="img"
                             sx={{ width: 60, height:60}}

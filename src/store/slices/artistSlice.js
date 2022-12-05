@@ -1,21 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const artistSlice = createSlice({
-  name: 'artista',
+  name: 'artist',
   initialState: {
-    artistas: null,
+    artist: null,
     count: 0,
   },
   reducers: {
     addArtistas: (state, action) => {
-      state.artistas = action.payload.artistas;
-      state.count = state.artistas.length;
+      state.artist = action.payload.artist;
+      state.count = state.artist.length;
     },
     addArtist: (state, action) => {
-      state.artistas = [...state.artistas, action.payload.artista];
+      state.artist = [...state.artist, action.payload.artist];
     },
     cleanArtist: state => {
-      state.artistas = null;
+      state.artist = null;
       state.count = 0;
     },
   },

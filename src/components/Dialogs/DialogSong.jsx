@@ -44,7 +44,7 @@ export default function DialogSong() {
 
                 <br/>
                 <Tables></Tables>
-            <Dialog open={open} onClose={handleClose} sx={{ width: 500, marginLeft: 60, borderRadius: 4 }} >
+            <Dialog open={open} sx={{ width: 500, marginLeft: 60, borderRadius: 4 }} >
                 <DialogTitle>Subir Cancion</DialogTitle>
                 <DialogContent>
                     <img src={file} className='img-conteiner' />
@@ -55,7 +55,7 @@ export default function DialogSong() {
                         label="Nombre de la cancion"
                         fullWidth
                         variant="standard"
-                        color={'primary'}
+                        color='fifth'
                         
                     />
                     <TextField
@@ -65,10 +65,10 @@ export default function DialogSong() {
                         label="Autor"
                         fullWidth
                         variant="standard"
-                        color={'primary'}
+                        color='fifth'
 
                     />
-                    <Button variant="contained" component="label"  sx={{marginLeft:16, marginTop:5}}>
+                    <Button variant="contained" component="label"  sx={{marginLeft:16, marginTop:5}} color='fifth'>
                         Subir imagen
                         <input hidden accept="image/*" type="file" onChange={handleChangeImg} />
                     </Button>
@@ -81,7 +81,7 @@ export default function DialogSong() {
                             value={song}
                             label="Artista"
                             onChange={handleChange}
-                            color={'primary'}
+                            color='fifth'
                         >
                             <MenuItem value={10}>Harry Styles</MenuItem>
                             <MenuItem value={20}>Juanga</MenuItem>
@@ -97,7 +97,7 @@ export default function DialogSong() {
                             value={song}
                             label="Album"
                             onChange={handleChange}
-                            color={'primary'}
+                            color='fifth'
                         >
                             <MenuItem value={10}>Harry's House</MenuItem>
                             <MenuItem value={20}>Bellas Artes Mx</MenuItem>
@@ -107,8 +107,8 @@ export default function DialogSong() {
                     <Input type="file" accept=".mp3,.mp4,audio/*" sx={{marginTop:2,width: 386}}/>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Subir</Button>
+                    <Button onClick={handleClose} color='fifth'>Cancel</Button>
+                    <Button onClick={handleClose} color='fifth'>Subir</Button>
                 </DialogActions>
             </Dialog>
         </div>

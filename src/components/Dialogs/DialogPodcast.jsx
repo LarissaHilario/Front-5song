@@ -46,7 +46,7 @@ export default function DialogPodcast() {
                 <br/>
                 <TablePodcast/>
 
-            <Dialog open={open} onClose={handleClose} sx={{ width: 500, marginLeft: 70, borderRadius: 4 }} >
+            <Dialog open={open}  sx={{ width: 500, marginLeft: 70, borderRadius: 4 }} >
                 <DialogTitle>Subir Podcast</DialogTitle>
                 <DialogContent>
                     <img src={file} className='img-conteiner' />
@@ -57,7 +57,7 @@ export default function DialogPodcast() {
                         label="Titulo del podcast"
                         fullWidth
                         variant="standard"
-                        color={'primary'}
+                        color={'fifth'}
                         
                     />
                     <TextField
@@ -67,7 +67,7 @@ export default function DialogPodcast() {
                         label="Autor"
                         fullWidth
                         variant="standard"
-                        color={'primary'}
+                        color={'fifth'}
 
                     />
                     
@@ -78,7 +78,7 @@ export default function DialogPodcast() {
                         label="Descripcion"
                         fullWidth
                         variant="standard"
-                        color={'primary'}
+                        color={'fifth'}
 
                     />
                     <FormControl fullWidth sx={{marginTop:1,marginBottom:2}}>
@@ -88,7 +88,7 @@ export default function DialogPodcast() {
                             id="demo-simple-select"
                             label="Categoria"
                             onChange={handleChange}
-                            color={'primary'}
+                            color={'fifth'}
                         >
                             <MenuItem value={10}>Suspenso</MenuItem>
                             <MenuItem value={10}>Fantasia</MenuItem>
@@ -105,7 +105,7 @@ export default function DialogPodcast() {
                             
                             label="Año"
                             onChange={handleChange}
-                            color={'primary'}
+                            color={'fifth'}
                         >
                             <MenuItem value={20}>2019</MenuItem>
                             <MenuItem value={20}>2020</MenuItem>
@@ -116,14 +116,14 @@ export default function DialogPodcast() {
                     </FormControl>
                     <Input type="file" multiple accept=".mp3,.mp4,audio/*"  sx={{marginTop:2,width: 388}}/>
 
-                    <Button variant="contained" component="label"  sx={{marginLeft:16, marginTop:2}}>
+                    <Button variant="contained" component="label"  color='fifth'sx={{marginLeft:16, marginTop:2}}>
                         Subir imagen
                         <input hidden accept="image/*" type="file"  onChange={handleChangeImg} />
                     </Button>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Subir</Button>
+                    <Button  color='fifth' onClick={handleClose}>Cancel</Button>
+                    <Button color='fifth' onClick={handleClose}>Subir</Button>
                 </DialogActions>
             </Dialog>
         </div>

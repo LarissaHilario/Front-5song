@@ -4,29 +4,34 @@ import { useNavigate } from 'react-router-dom';
 import SearchIcon from "@mui/icons-material/Search";
 import { Typography, Avatar, Stack, TextField, InputAdornment, Divider} from "@mui/material";
 import styles from "./Header.module.css";
-import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
+
 import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
+
 import Logout from '@mui/icons-material/Logout';
+import { cleanArtist } from '../../store/slices/artistSlice';
+import { useDispatch } from 'react-redux';
 
 const Header = ({ title,alt, avatar,Name}) => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  const dispatch = useDispatch();
+  
+
+  const handleLogout = () => {
+    dispatch(cleanArtist());
+    navigate('/login');
+  };
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleClickRedux=()=>{
-    navigate('/login');
-  }
 
   return (
     <>
@@ -93,8 +98,8 @@ const Header = ({ title,alt, avatar,Name}) => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       
        >
-        <MenuItem  onClick={handleClickRedux}>
-          <IconButton onClick={handleClickRedux}>
+        <MenuItem  onClick={handleLogout}>
+          <IconButton onClick={handleLogout}>
             <Logout fontSize="small" /> 
             
           </IconButton>

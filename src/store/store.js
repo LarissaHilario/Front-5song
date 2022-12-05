@@ -3,7 +3,7 @@ import { artistSlice } from './slices/artistSlice'
 
 const store=configureStore({
     reducer: {
-       artista: artistSlice.reducer
+       artistas: artistSlice.reducer
     }
 })
 
