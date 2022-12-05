@@ -1,6 +1,5 @@
 .card{
-    width: 830px;
-    height: 400px;
+    
     display: flex;
     background-size: cover;
     float: left;
@@ -8,7 +7,7 @@
     position: relative;
     overflow: hidden;
     background-position: center;
-    margin: 10px;
+    margin-left: 1.5%;
     align-items: center;
     align-content: center;
     background-color:  #F4258E;
@@ -16,7 +15,7 @@
 }
 
 .image{
-  width: 300px;
+  width: 350px;
   height: 400px;
   object-fit: cover;
   position:absolute;
@@ -28,7 +27,7 @@
 
 .card-top {
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 100%;
   transform: scale(1.3);
   opacity: 100%;
@@ -48,7 +47,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.btn{
+.btn-card{
     background: #FFF;
     padding: 10px;
     border-radius: 25px;

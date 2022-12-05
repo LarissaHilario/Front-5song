@@ -1,40 +1,24 @@
 
 import person from '../assets/images/person2.png'
 
-import '../components/shared/styles.css'
+import styles from '../components/shared/styles.css'
 import Card from '../components/card/Card';
 import ListArtist from '../components/artist/ListArtist';
 import ListPlaylist from '../components/playlist-list/ListPlaylist';
 import Player from '../components/Player/Player';
+import Header from '../components/Header/Header';
+import { Typography } from '@mui/material';
 
-const Home=()=>{
-    return(
-        <>
-        <div className='container'>
-
-        
+const Home = () => {
+    return (
         <div className="body">
-             <div className="Header">
-            <h1>Home</h1>
-        </div>
-        <div className="Card-Home">
-           
-            <Card title={"Explora toda la música en tendencia en estos momentos"} 
-        image={person} button={"Explorar ahora"}/>
-        </div>
-        <div className="top">
-        <ListArtist></ListArtist>
-        </div>
-        <div className="Playlist">
-            <ListPlaylist></ListPlaylist>
-        </div>
-        <div className="reproductor">
+            <div className="Header">
+                <Header title={'Home'} Name={'Larissa'} avatar={person}></Header>
+                <Card image={person} button={'Explorar ahora'} title={'Explora toda la música relevante en este momento'}></Card>
             
         </div>
-        <Player></Player>
-        </div></div>
-        </>
+        </div>
     )
-   
-} 
+
+}
 export default Home

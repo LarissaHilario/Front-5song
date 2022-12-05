@@ -1,5 +1,3 @@
-import '../assets/styles/login.css'
-import logo from '../assets/img/logo.png'
 
 function Registro(){
 

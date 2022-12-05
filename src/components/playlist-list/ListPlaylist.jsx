@@ -1,51 +1,34 @@
-
+import { useState, useEffect } from "react";
 import "./list.css"
 import Playlist from "./Playlist";
 import globos from '../../assets/images/globos.jpg'
 function ListPlaylist() {
  
-    const cakes = [
-      {
-        id:1,
-        name: "Fiesta",
-        songs:"12 canciones",
-        image:"images/globos.jpg"
-      },
-      {
-        id:2,
-        name: "Fiesta",
-        songs:"12 canciones",
-        image:"images/globos.jpg"
-      },
-      {
-        id:3,
-        name: "Fiesta",
-        songs:"12 canciones",
-        image:"images/globos.jpg"
-      },
-      {
-        id:4,
-        name: "Fiesta",
-        songs:"12 canciones",
-        image:"images/globos.jpg"
-      },
-      
-    ];
-  
+  const [playlist, setPlaylist] = useState([]);
+
+  useEffect(() => {
+     fetch('http://3.135.19.149:8080/playlist')
+        .then((response) => response.json())
+        .then((data) => {
+           console.log(data.data);
+           setPlaylist(data.data);
+        })
+        .catch((err) => {
+           console.log(err.message);
+        });
+  }, []);
     return (
         <>
-            <br>
-            </br>
-            <br></br>
-            <h2 className="subtitle">Playlist</h2> 
-            <div className="containerPlay">
-            {cakes.map((cake)=> {
+        
+            <h2 className="namePlaylist">Playlist</h2> 
+           <br></br> <div className="containerPlay">
+            {playlist.map((play)=> {
                 return (
                     <Playlist
-                      key={cake.id}
-                      title={cake.name}
-                      songs={cake.songs}
-                      image={cake.image}
+                      key={play.id}
+                      title={play.name}
+                      songs={play.duration}
+                      image={play.photoUrl}
                     />
                    
                 )

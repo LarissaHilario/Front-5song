@@ -1,0 +1,142 @@
+.wave{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :7rem;
+    padding: 0 2rem;
+}
+
+.imgLogin{
+    display: flex;
+	justify-content:flex-start;
+	align-items: center;
+	width: 50%;
+	position: relative;
+    top:20%;
+	left: -75%;
+
+}
+.imgLogin img{
+	width: 120%;
+}
+
+.login-content{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+}
+form{
+	position: relative;
+	width: 460px;
+	left: 40%;
+}
+
+
+.title h1{
+	margin: 15px 0;
+	color: rgb(1, 1, 1);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3rem;
+}
+
+.group {
+	position: relative;
+   }
+   
+   .input {
+	font-size: 16px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 200px;
+	border: none;
+	border-bottom: 1px solid #515151;
+	background: transparent;
+   }
+   
+   .input:focus {
+	outline: none;
+   }
+   
+   label {
+	color: #999;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+   }
+   
+   .input:focus ~ label, .input:valid ~ label {
+	top: -20px;
+	font-size: 14px;
+	color: #E84A9B;
+   }
+   
+   .bar {
+	position: relative;
+	display: block;
+	width: 200px;
+   }
+   
+   .bar:before, .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #5264AE;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+   }
+   
+   .bar:before {
+	left: 50%;
+   }
+   
+   .bar:after {
+	right: 50%;
+   }
+   
+   .input:focus ~ .bar:before, .input:focus ~ .bar:after {
+	width: 50%;
+   }
+   
+   .highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+   }
+   
+   .input:focus ~ .highlight {
+	animation: inputHighlighter 0.3s ease;
+   }
+   
+   @keyframes inputHighlighter {
+	from {
+	 background: #5264AE;
+	}
+   
+	to {
+	 width: 0;
+	 background: transparent;
+	}
+   }
