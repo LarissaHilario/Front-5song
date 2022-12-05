@@ -48,7 +48,7 @@ const Library = () => {
   <Header title={'Library'}/> <br />
   <section className='section-1'>
    <h1>Playlist</h1>
-        <div className='option-1'>
+        <div className='option-1' id='Playlist'>
           {dataPlaylist.map((play, i) => {
           if (i < playlist) {
             return (
@@ -62,12 +62,12 @@ const Library = () => {
           } else {
             return null;
           }
-        })} ;</div><br />
+        })}</div><br />
          <a href='/playlist'>Ver mas</a>
     </section>
-    <section className='section-2'>
+    <section className='section-2' >
    <h1>Podcast</h1>
-        <div className='option-2'>
+        <div className='option-2' id='Playlist'>
           {dataPodcast.map((play, i) => {
           if (i < podcast) {
             return (
@@ -81,12 +81,12 @@ const Library = () => {
           } else {
             return null;
           }
-        })} ;</div><br />
+        })} </div><br />
          <a href='/playlist'>Ver mas</a>
     </section>
     <section className='section-3'>
    <h1>Artistas</h1>
-        <div className='option-3'>
+        <div className='option-3' id='TopArtist'>
           {dataArtist.map((art, i) => {
           if (i < artist) {
             return (
