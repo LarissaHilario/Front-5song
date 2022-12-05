@@ -39,6 +39,12 @@ function SignUp() {
       showPassword: !values.showPassword,
     });
   };
+  const handleClickShowPasswordConfirm = () => {
+    setValues({
+      ...values,
+      showPasswordConfirm: !values.showPasswordConfirm,
+    });
+  };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -46,7 +52,63 @@ function SignUp() {
   const handleClick = () => {
     navigate('/login');
   };
+  
+  const submit=(option)=>{
+    fetch('http://18.116.50.13:8080/user', option)
+    .then(response=> response.json())
+    .then( data=>data.success ? navigate("/login"):alert("error"))
+    .catch(err=>console.log(err))
+  }
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const option={
+      method: 'POST',
+      headers: {
+          'Accept' : 'application/json',
+          'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify({
+          name: name.value,
+          password: values.password
+      })
+
+      (values.password===values.passwordConfirm)?  submit(option):console.log("error")
+  }
+
+
+  };
+
+  const verifypass=()=>{
+    return values.password === values.passwordConfirm;
+  }
+
+  const registerUser=()=>{
+    const option={
+      method: 'POST',
+      headers: {
+          'Accept' : 'application/json',
+          'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify({
+          name: values.name,
+          password: values.password,
+          email: values.email,
+          photoUrl:"https://musicawsbucket.s3.us-east-2.amazonaws.com/FdaInFzakAEMwqj.jpg"
+      }) 
+  }
+
+    fetch('http://18.116.50.13:8080/user', option)
+    .then(response=> response.json())
+    .then( data=>data.success ? navigate("/login"):alert("Fallo"))
+    .catch(err=>console.log(err))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    verifypass()? registerUser(): alert("contraseña incorrecta");
+    
+  };
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg"/>
