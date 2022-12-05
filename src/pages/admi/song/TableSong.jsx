@@ -1,24 +1,19 @@
-
-
-import { Button, CardMedia, TableHead } from '@mui/material';
-
+import { Button, CardMedia, Divider, TableHead } from '@mui/material';
 import Paper from '@mui/material/Paper';
-
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-
 import TableRow from '@mui/material/TableRow';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from 'react';
 
 import styles from './table.module.css'
-const Tables =()=>{
+const TableSong =()=>{
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-       fetch('http://18.116.50.13:8080/artist')
+       fetch('http://18.116.50.13:8080/song')
           .then((response) => response.json())
           .then((data) => {
              console.log(data.data);
@@ -29,11 +24,10 @@ const Tables =()=>{
           });
     }, []);
    
-
-
     return(
        <div>
       <br></br>
+
       <br></br>
       <div className={styles.tableContainer}>
         <Paper sx={{ width: '70%' }}>
@@ -45,8 +39,9 @@ const Tables =()=>{
                 <TableRow>
                   <TableCell>ID</TableCell>
                   <TableCell>Nombre</TableCell>
-                  <TableCell>Oyentes</TableCell>
-                  <TableCell>Imagenes</TableCell>
+                  <TableCell>Duracion</TableCell>
+                  <TableCell>Artista</TableCell>
+                  <TableCell>Imagen</TableCell>
                   <TableCell>.</TableCell>
                 </TableRow>
               </TableHead>
@@ -60,19 +55,14 @@ const Tables =()=>{
                   >
                     <TableCell>{row.id} </TableCell>
                     <TableCell>{row.name}</TableCell>
-                    <TableCell>{row.listener}</TableCell>
+                    <TableCell>{row.duration}</TableCell>
+                    <TableCell>{row.artist}</TableCell>
                     <TableCell > 
                          <CardMedia  component="img"
                             sx={{ width: 60, height:60}}
                             image={ row.photoUrl}>
                         </CardMedia></TableCell>
-                    <TableCell>
-                        <Button variant="outlined" 
-                                color="fifth"
-                                startIcon={<DeleteIcon />}>
-                         Eliminar
-                        </Button>
-                    </TableCell>
+                    <TableCell><Button variant="outlined" color="fifth"startIcon={<DeleteIcon />}>Eliminar</Button></TableCell>
                   </TableRow>
 ))}
               </TableBody>
@@ -81,8 +71,9 @@ const Tables =()=>{
           </TableContainer>
         </Paper>
       </div>
+
     </div>
   );
 };
 
-export default Tables;
+export default TableSong;

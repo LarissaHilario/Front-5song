@@ -10,7 +10,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Input from '@mui/material/Input';
-
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Tables from "../../pages/admi/song/TableSong";
 export default function DialogSong() {
 
     const [open, setOpen] = React.useState(false);
@@ -37,9 +38,12 @@ export default function DialogSong() {
 
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen}>
-                Subir cancion
-            </Button>
+            <Button variant="outlined" startIcon={<AddCircleIcon />} color="fifth" size="large" onClick={handleClickOpen}>
+                Añadir Cancion
+                </Button>
+
+                <br/>
+                <Tables></Tables>
             <Dialog open={open} onClose={handleClose} sx={{ width: 500, marginLeft: 60, borderRadius: 4 }} >
                 <DialogTitle>Subir Cancion</DialogTitle>
                 <DialogContent>
