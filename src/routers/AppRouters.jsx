@@ -13,6 +13,8 @@ import { useSelector } from 'react-redux';
 import SignUp from '../pages/user/SignUp/SignUp';
 import { ThemeProvider } from '@mui/material';
 import Theme from '../themes/theme'
+import AdmiLogin from '../pages/admi/Login/AdmiLogin';
+import AdmiRoutes from './AdmiRouters';
 //import { useCheckAuth } from '../hooks/useCheckAuth';
 
 
@@ -46,8 +48,7 @@ const AppRouters = () => {
         <Route
           path='/*'
           element={
-            
-            <DashRoutes></DashRoutes>
+          <AdmiRoutes></AdmiRoutes>
           }
         />
          <Route
