@@ -1,0 +1,14 @@
+.containerPlay{ 
+    display: flex; 
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+   }
+   .namePlaylist {
+    color: #323031;
+    font-size: 2.5em;
+    font-weight: bolder;
+    position: relative;
+    left:2%;
+    margin-top: 25%;
+   }

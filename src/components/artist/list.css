@@ -1,0 +1,17 @@
+.containerArtist{ 
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    align-items: right;
+    left: 5%;
+    top: 30%;
+   }
+
+   .titleartist {
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    left:10px;
+    top:10px;
+   }

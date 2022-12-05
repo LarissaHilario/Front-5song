@@ -1,0 +1,52 @@
+*{
+
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+}
+
+  .body{
+    
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0 20rem;
+    z-index: 10;
+    
+    /*background-image: linear-gradient(to bottom, #fffcdcd3, #fff7dfc8, #fff4e5, #fff2ec, #fff1f1, #fdf2f3, #f5e8eb, #ffdfe7, #ffdfe7, #ffdfe7, #ffdfe7, #f0b8cd);
+  }*/}
+  .Header{
+    position: relative;
+    margin-top:2%;
+  }
+  .Header h3{
+    font-size: 1.5em;
+    font-weight: bolder;
+    position: relative;
+    left:1.5%;
+    color: #323031;
+  }
+  .buscador{
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 24px;
+    width: 500px;
+    border: transparent;
+    border-bottom: solid 1px #ccc;
+    padding: 10px 0px 10px 30px;
+    position: absolute;
+    outline: none;
+    top: 20%;
+  }
+
+.reproductor {
+  display: table;
+  position: relative;
+  margin-top: -33%;
+  left: 105%;
+  width: 400px;
+  height: 400px;
+}
+
+.Card-Home{
+  z-index: 1;
+}
