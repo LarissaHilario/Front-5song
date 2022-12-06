@@ -1,12 +1,10 @@
 import React from 'react'
-import songs from '../Player/tracksTests';
 import './albumInfo.css';
 const AlbumInfo = ({album}) => {
     const artists = [];
-    songs.forEach((element) => {
-      artists.push(element.artists);
+    album?.artists?.forEach((element) => {
+      artists.push(element.name);
     });
-  
     return (
       <div className="albumInfo-card">
         <div className="albumName-container">

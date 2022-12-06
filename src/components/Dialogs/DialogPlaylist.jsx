@@ -10,7 +10,7 @@ import ListPlaylist from "../playlist-list/ListPlaylist";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 export default function DialogPlaylist() {
     const [name, setName] = useState('')
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleChangeName = (event) => setName(event.target.value)
     const handleClickOpen = () => {
@@ -75,7 +75,7 @@ export default function DialogPlaylist() {
                 
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose} onSubmit={handleSubmit}>Crear</Button>
+                    <Button onClick={handleClose}>Crear</Button>
                 </DialogActions>
             </Dialog>
         </div>

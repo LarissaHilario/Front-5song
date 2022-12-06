@@ -1,4 +1,4 @@
-import "../playlist-list/playlist.css"
+import "../playlist-list/playlist2.css"
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 //<button className="button1"> <span><br/>Duración:{songs}</span><PlayCircleFilledIcon/></button>
 

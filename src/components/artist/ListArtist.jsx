@@ -5,7 +5,6 @@ const ListArtist=()=>{
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-   
      fetch('http://3.19.59.225:8080/artist?_limit=7')
         .then((response) => response.json())
         .then((data) => {

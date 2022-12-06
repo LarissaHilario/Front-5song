@@ -6,12 +6,13 @@ import { Typography, Avatar, Stack, TextField, InputAdornment, Divider} from "@m
 import styles from "./Header.module.css";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-
 import IconButton from '@mui/material/IconButton';
-
 import Logout from '@mui/icons-material/Logout';
 import { cleanArtist } from '../../store/slices/artistSlice';
 import { useDispatch } from 'react-redux';
+
+import { deleteToken } from '../../helpers/auth'
+import { logout } from '../../store/slices/authSlice';
 
 const Header = ({ title,alt, avatar,Name}) => {
   const navigate = useNavigate();
@@ -23,7 +24,8 @@ const Header = ({ title,alt, avatar,Name}) => {
 
   const handleLogout = () => {
     dispatch(cleanArtist());
-    navigate('/login');
+    dispatch(logout());
+    deleteToken();
   };
 
   const handleClick = (event) => {
@@ -37,7 +39,7 @@ const Header = ({ title,alt, avatar,Name}) => {
     <>
       <div className={styles.container}>
         <div className={styles.title}>
-          <Typography variant="h2" fontWeight={500} sx={ {marginTop:2}}>{title}</Typography>
+          <Typography variant="h2" fontWeight={500} sx={ {marginTop:1}}>{title}</Typography>
         </div>
      
       <Divider orientation="vertical" color="primary"></Divider>

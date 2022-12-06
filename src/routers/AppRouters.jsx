@@ -52,7 +52,7 @@ const AppRouters = () => {
     </BrowserRouter>
    
   );
-};
+}
 
 export default AppRouters;
 

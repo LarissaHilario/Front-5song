@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import styles from "./signUp.module.css";
 import {
   TextField,
   Button,
@@ -16,7 +15,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-
+import "./signUp.css"
 function SignUp() {
   const navigate= useNavigate();
   const [values, setValues] = useState({
@@ -89,7 +88,7 @@ function SignUp() {
         </div>
         <div className="login-content">
           <form onSubmit={handleSubmit}>
-            <img src="images/logo.png" />
+            <img src="images/logo-user.png" id="logo-user"/>
             <Typography
               variant="h2"
               fontSize="3em"

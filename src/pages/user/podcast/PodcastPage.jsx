@@ -2,6 +2,7 @@ import { Button } from "@mui/material"
 import Header from "../../../components/Header/Header"
 import ListPlaylist from "../../../components/playlist-list/ListPlaylist"
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import ListPodcast from "./ListPodcast";
 
 const PodcastPage=()=>{
     return(
@@ -13,7 +14,7 @@ const PodcastPage=()=>{
                 </section>
                <br></br>
                 <div className="Playlist">
-                    <ListPlaylist/>
+                    <ListPodcast/>
                 </div>
             </div>
             )

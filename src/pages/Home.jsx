@@ -1,4 +1,5 @@
-
+import React from 'react';
+// import {useSelector} from 'react-redux';
 import person from '../assets/images/person2.png'
 
 import styles from '../components/shared/styles.css'
@@ -11,6 +12,13 @@ import { Typography } from '@mui/material';
 import PlaylistHome from '../components/playlist-list/PlaylistHome';
 
 const Home = () => {
+    //     const [currMusic, setCurrMusic] = useState(playing);
+    //   const {playing} = useState(state => state.musicReducer);
+
+    //     useEffect(() => {
+    //         setCurrMusic(playing)
+    //     }, [playing]);
+
     return (
        
             <div className="body">
@@ -34,6 +42,5 @@ const Home = () => {
         
     
     )
-
 }
 export default Home

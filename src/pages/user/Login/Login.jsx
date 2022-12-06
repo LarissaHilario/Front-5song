@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import "./login.css";
 import {
   TextField,
   Button,
@@ -19,7 +18,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Alert from '@mui/material/Alert';
 //import { checkingAuthentication } from "../../../store/slices/Auth/thunks";
 //import { startGoogleSignIn,startLoginWithEmailPassword } from "../../../store/slices/Auth/thunks";
-
+import "./login.css"
 function Login() {
 
   const [showPassword, setShowPassword]= useState(false);
@@ -45,26 +44,25 @@ function Login() {
     navigate("/sing-in-admin");
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const { name, password } = event.target;
-    const option = {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const { name, password } = e.target;
+    await axiosInstance
+      .post('login/', {
         name: name.value,
         password: password.value,
-      }),
-    };
-
-    fetch('http://18.116.50.13:8080/user/login', option)
-    .then(response=> response.json())
-    .then( data=>data.success )
-    
-    .catch(err=>console.log(err))
+      })
+      .then(resp => {
+        const { data } = resp;
+        setTokens(data.token);
+        dispatch(
+          login({
+            accessToken: data.token,
+            status: resp.status,
+          })
+        );
+      })
+      .catch(err=>console.log(err))
   };
 
 
@@ -72,12 +70,12 @@ function Login() {
     <>
       <img className="wave" src="images/wave-haikei (7).svg" />
       <div className="container">
-        <div className="img-login">
+        <div className="img-Login">
           <img src="images/audio (2).svg" />
         </div>
         <div className="login-content">
           <form onSubmit={handleSubmit}>
-            <img src="images/logo.png" />
+            <img src="images/logo-user.png" id="logo-user" />
             <Typography
               variant="h2"
               fontSize="3em"
@@ -105,7 +103,7 @@ function Login() {
               <FilledInput
                 name="password"
                 id="filled-adornment-password"
-                type={values.showPassword ? "text" : "password"}
+                type={showPassword.values ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -114,7 +112,7 @@ function Login() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                      {showPassword.values ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -128,9 +126,7 @@ function Login() {
             <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
               Iniciar Sesión
             </Button>
-            <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit"  onClick={ onGoogleSignIn }>
-              GOOGLE
-            </Button>
+           
           </form>
         </div>
       </div>

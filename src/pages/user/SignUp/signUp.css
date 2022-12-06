@@ -21,10 +21,10 @@
 	align-items: center;
 }
 .img-login img{
-	width: 70%;
+	width: 35%;
 	position: relative;
-	top: -5%;
-	left: -10%;
+	top: -2%;
+	left: -8%;
 }
 
 .login-content{
@@ -32,8 +32,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
-	position: relative;
-	top: -5%;
+	margin-top: -4%;
 }
 form{
 	position: relative;
@@ -52,4 +51,3 @@ form{
 	font-family: 'Montserrat', sans-serif;
 	font-size: 3.5rem;
 }
-

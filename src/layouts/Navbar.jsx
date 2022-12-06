@@ -70,8 +70,7 @@ const Navbar = ({ currentPage }, props) => {
       
       <Box
         role='presentation'
-        onClick={() => setIsDrawerOpen(false)}
-        onKeyDown={() => setIsDrawerOpen(false)}
+       
         sx={{ padding: 2 }}
       >
         <Box

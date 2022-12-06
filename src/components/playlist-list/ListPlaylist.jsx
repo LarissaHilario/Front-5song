@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./list.css"
+import "../playlist-list/playlist.css"
 import Playlist from "./Playlist";
-import globos from '../../assets/images/globos.jpg'
 function ListPlaylist() {
  
   const [playlist, setPlaylist] = useState([]);

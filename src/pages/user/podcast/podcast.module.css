@@ -1,0 +1,72 @@
+.containerCard {
+    width: 10vw;
+    height: 30vh;
+    display: flex;
+    background-size: cover;
+    float: left;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    left: -.5%;
+    background-position: center;
+    margin: 10px;
+    align-items: center;
+    align-content: center;
+    background-color: #f4258d;
+    align-items: center;
+}
+
+.imagePlay{
+  max-width: 100%;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  position:relative;
+  align-items: center;
+  top: -20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 90%;
+}
+.containerCard:hover .card {
+  opacity: 3;
+  transform: scale(1);
+}
+.containerCard img {
+  object-fit: cover;
+  transition: transform .8s ease;
+  
+}
+
+.containerCard:hover img {
+  transform: scale(1.1);
+}
+.containerCard img{
+  transition: transform .8s ease;
+}
+
+.cardTitle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.3);
+  opacity: 100%;
+  top: 15%;
+  left: -50%;
+  transition: transform .4s ease 0s;
+}
+
+
+.cardTitle h3 {
+  text-transform: capitalize;
+  position: absolute;
+  top: 65%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+}

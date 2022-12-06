@@ -1,0 +1,26 @@
+.containerPlay{ 
+    display: flex; 
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+   }
+   .namePlaylist {
+    color: #323031;
+    font-size: 2.5em;
+    font-weight: bolder;
+    position: relative;
+    
+   }
+   .imagePlay-Podcast{
+    max-width: 100%;
+    width: 100%;
+    height:60%;
+    object-fit: cover;
+    position:relative;
+    align-items: center;
+    top: -20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 90%;
+  }
