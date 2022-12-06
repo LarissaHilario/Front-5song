@@ -10,6 +10,8 @@ import "./formDialog.css"
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Tables from "../../pages/admi/artist/Table";
 import { addNewArtist } from "../../store/thunks/artistThunk";
+import axios from "axios";
+
 export default function DialogArtist() {
     const dispatch=useDispatch();
     const [artist, setArtist] = useState('');
@@ -24,6 +26,7 @@ export default function DialogArtist() {
     };
 
     const [file, setFile] = useState(); //codigo del preview
+    const [files, setFiles] = useState();
     function handleChange(e) {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
@@ -36,7 +39,7 @@ export default function DialogArtist() {
 
       const handleSubmit = () => {
         if (artist !== '') {
-          dispatch(addNewArtist({ name: artist}));
+          dispatch(addNewArtist({ name: artist, photoUrl:files}));
           setOpen(false);
           setArtist('');
         } else {
@@ -44,6 +47,21 @@ export default function DialogArtist() {
         }
       };
 
+      const NewPhoto= () => {
+            axios.post('http://3.19.59.225:8080/artist/upload/photo',{
+              
+            body:{
+             file
+              }
+            .then(resp => { resp.Json()
+              setFiles(resp.data)
+              console.log(resp);
+            })
+            .catch(err => {
+              console.log(err);
+            })
+        
+              });}
     return (
         <div>
            <Button variant="outlined" startIcon={<AddCircleIcon />} color="fifth" size="large" onClick={handleClickOpen}>
@@ -67,9 +85,9 @@ export default function DialogArtist() {
                         value={artist}
                         onChange={handleChangeArtist}
                     />
-                    <Button variant="contained" component="label" color="fifth" sx={{marginTop:2,marginLeft:16}}>
+                    <Button variant="contained" component="label" color="fifth" sx={{marginTop:2,marginLeft:16}} onClick={NewPhoto}>
                         Subir imagen
-                        <input hidden accept="image/*" type="file" onChange={handleChange} />
+                        <input hidden accept="image/*" type="file" onChange={handleChange} name="file" value={file}/>
                     </Button>     
                 </DialogContent>
                 

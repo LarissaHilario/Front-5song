@@ -4,7 +4,7 @@ import axios from 'axios';
 export const chargingArtist = () => {
   return async dispatch => {
     
-      axios.get('http://3.19.59.225:8080/artist/',{
+      axios.get('http://3.19.59.225:8080/artist',{
       headers: {
         'Content-type': 'application/json',
         'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
@@ -22,7 +22,6 @@ export const chargingArtist = () => {
 export const addNewArtist = (body) => {
   return async dispatch => {
       axios.post('http://3.19.59.225:8080/artist/',
-       
         body
       )
       .then(resp => {

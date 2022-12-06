@@ -1,28 +1,20 @@
 import { useEffect, useState} from "react";
 import TopArtist from "./TopArtist"
 import './list.css';
+import { useSelector } from "react-redux";
 const ListArtist=()=>{
+const { artist } = useSelector(state => state.artist);
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-     fetch('http://3.19.59.225:8080/artist?_limit=7')
-        .then((response) => response.json())
-        .then((data) => {
-           console.log(data.data);
-           setPosts(data.data);
-        })
-        .catch((err) => {
-           console.log(err.message);
-        });
-  }, []);
+ 
  
     return (
         <>
        
             <div className="containerArtist">
-                 <span className="titleartist">Top</span> 
+                 <span className="titleartist">Top Artistas</span> 
                  
-                 {posts.map((post)=> {
+                 {artist?.data.map((post)=> {
                 return (
                     <>
                    <TopArtist

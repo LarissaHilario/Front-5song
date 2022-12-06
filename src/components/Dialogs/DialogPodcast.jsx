@@ -12,9 +12,12 @@ import Select from '@mui/material/Select';
 import Input from '@mui/material/Input';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import TablePodcast from "../../pages/admi/podcast/TablePodcast";
+import { addNewPodcast } from "../../store/thunks/podcastThunk";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function DialogPodcast() {
-
+    const dispatch=useDispatch();
+    const {category}= useSelector(state => state.podcast);
     const [open, setOpen] = useState(false);
     const [song, setSong] = useState(''); // estado de las canciones
 
@@ -36,6 +39,16 @@ export default function DialogPodcast() {
     const handleChange = (event) => { //codigo del select
         setSong(event.target.value);
     };
+
+    const handleSubmit = () => {
+        if (artist !== '') {
+          dispatch(addNewPodcast({ name: name, photoUrl:files}));
+          setOpen(false);
+          setArtist('');
+        } else {
+          console.log('No has ingresado nada');
+        }
+      };
 
     return (
         <div>
@@ -87,13 +100,16 @@ export default function DialogPodcast() {
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             label="Categoria"
-                            onChange={handleChange}
+                           
                             color={'fifth'}
+                            value={song}
+                             onChange={e => setSong(e.target.value)}
                         >
-                            <MenuItem value={10}>Suspenso</MenuItem>
-                            <MenuItem value={10}>Fantasia</MenuItem>
-                            <MenuItem value={10}>Amor</MenuItem>
-                            <MenuItem value={10}>Historia</MenuItem>
+                            {category?.data.map( category=> (
+            <MenuItem key={category.id} value={category.category}>
+              {category.category}
+            </MenuItem>
+          ))}
                         </Select>
                     </FormControl>
 
@@ -123,7 +139,7 @@ export default function DialogPodcast() {
                 </DialogContent>
                 <DialogActions>
                     <Button  color='fifth' onClick={handleClose}>Cancel</Button>
-                    <Button color='fifth' onClick={handleClose}>Subir</Button>
+                    <Button color='fifth'onClick={handleSubmit} >Subir</Button>
                 </DialogActions>
             </Dialog>
         </div>
