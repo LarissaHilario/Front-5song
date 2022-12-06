@@ -5,7 +5,7 @@ const ListArtist=()=>{
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-     fetch('http://18.116.50.13:8080/artist?_limit=7')
+     fetch('http://18.222.203.69:8080/artist')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);
@@ -15,25 +15,26 @@ const ListArtist=()=>{
            console.log(err.message);
         });
   }, []);
- 
+
     return (
         <>
        
             <div className="containerArtist">
-                 <span className="titleartist">Top Artistas</span> 
-                 
-                 {posts.map((post)=> {
+                 <span className="titleartist">Top Artistas</span>
+
+                 {posts.slice(0,5).map((post)=> {
+
                 return (
                     <>
                    <TopArtist
                       key={post.id}
                       name={post.name}
                       avatar={post.photoUrl}
-                    /> 
+                    />
                      </>
                 )
-               
-            })}  
+
+            })}
                    
                   
             </div>
