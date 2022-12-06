@@ -1,13 +1,13 @@
-.artist-presentation{
+.artistPresentation{
    width: 100%;
 }
-.container-Artist{
+.containerArtist{
     display: flex;
-    width: 75vmax;
-    height: 250px;
+    width: 70vw;
+    height: 20vh;
     background-color: #f3258e;
     border-radius: 40px;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-right: 2%;
     color: white;
 }
@@ -22,13 +22,9 @@
     border-radius: 40px;
 }
 
-.nameArtist{
-    font-size: xxx-large;
-    max-width: 250px;
-    margin: auto;
-}
 
-.artist-songs{
+
+.artistSongs{
     margin-top: 5%;
     margin-right: 0;
 

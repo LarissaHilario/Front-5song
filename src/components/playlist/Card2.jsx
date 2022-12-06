@@ -1,11 +1,10 @@
 function Card2(props){
     return (
         <>
-        <div className='playlist-card'>
+        <div>
             <img src ={props.img}></img>
-            <span className='title'>{props.artist}</span> 
-            <span className='autor'>{props.name}</span>
-            <span className='autor'>{props.duration}</span>
+            <span className='title'>{props.name}</span> 
+            <span className='autor'>{props.autor}</span>
         </div>
         </>
         

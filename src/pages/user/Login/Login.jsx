@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import "./login.css";
 import {
   TextField,
   Button,
@@ -15,16 +14,22 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Alert from '@mui/material/Alert';
+import { login } from "../../../store/slices/authSlice";
+import { setTokens } from "../../../helpers/auth";
+import { axiosInstance } from "../../../helpers/AxiosInstance";
+import axios from "axios";
+
 
 function Login() {
 
   const [showPassword, setShowPassword]= useState(false);
-  
+ 
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
-      setShowPassword( !showPassword)
+    setShowPassword({
+      showPassword: !showPassword,
+    });
   };
 
   const handleMouseDownPassword = (event) => {
@@ -32,36 +37,47 @@ function Login() {
   };
 
   const handleClick = () => {
-    navigate('/signUp');
+    navigate("/signUp");
   };
 
-  const handleClickRedux=()=>{
-    navigate('/home');
-  }
-  
-  
-
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const {name,password}=event.target;
-    const option={
-      method: 'POST',
-      headers: {
-          'Accept' : 'application/json',
-          'Content-Type' : 'application/json'
-      },
-      body : JSON.stringify({
-          name: name.value,
-          password: password.value
-      }) 
-  }
-
-    fetch('http://18.116.50.13:8080/user/login', option)
-    .then(response=> response.json())
-    .then( data=>data.success ? navigate("/home"):alert("error"))
-    .catch(err=>console.log(err))
+  const handleClickAdmin = () => {
+    navigate("/sing-in-admin");
   };
+
+  const dispatch = useDispatch();
+
+  const handleSubmit =() => {
+    e.preventDefault();
+    const { email, password } = e.target;
+    
+      axios.post('http://3.144.208.227:8080/login', {
+
+        headers: {
+          'Content-type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+        },
+        body: JSON.stringify({
+          email: email.value,
+          password: password.value,
+        }),
+      })
+      .then(resp => {
+        const { data } = resp;
+        setTokens(data.token);
+        dispatch(
+          login({
+            accessToken: data.token,
+            status: resp.status,
+          })
+        );
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+  };
+
+  
+
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg" />
@@ -80,27 +96,24 @@ function Login() {
             >
               Inicia Sesión
             </Typography>
-            <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel  htmlFor="input-with-icon-adornment">
-                Email
+            <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
+              <InputLabel htmlFor="input-with-icon-adornment">
+                Username
               </InputLabel>
               <FilledInput
-                 name='name'
+                name="email"
                 id="input-with-icon-adornment"
                 endAdornment={
-                      <InputAdornment edge="end">
-                        <AccountCircleIcon />
-                      </InputAdornment>
-                    }
-                    ></FilledInput>
-
+                  <InputAdornment edge="end">
+                    <AccountCircleIcon />
+                  </InputAdornment>
+                }
+              ></FilledInput>
             </FormControl>
-            <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>
-                Contraseña
-              </InputLabel>
-              <FilledInput 
-              name='password'
+            <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
+              <InputLabel fullWidth>Contraseña</InputLabel>
+              <FilledInput
+                name="password"
                 id="filled-adornment-password"
                 type={showPassword ? "text" : "password"}
                 endAdornment={
@@ -111,7 +124,7 @@ function Login() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <Visibility />:  <VisibilityOff />}
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -122,9 +135,10 @@ function Login() {
             sx={ { marginLeft:22.3, marginRight:0 }} 
             align='left' textSizeSmall
             onClick={handleClick}>¿No tienes una cuenta? Regístrate aquí</Button>
-            <Button sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
+            <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
               Iniciar Sesión
             </Button>
+           
           </form>
         </div>
       </div>

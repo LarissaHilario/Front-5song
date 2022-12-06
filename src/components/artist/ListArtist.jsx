@@ -1,7 +1,9 @@
 import { useEffect, useState} from "react";
 import TopArtist from "./TopArtist"
 import './list.css';
+import { useSelector } from "react-redux";
 const ListArtist=()=>{
+const { artist } = useSelector(state => state.artist);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {

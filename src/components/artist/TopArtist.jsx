@@ -6,7 +6,7 @@ const TopArtist=({name,avatar})=>{
         <div className="container-artist">
             <div className='avatar'>
                  <Avatar src={avatar} 
-          sx={{ width: 80, height: 80 }}
+          sx={{ width: 60, height: 60 }}
           variant= 'rounded'/>
             </div>
          

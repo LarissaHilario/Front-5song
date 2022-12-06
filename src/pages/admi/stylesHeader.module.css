@@ -1,0 +1,18 @@
+
+.container{
+    position: relative;
+    margin-top: 2%;
+  }
+  
+  .avatar{
+    position: relative;
+    margin-top: -3.5%;
+    margin-left: 40%;
+  
+  }
+  
+  .search{
+    position: relative;
+    margin-top: -3%;
+    left: 50%;
+  }

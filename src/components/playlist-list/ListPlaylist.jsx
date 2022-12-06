@@ -2,26 +2,14 @@ import { useState, useEffect } from "react";
 import "./list.css"
 import Playlist from "./Playlist";
 function ListPlaylist() {
- 
-  const [playlist, setPlaylist] = useState([]);
+  const { playlist} = useSelector(state => state.playlist);
 
-  useEffect(() => {
-     fetch('http://18.222.203.69:8080/playlist')
-        .then((response) => response.json())
-        .then((data) => {
-           console.log(data.data);
-           setPlaylist(data.data);
-        })
-        .catch((err) => {
-           console.log(err.message);
-        });
-  }, []);
+
+ 
     return (
-        <>
-        
-            <h2 className="namePlaylist">Playlist</h2> 
+        <>           
            <br></br> <div className="containerPlay">
-            {playlist.map((play)=> {
+            {playlist?.map((play)=> {
                 return (
                     <Playlist
                       key={play.id}
