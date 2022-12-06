@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Comfortaa:wght@500&family=Dancing+Script&family=Lato:ital,wght@1,100&family=Montserrat:wght@300&family=Playfair+Display:ital@1&family=Poppins:ital,wght@1,200&family=Quicksand&family=Roboto&family=Sofia&display=swap');
-*{
-    font-family: 'Roboto', sans-serif;
-}
+
 body {
     background-color: white;
 }
@@ -60,11 +57,7 @@ h4{
     margin-left: 5px;
     font-size: 15px;
 }
-.logo {
+.image-login {
     width: 105px;
     height: 77px;
-}
-
-.link{
-    display:flex;
 }

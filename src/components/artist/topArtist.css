@@ -1,6 +1,6 @@
 .container-artist {
-    width: 75%;
-    height: 100px;
+    width: 25vw;
+    height: 10vh;
     display: block;
     background-size: cover;
     float: left;
@@ -8,7 +8,7 @@
     position: relative;
     overflow: hidden;
     background-position: center;
-    margin: 10px;
+    margin: 8px;
     align-items: center;
     align-content: center;
     background-color: #ffffff;
@@ -17,13 +17,13 @@
 }
 
 .avatar{
-    width:80px;
+    width:80vh;
     height:80px;
     border-radius:20px;
   object-fit: cover;
   position:absolute;
   align-items: center;
-  top: 20px;
+  top: 10px;
   left: 20px;
   right: 0;
   bottom: 0;
@@ -31,7 +31,7 @@
 }
 
 .name {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   transform: scale(1.3);
@@ -41,14 +41,13 @@
 
 
 .name h2 {
-  position: absolute;
-  top: 50%;
-  left: 60%;
+  position: relative;
+  top: 45%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
-  color:#D194B6;
+  color:#FF0080;
   font-family: 'Montserrat', sans-serif;
-
 }

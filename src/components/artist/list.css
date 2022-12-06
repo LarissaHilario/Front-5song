@@ -4,12 +4,13 @@
     flex-direction: column;
     position: relative;
     align-items: right;
-    left: 5%;
+    left: 2%;
+    top: 3%;
    }
 
-   h2{
-    font-size: 30px;
+   .titleartist {
+    font-size: 2rem;
+    font-weight: bold;
     position: relative;
-    left: 1%;
-    margin-top:2%
+    left:10%;
    }

@@ -1,0 +1,59 @@
+.wave{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :7rem;
+    padding: 0 2rem;
+}
+
+.img-login{
+    display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.img-login img{
+	width: 70%;
+	position: relative;
+	top: -5%;
+	left: -10%;
+}
+
+.login-content{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	top: -5%;
+}
+form{
+	position: relative;
+	width: 460px;
+	left: 30%;
+	
+}
+.login-content img{
+    width: 30%;
+	position: relative;	
+}
+
+.login-content h2{
+	margin: 10% 0;
+	color: rgb(1, 1, 1);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3.5rem;
+}
+
+
+
+
+   

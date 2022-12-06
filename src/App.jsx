@@ -1,11 +1,15 @@
 import { useState } from 'react'
-import Home from './pages/Home/Home'
-import Login from './pages/Login'
+import AppRouters from './routers/AppRouters';
+import { ThemeProvider } from '@mui/material' 
+import Theme from './themes/theme'
 const App=()=> {
 
 
   return (
-    <Home/>
+  <ThemeProvider theme={Theme}>
+   <AppRouters></AppRouters>
+   </ThemeProvider>
+  
   )
 }
 
