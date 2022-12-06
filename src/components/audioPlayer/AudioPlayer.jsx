@@ -59,14 +59,14 @@ const AudioPlayer = ({
 
     const handlePrev = () => {
         if (currentIndex - 1 < 0) {
-            setCurrentIndex(total.length - 1);
+            setCurrentIndex(songs.length - 1);
         } else {
             setCurrentIndex(currentIndex - 1);
         }
     };
 
     const handleNext = () => {
-        if (currentIndex < total.length - 1) {
+        if (currentIndex < songs.length - 1) {
             setCurrentIndex(currentIndex + 1);
         } else {
             setCurrentIndex(0);
@@ -117,10 +117,6 @@ const AudioPlayer = ({
             clearInterval(intervalRef.current);
         };
     }, []);
-    const artists = [];
-    currentTrack.album.artists.forEach((artist) => {
-        artists.push(artist.name);
-    });
     return (
         <div className="audio-player">
             <div className="track-info">

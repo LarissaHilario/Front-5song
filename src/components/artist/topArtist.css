@@ -1,6 +1,6 @@
 .container-artist {
-    width: 75%;
-    height: 100px;
+    width: 25vw;
+    height: 10vh;
     display: block;
     background-size: cover;
     float: left;

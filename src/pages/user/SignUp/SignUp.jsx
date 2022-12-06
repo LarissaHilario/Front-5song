@@ -54,7 +54,7 @@ function SignUp() {
   };
   
   const submit=(option)=>{
-    fetch('http://18.116.50.13:8080/user', option)
+    fetch('http://3.137.200.76:8080/user', option)
     .then(response=> response.json())
     .then( data=>data.success ? navigate("/login"):alert("error"))
     .catch(err=>console.log(err))
@@ -104,11 +104,7 @@ function SignUp() {
     .catch(err=>console.log(err))
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    verifypass()? registerUser(): alert("contraseña incorrecta");
-    
-  };
+ 
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg"/>
