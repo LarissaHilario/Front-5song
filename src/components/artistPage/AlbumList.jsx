@@ -5,7 +5,7 @@ const AlbumList=()=>{
     const [album, setAlbums] = useState([]);
 
     useEffect(() => {
-        fetch('http://18.116.50.13:8080/album')
+        fetch('http://18.222.203.69:8080/album')
             .then((response) => response.json())
             .then((data) => {
                 console.log(data.data);
