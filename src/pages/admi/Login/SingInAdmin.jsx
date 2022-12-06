@@ -70,12 +70,12 @@ function Login() {
     <>
       <img className="wave1" src="images/wave-admin.png" />
       <div className="container1">
-        <div className="img-login">
+        <div className="img-login1" id="img-admin">
           <img src="images/undraw_admin.svg" />
         </div>
-        <div className="login-content">
+        <div className="login-content1" >
           <form onSubmit={handleSubmit}>
-            <img src="images/logo-admin.png" />
+            <img src="images/logo-admin.png"/>
             <Typography
               variant="h2"
               fontSize="2em"
