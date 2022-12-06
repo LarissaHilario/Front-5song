@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-import Cards from "../../../components/artist/Cards";
+import Cards from "../../../../components/artist/Cards";
 
 function AlbumCards() {
  
   const [artist, setArtist] = useState([]);
 
   useEffect(() => {
-     fetch('http://3.137.200.76:8080/album')
+     fetch('http://3.19.59.225:8080/album')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);

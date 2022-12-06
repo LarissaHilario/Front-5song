@@ -4,7 +4,7 @@
 .containerArtist{
     display: flex;
     width: 70vw;
-    
+    height: 20vh;
     background-color: #f3258e;
     border-radius: 40px;
     margin-top: 2%;

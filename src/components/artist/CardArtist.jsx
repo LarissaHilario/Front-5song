@@ -7,7 +7,7 @@ function CardArtist() {
   const [artist, setArtist] = useState([]);
 
   useEffect(() => {
-     fetch('http://3.137.200.76:8080/artist')
+     fetch('http://3.19.59.225:8080/artist')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);

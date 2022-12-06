@@ -39,7 +39,7 @@ const Header = ({ title,alt, avatar,Name}) => {
     <>
       <div className={styles.container}>
         <div className={styles.title}>
-          <Typography variant="h2" fontWeight={500} sx={ {marginTop:2}}>{title}</Typography>
+          <Typography variant="h2" fontWeight={500} sx={ {marginTop:1}}>{title}</Typography>
         </div>
      
       <Divider orientation="vertical" color="primary"></Divider>

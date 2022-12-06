@@ -14,7 +14,7 @@ const Player = () => {
   const [currentTrack, setCurrentTrack] = useState(tracks[currentIndex]);
 
       useEffect(() => {
-     fetch('http://18.116.50.13:8080/song')
+     fetch('http://3.19.59.225:8080/song')
         .then((response) => response.json())
         .then((data) => {
            setTracks(data.data);

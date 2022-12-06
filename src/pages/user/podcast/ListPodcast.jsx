@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import "./list.css"
-import Playlist from "./Playlist";
-function ListPlaylist() {
+import Playlist from "../../../components/playlist-list/Playlist";
+function ListPodcast() {
  
   const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
-     fetch('http://3.19.59.225:8080/playlist')
+     fetch('http://3.19.59.225:8080/podcast')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);
@@ -20,7 +20,7 @@ function ListPlaylist() {
         <>
         
            
-           <br></br> <div className="containerPlay">
+           <br></br> <div classame="containerPlay">
             {playlist.map((play)=> {
                 return (
                     <Playlist
@@ -39,4 +39,4 @@ function ListPlaylist() {
   }
   
 
-  export default ListPlaylist;
+  export default ListPodcast;
