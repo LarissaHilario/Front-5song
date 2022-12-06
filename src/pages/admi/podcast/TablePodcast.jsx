@@ -24,7 +24,7 @@ const TablePodcast =()=>{
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-       fetch('http://18.222.203.69:8080/podcast')
+       fetch('http://3.19.59.225:8080/podcast')
           .then((response) => response.json())
           .then((data) => {
              console.log(data.data);

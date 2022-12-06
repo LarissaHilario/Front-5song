@@ -7,7 +7,7 @@ function PlaylistHome() {
   const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
-     fetch('http://18.222.203.69:8080/playlist?_limit=4')
+     fetch('http://3.19.59.225:8080/playlist?_limit=4')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);
@@ -17,7 +17,7 @@ function PlaylistHome() {
            console.log(err.message);
         });
   }, []);
-    return (
+    return (      
         <>
         
            
