@@ -8,6 +8,7 @@ import Songs from '../pages/admi/song/Songs';
 import Home from '../pages/Home';
 import { chargingArtist } from '../store/thunks/artistThunk';
 
+
 const AdmiRoutes = () => {
   const dispatch = useDispatch();
  

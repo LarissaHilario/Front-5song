@@ -15,8 +15,8 @@ import TablePodcast from "../../pages/admi/podcast/TablePodcast";
 
 export default function DialogPodcast() {
 
-    const [open, setOpen] = React.useState(false);
-    const [song, setSong] = React.useState(''); // estado de las canciones
+    const [open, setOpen] = useState(false);
+    const [song, setSong] = useState(''); // estado de las canciones
 
     const handleClickOpen = () => {
         setOpen(true);
