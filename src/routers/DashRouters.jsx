@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import Playlist from '../pages/user/Playlist';
 import HomePage from '../pages/admi/Home'
 import Artist from "../pages/Artist.jsx";
+import Library from '../pages/user/Library.jsx'
 
 const DashRoutes = () => {
   const [currentPage, setCurrentPage] = useState('');
@@ -15,7 +16,7 @@ const DashRoutes = () => {
             <Route path='/home' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
             <Route path='/podcast' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
             <Route path='/album' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
-            <Route path='/library' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
+            <Route path='/library' element={<Library onChangeCurrentPage={setCurrentPage} />}/>
             <Route path='/browser' element={<Home onChangeCurrentPage={setCurrentPage} />}/>
             <Route path='/playlist' element={<Playlist onChangeCurrentPage={setCurrentPage}/>} />
           <Route path='/artist' element={<Artist onChangeCurrentPage={setCurrentPage}/>} />

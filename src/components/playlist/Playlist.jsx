@@ -7,6 +7,7 @@ function Playlist1() {
     const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
+      //fetch('http://18.222.203.69:8080/playlist-library/playlists/library/' + libraryId) // fetch para playlists de la libreria por medio del id del usuario
      fetch('http://3.135.19.149:8080/song')
         .then((response) => response.json())
         .then((data) => {

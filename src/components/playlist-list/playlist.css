@@ -3,7 +3,6 @@
     height: 30vh;
     display: flex;
     background-size: cover;
-    float: left;
     border-radius: 15px;
     position: relative;
     overflow: hidden;
@@ -13,7 +12,6 @@
     align-items: center;
     align-content: center;
     background-color: #f4258d;
-    align-items: center;
 }
 
 .imagePlay{
