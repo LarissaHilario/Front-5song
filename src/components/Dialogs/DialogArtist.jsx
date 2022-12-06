@@ -7,14 +7,13 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import "./formDialog.css"
-//import { addNewArtist } from '../../store/thunks/artistThunk';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Tables from "../../pages/admi/artist/Table";
-
+import { addNewArtist } from "../../store/thunks/artistThunk";
 export default function DialogArtist() {
-   
+    const dispatch=useDispatch();
     const [artist, setArtist] = useState('');
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -32,6 +31,17 @@ export default function DialogArtist() {
   
       const handleChangeArtist = e => {
         setArtist(e.target.value);
+        console.log(e.target.value)
+      };
+
+      const handleSubmit = () => {
+        if (artist !== '') {
+          dispatch(addNewArtist({ name: artist}));
+          setOpen(false);
+          setArtist('');
+        } else {
+          console.log('No has ingresado nada');
+        }
       };
 
     return (
@@ -54,8 +64,8 @@ export default function DialogArtist() {
                         fullWidth
                         variant="standard"
                         color={'fifth'}
+                        value={artist}
                         onChange={handleChangeArtist}
-                        
                     />
                     <Button variant="contained" component="label" color="fifth" sx={{marginTop:2,marginLeft:16}}>
                         Subir imagen
@@ -65,7 +75,7 @@ export default function DialogArtist() {
                 
                 <DialogActions>
                     <Button onClick={handleClose} color="fifth">Cancel</Button>
-                    <Button color="fifth" disabled={artist === ''} >Subir</Button>
+                    <Button color="fifth" disabled={artist === ''} onClick={handleSubmit} >Subir</Button>
                 </DialogActions>
             </Dialog>
         </div>

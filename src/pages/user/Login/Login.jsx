@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -15,9 +14,11 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Alert from '@mui/material/Alert';
-//import { checkingAuthentication } from "../../../store/slices/Auth/thunks";
-//import { startGoogleSignIn,startLoginWithEmailPassword } from "../../../store/slices/Auth/thunks";
+import { login } from "../../../store/slices/authSlice";
+import { setTokens } from "../../../helpers/auth";
+import { axiosInstance } from "../../../helpers/AxiosInstance";
+import axios from "axios";
+
 
 function Login() {
 
@@ -25,12 +26,9 @@ function Login() {
  
   const navigate = useNavigate();
 
-  
-
   const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
+    setShowPassword({
+      showPassword: !showPassword,
     });
   };
 
@@ -46,13 +44,22 @@ function Login() {
     navigate("/sing-in-admin");
   };
 
-  const handleSubmit = async e => {
+  const dispatch = useDispatch();
+
+  const handleSubmit =() => {
     e.preventDefault();
-    const { name, password } = e.target;
-    await axiosInstance
-      .post('login/', {
-        name: name.value,
-        password: password.value,
+    const { email, password } = e.target;
+    
+      axios.post('http://3.144.208.227:8080/login', {
+
+        headers: {
+          'Content-type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+        },
+        body: JSON.stringify({
+          email: email.value,
+          password: password.value,
+        }),
       })
       .then(resp => {
         const { data } = resp;
@@ -64,9 +71,12 @@ function Login() {
           })
         );
       })
-      .catch(err=>console.log(err))
+      .catch((err) => {
+        console.log(err)
+      });
   };
 
+  
 
   return (
     <>
@@ -91,7 +101,7 @@ function Login() {
                 Username
               </InputLabel>
               <FilledInput
-                name="name"
+                name="email"
                 id="input-with-icon-adornment"
                 endAdornment={
                   <InputAdornment edge="end">
@@ -105,7 +115,7 @@ function Login() {
               <FilledInput
                 name="password"
                 id="filled-adornment-password"
-                type={showPassword.values ? "text" : "password"}
+                type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -114,7 +124,7 @@ function Login() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword.values ? <Visibility /> : <VisibilityOff />}
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }

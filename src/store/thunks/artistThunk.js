@@ -1,10 +1,15 @@
-
-
+import { axiosInstance } from '../../helpers/axiosInstance';
 import { addArtist, addArtistas } from '../slices/artistSlice'
-
+import axios from 'axios';
 export const chargingArtist = () => {
-  return dispatch => {
-    fetch('http://18.222.203.69:8080/artist')
+  return async dispatch => {
+    
+      axios.get('http://3.19.59.225:8080/artist/',{
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+      },
+  })
       .then(({ data }) => {
         dispatch(addArtistas({ artist: data }));
       })
@@ -14,3 +19,18 @@ export const chargingArtist = () => {
   };
 };
 
+export const addNewArtist = (body) => {
+  return async dispatch => {
+      axios.post('http://3.19.59.225:8080/artist/',
+       
+        body
+      )
+      .then(resp => {
+        dispatch(addArtist({ artist: resp.data }));
+        console.log(resp);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+};
