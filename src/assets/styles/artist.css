@@ -12,6 +12,10 @@
     color: white;
 }
 
+.containerAlbums{
+    display: flex;
+}
+
 .photoArtist{
     width: 250px;
     margin-right: 0;
