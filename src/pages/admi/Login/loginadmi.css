@@ -31,6 +31,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
+	margin-top: -18%;
 }
 form{
 	position: relative;
@@ -144,7 +145,7 @@ form{
 }
 
 .link-login1:hover{
-	color: #F0C8E8;
+	color: #A570BE;
 }
 
 .buttonlogin1{

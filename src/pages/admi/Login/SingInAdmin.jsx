@@ -68,14 +68,14 @@ function Login() {
 
   return (
     <>
-      <img className="wave1" src="images/wave 11.png" />x
+      <img className="wave1" src="images/wave-admin.png" />
       <div className="container1">
-        <div className="img-login">
-          <img src="images/admi.svg" />
+        <div className="img-login1" id="img-admin">
+          <img src="images/undraw_admin.svg" />
         </div>
-        <div className="login-content">
+        <div className="login-content1" >
           <form onSubmit={handleSubmit}>
-            <img src="images/logo.png" />
+            <img src="images/logo-admin.png"/>
             <Typography
               variant="h2"
               fontSize="2em"
@@ -85,24 +85,26 @@ function Login() {
               Login Admin
             </Typography>
             <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
-              <InputLabel htmlFor="input-with-icon-adornment">
+              <InputLabel htmlFor="input-with-icon-adornment" color="fifth">
                 Username
               </InputLabel>
               <FilledInput
                 name="name"
                 id="input-with-icon-adornment"
+                color="fifth"
                 endAdornment={
-                  <InputAdornment edge="end">
+                  <InputAdornment edge="end" >
                     <AccountCircleIcon />
                   </InputAdornment>
                 }
               ></FilledInput>
             </FormControl>
             <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>Contraseña</InputLabel>
+              <InputLabel fullWidth color="fifth">Contraseña</InputLabel>
               <FilledInput
                 name="password"
                 id="filled-adornment-password"
+                color="fifth"
                 type={values.showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
@@ -120,9 +122,9 @@ function Login() {
             </FormControl>
 
             <Button
-              color="secondary"
-              style={{ fontSize: ".75em" }}
-              sx={{ marginLeft: 22.3, marginRight: 0 }}
+              color="fifth"
+              style={{ fontSize: ".85em" }}
+              sx={{ marginLeft: 32, marginRight: 0 }}
               align="left"
               textSizeSmall
               onClick={handleClick}
@@ -132,7 +134,7 @@ function Login() {
             <Button
               sx={{ my: 2 }}
               variant="contained"
-              color="primary"
+              color="fifth"
               fullWidth
               type="submit"
             >

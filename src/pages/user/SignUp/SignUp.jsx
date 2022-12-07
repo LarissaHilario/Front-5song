@@ -15,8 +15,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-import "./signUp.module.css"
-
+import "./signUp.css"
 function SignUp() {
   const navigate= useNavigate();
   const [values, setValues] = useState({
@@ -30,19 +29,12 @@ function SignUp() {
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
-    console.log(values)
   };
 
   const handleClickShowPassword = () => {
     setValues({
       ...values,
       showPassword: !values.showPassword,
-    });
-  };
-  const handleClickShowPasswordConfirm = () => {
-    setValues({
-      ...values,
-      showPasswordConfirm: !values.showPasswordConfirm,
     });
   };
 
@@ -61,7 +53,7 @@ function SignUp() {
   };
   
   const submit=(option)=>{
-    fetch('http://3.137.200.76:8080/user', option)
+    fetch('http://18.116.50.13:8080/user', option)
     .then(response=> response.json())
     .then( data=>data.success ? navigate("/login"):alert("error"))
     .catch(err=>console.log(err))
@@ -76,7 +68,8 @@ function SignUp() {
           'Content-Type' : 'application/json'
       },
       body : JSON.stringify({
-          name: name.value,
+          name: values.name,
+          email: values.email,
           password: values.password
       }) 
 
@@ -86,42 +79,16 @@ function SignUp() {
 
   };
 
-  const verifypass=()=>{
-    return values.password === values.passwordConfirm;
-  }
-
-  const registerUser=()=>{
-    const option={
-      method: 'POST',
-      headers: {
-          'Accept' : 'application/json',
-          'Content-Type' : 'application/json'
-      },
-      body : JSON.stringify({
-          name: values.name,
-          password: values.password,
-          email: values.email,
-          photoUrl:"https://musicawsbucket.s3.us-east-2.amazonaws.com/FdaInFzakAEMwqj.jpg"
-      }) 
-  }
-
-    fetch('http://18.116.50.13:8080/user', option)
-    .then(response=> response.json())
-    .then( data=>data.success ? navigate("/login"):alert("Fallo"))
-    .catch(err=>console.log(err))
-  }
-
- 
   return (
     <>
       <img className="wave" src="images/wave-haikei (7).svg"/>
       <div className="container">
         <div className="img-login">
-          <img src="images/audioos.svg" />
+          <img src="images/audioos.svg"/>
         </div>
         <div className="login-content">
           <form onSubmit={handleSubmit}>
-            <img src="images/logo.png" />
+            <img src="images/logo-user.png" id="logo-user"/>
             <Typography
               variant="h2"
               fontSize="3em"
@@ -131,14 +98,12 @@ function SignUp() {
               Registro
             </Typography>
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel htmlFor="input-email">
+              <InputLabel htmlFor="input-with-icon-adornment-up">
                 Email
               </InputLabel>
               <FilledInput
-                name="name"
-                type={"email"}
-                onChange={handleChange("email")}
-                id="input-email"
+                email='email'
+                id="input-with-icon-adornment-up"
                 endAdornment={
                     
                       <InputAdornment >
@@ -148,14 +113,13 @@ function SignUp() {
                     ></FilledInput>
             </FormControl>
             <FormControl sx={{  my:2 }} variant="filled" fullWidth>
-              <InputLabel fullWidth>
+              <InputLabel htmlFor="input-with-icon-adornment-name"  fullWidth>
                 Nombre de usuario
               </InputLabel>
               <FilledInput
-                value={values.username}
-                type={"text"}
-                onChange={handleChange("username")}
-                id="input-with-icon-adornment"
+                username='username'
+               
+                id="input-with-icon-adornment-name"
                 endAdornment={
                     
                       <InputAdornment edge="end">
@@ -182,7 +146,7 @@ function SignUp() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -204,7 +168,7 @@ function SignUp() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPasswordConfirm ? <VisibilityOff /> : <Visibility />}
+                      {values.showPasswordConfirm ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }

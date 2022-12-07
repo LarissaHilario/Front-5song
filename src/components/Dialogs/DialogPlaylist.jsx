@@ -8,7 +8,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import "./formDialog.css"
 import {addNewPlaylist} from '../../store/thunks/playlistThunk'
 import { useDispatch } from "react-redux";
-
+import AddCircle from "@mui/icons-material/AddCircle";
+import ListPlaylist from "../playlist-list/ListPlaylist";
 
 export default function DialogPlaylist() {
 
@@ -47,13 +48,13 @@ export default function DialogPlaylist() {
     
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen}>
-                Crear Playlist
-            </Button>
+            <Button variant="outlined" startIcon={<AddCircle/>} size="large" onClick={handleClickOpen}>
+                Crear playlist
+                </Button>
             <Dialog open={open} sx={{width:500, marginLeft:60, borderRadius:4}} >
                 <DialogTitle>Nueva Playlist</DialogTitle>
                 <DialogContent>
-                    <img src={file} className='img-conteiner' />
+                    <img src={file} className='img-conteiner'/>
                     <TextField
                         autoFocus
                         margin="dense"

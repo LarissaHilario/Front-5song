@@ -44,21 +44,29 @@
 }
 .containerCard img{
   transition: transform .8s ease;
-
 }
 
 .cardTitle {
   position: relative;
-  width: 70%;
+  width: 100%;
   height: 100%;
   transform: scale(1.3);
   opacity: 100%;
   top: 15%;
-  font-family: 'Montserrat', sans-serif;
-
+  left: -50%;
+  transition: transform .4s ease 0s;
 }
 
 
-
-
-
+.cardTitle h3 {
+  text-transform: capitalize;
+  position: absolute;
+  top: 65%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+}

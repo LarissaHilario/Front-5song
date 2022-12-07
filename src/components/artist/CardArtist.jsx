@@ -19,6 +19,7 @@ function CardArtist() {
                       key={play.id}
                       name={play.name}
                       img={play.photoUrl}
+                      id={play.id}
                     />
                    
                 )

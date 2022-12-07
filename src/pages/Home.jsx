@@ -34,8 +34,8 @@ const Home = () => {
               
                
                     <ListArtist/>
-                    <br></br>
                 <div className="Playlist">
+                <br/>
                 <h2 className="namePlaylist">Playlist</h2> 
                     <PlaylistHome/>
                 </div>

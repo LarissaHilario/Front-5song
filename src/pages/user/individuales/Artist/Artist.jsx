@@ -5,12 +5,12 @@ import { Typography } from "@mui/material";
 import Header from "../../../../components/Header/Header.jsx";
 import TableSongs from "./TablesSongs.jsx";
 import AlbumCards from "./AlbumCards.jsx";
+import { useParams } from "react-router-dom";
+
 //import "../assets/styles/artist.css"
 
 function Artist() {
-
-
-    
+    const { id } = useParams();
     return (
         <div className='body'>
             <Header title={"Artista"} Name={'Larissa'}></Header>

@@ -7,12 +7,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from 'react';
-
+import { useParams } from 'react-router-dom';
 //import styles from './table.module.css'
 const TableSongs =()=>{
     const [posts, setPosts] = useState([]);
+    const { id } = useParams();
+
     useEffect(() => {
-       fetch('http://3.19.59.225:8080/song?_limit=5')
+       fetch('http://3.19.59.225:8080/artist/'+ id)
           .then((response) => response.json())
           .then((data) => {
              console.log(data.data);

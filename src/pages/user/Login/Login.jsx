@@ -17,7 +17,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { login } from "../../../store/slices/authSlice";
 import { setTokens } from "../../../helpers/auth";
 import axios from "axios";
-
+import './login.css'
 
 function Login() {
 
@@ -26,9 +26,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
-    setShowPassword({
-      showPassword: !showPassword,
-    });
+    setShowPassword(!showPassword);
   };
 
   const handleMouseDownPassword = (event) => {
@@ -81,12 +79,12 @@ function Login() {
     <>
       <img className="wave" src="images/wave-haikei (7).svg" />
       <div className="container">
-        <div className="img-login">
+        <div className="img-Login">
           <img src="images/audio (2).svg" />
         </div>
         <div className="login-content">
           <form onSubmit={handleSubmit}>
-            <img src="images/logo.png" />
+            <img src="images/logo-user.png" id="logo-user" />
             <Typography
               variant="h2"
               fontSize="3em"
@@ -130,8 +128,8 @@ function Login() {
               />
             </FormControl>
             <Button color="secondary" 
-            style={{ fontSize: '.75em'}} 
-            sx={ { marginLeft:22.3, marginRight:0 }} 
+            style={{ fontSize: '.79em'}} 
+            sx={ { marginLeft:18, marginRight:0 }} 
             align='left' textSizeSmall
             onClick={handleClick}>¿No tienes una cuenta? Regístrate aquí</Button>
             <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">

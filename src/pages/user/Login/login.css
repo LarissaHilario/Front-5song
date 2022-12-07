@@ -15,16 +15,16 @@
     padding: 0 2rem;
 }
 
-.img-login{
+.img-Login{
     display: flex;
 	justify-content: flex-end;
 	align-items: center;
 }
-.img-login img{
-	width: 70%;
+.img-Login img{
+	width: 50%;
 	position: relative;
 	top: -5%;
-	left: -10%;
+	left: -2%;
 }
 
 .login-content{
@@ -53,7 +53,10 @@ form{
 	font-size: 3.5rem;
 }
 
-
+#logo-user{
+	width: 40%;
+	margin-left: -4%;
+}
 
 
    

@@ -75,7 +75,7 @@ export default function DialogSong() {
                     </Button>
 
                     <FormControl fullWidth sx={{marginTop:2,marginBottom:2}}>
-                        <InputLabel id="demo-simple-select-label">Artista</InputLabel>
+                        <InputLabel id="demo-simple-select-label " color="fifth">Artista</InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
@@ -95,7 +95,7 @@ export default function DialogSong() {
                     </FormControl>
 
                     <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Album</InputLabel>
+                        <InputLabel id="demo-simple-select-label" color="fifth">Album</InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
@@ -113,7 +113,7 @@ export default function DialogSong() {
                     ))}
                         </Select>
                     </FormControl>
-                    <Input type="file" accept=".mp3,.mp4,audio/*" sx={{marginTop:2,width: 386}}/>
+                    <Input type="file" accept=".mp3,.mp4,audio/*" color="fifth" sx={{marginTop:2,width: 386}}/>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color='fifth'>Cancel</Button>

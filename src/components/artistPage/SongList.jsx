@@ -1,10 +1,11 @@
 import Song from './Song.jsx'
+import {useEffect, useState} from "react";
 
-const SongList=({songsartist})=>{
-    //const [songs, setSongs] = useState([]);
+const SongList=()=>{
+    const [songs, setSongs] = useState([]);
 
-    /*useEffect(() => {
-        fetch('http://3.135.19.149:8080/artist?_limit=7')
+    useEffect(() => {
+        fetch('http://18.222.203.69:8080/song')
             .then((response) => response.json())
             .then((data) => {
                 console.log(data.data);
@@ -13,13 +14,13 @@ const SongList=({songsartist})=>{
             .catch((err) => {
                 console.log(err.message);
             });
-    }, []);*/
+    }, []);
 
     return (
         <>
 
 
-            {songsartist.map((song)=> {
+            {songs.slice(0,5).map((song)=> {
                 return (
 
                     <tr>

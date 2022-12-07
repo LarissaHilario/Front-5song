@@ -12,7 +12,7 @@ import styles from './table.module.css'
 const TableSong =()=>{
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-       fetch('http://3.137.200.76:8080/song')
+       fetch('http://18.222.203.69:8080/song')
           .then((response) => response.json())
           .then((data) => {
              console.log(data.data);

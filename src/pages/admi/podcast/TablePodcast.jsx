@@ -29,6 +29,18 @@ const TablePodcast =()=>{
   const navigate = useNavigate();
   
 
+    useEffect(() => {
+       fetch('http://3.19.59.225:8080/podcast')
+          .then((response) => response.json())
+          .then((data) => {
+             console.log(data.data);
+             setPosts(data.data);
+          })
+          .catch((err) => {
+             console.log(err.message);
+          });
+    }, []);
+   
   const handleBack = () => {
     navigate(-1);
   };

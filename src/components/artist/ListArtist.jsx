@@ -6,8 +6,8 @@ const ListArtist=()=>{
 const { artist } = useSelector(state => state.artist);
   const [posts, setPosts] = useState([]);
 
- 
- 
+
+
     return (
         <>
        
@@ -21,11 +21,11 @@ const { artist } = useSelector(state => state.artist);
                       key={post.id}
                       name={post.name}
                       avatar={post.photoUrl}
-                    /> 
+                    />
                      </>
                 )
-               
-            })}  
+
+            })}
                    
                   
             </div>

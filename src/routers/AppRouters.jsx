@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Login from '.././pages/user/Login/Login';
 import SingInAdmin from '../pages/admi/Login/SingInAdmin';
-
-import DashRoutes from './DashRouters';
-
+import DashRouters from './DashRouters';
 import SignUp from '../pages/user/SignUp/SignUp';
 import AdmiRoutes from './AdmiRouters';
 import PublicRoutes from './PublicRouters';
@@ -47,7 +45,7 @@ const AppRouters = () => {
           path='/*'
           element={
             //<PrivateRoutes>
-            <DashRoutes/>
+            <DashRouters/>
             //<AdmiRoutes/>
             //</PrivateRoutes>
        
