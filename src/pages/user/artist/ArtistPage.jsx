@@ -15,7 +15,7 @@ const ArtistPage=()=>{
                 </div>
                 </section>
                
-               <ReactScrollablleFeed className="scroll" >
+               <ReactScrollablleFeed >
                 <section className="Artist">
                    <CardArtist/>
                 </section>

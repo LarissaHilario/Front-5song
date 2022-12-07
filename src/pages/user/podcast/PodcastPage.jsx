@@ -3,7 +3,7 @@ import Header from "../../../components/Header/Header"
 import ListPlaylist from "../../../components/playlist-list/ListPlaylist"
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import ListPodcast from "./ListPodcast";
-
+import ReactScrollablleFeed from 'react-scrollable-feed'
 const PodcastPage=()=>{
     return(
         <div className="body">
@@ -13,9 +13,13 @@ const PodcastPage=()=>{
                 </div>
                 </section>
                <br></br>
-                <div className="Playlist">
+               <ReactScrollablleFeed >
+               <section className="Playlist">
                     <ListPodcast/>
-                </div>
+                </section>
+                <br/><br/><br/><br/><br/><br/><br/>
+               </ReactScrollablleFeed>
+              
             </div>
             )
    

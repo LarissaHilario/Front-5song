@@ -57,11 +57,10 @@
   transition: transform .4s ease 0s;
 }
 
-
 .card-title h3 {
   text-transform: capitalize;
   position: absolute;
-  top: 60%;
+  top: 65%;
   left: 30%;
   transform: translate(-50%, -50%);
   font-weight: bold;
