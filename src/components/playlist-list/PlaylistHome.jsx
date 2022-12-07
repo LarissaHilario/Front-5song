@@ -5,9 +5,10 @@ import globos from '../../assets/images/globos.jpg'
 function PlaylistHome() {
  
   const [playlist, setPlaylist] = useState([]);
+  const [playlistH]= useState([4])
 
   useEffect(() => {
-     fetch('http://3.137.200.76:8080/playlist?_limit=4')
+     fetch('http://3.19.59.225:8080/playlist')
         .then((response) => response.json())
         .then((data) => {
            console.log(data.data);
@@ -22,7 +23,8 @@ function PlaylistHome() {
         
            
            <br></br> <div className="containerPlay">
-            {playlist.map((play)=> {
+            {playlist.map((play, i)=> {
+               if (i < playlistH) {
                 return (
                     <Playlist
                       key={play.id}
@@ -30,9 +32,10 @@ function PlaylistHome() {
                       songs={play.duration}
                       image={play.photoUrl}
                     />
-                   
                 )
-               
+              } else {
+                return null;
+              } 
             })}  
             </div>
         </>

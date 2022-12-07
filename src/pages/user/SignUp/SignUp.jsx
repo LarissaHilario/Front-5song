@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -54,7 +55,7 @@ function SignUp() {
   };
   
   const submit=(option)=>{
-    fetch('http://3.137.200.76:8080/user', option)
+    fetch('http://3.19.59.225:8080/user', option)
     .then(response=> response.json())
     .then( data=>data.success ? navigate("/login"):alert("error"))
     .catch(err=>console.log(err))
@@ -69,7 +70,7 @@ function SignUp() {
           'Content-Type' : 'application/json'
       },
       body : JSON.stringify({
-          name: name.value,
+          name: values.username,
           password: values.password
       })
 
@@ -98,7 +99,7 @@ function SignUp() {
       }) 
   }
 
-    fetch('http://18.116.50.13:8080/user', option)
+    fetch('http://3.19.59.225:8080/user', option)
     .then(response=> response.json())
     .then( data=>data.success ? navigate("/login"):alert("Fallo"))
     .catch(err=>console.log(err))
