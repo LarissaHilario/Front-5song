@@ -7,7 +7,7 @@ const TopArtist=({name,avatar})=>{
             <div className='avatar'>
                  <Avatar src={avatar} 
           sx={{ width: 80, height: 80 }}
-          variant= 'rounded'/>
+          variant= 'circular'/>
             </div>
          
             <div className="name">

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,19 +13,23 @@ import {
   FilledInput,
   InputLabel,
 } from "@mui/material";
+import { axiosInstance } from "../../../helpers/AxiosInstance";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Alert from '@mui/material/Alert';
+import './login.css'
 //import { checkingAuthentication } from "../../../store/slices/Auth/thunks";
 //import { startGoogleSignIn,startLoginWithEmailPassword } from "../../../store/slices/Auth/thunks";
 
 function Login() {
-
-  const [showPassword, setShowPassword]= useState(false);
  
   const navigate = useNavigate();
-
+  const [values, setValues] = useState({
+    name: "",
+    password: "",
+    showPassword: false,
+  });
   
 
   const handleClickShowPassword = () => {
@@ -78,22 +83,14 @@ function Login() {
         <div className="login-content">
           <form onSubmit={handleSubmit}>
             <img src="images/logo.png" />
-            <Typography
-              variant="h2"
-              fontSize="3em"
-              fontWeight={500}
-              align="center"
-            >
+            <Typography variant="h2" fontSize="3em" fontWeight={500} align="center" >
               Inicia Sesión
             </Typography>
             <FormControl sx={{ my: 2 }} variant="filled" fullWidth>
               <InputLabel htmlFor="input-with-icon-adornment">
                 Username
               </InputLabel>
-              <FilledInput
-                name="name"
-                id="input-with-icon-adornment"
-                endAdornment={
+              <FilledInput name="name" id="input-with-icon-adornment" endAdornment={
                   <InputAdornment edge="end">
                     <AccountCircleIcon />
                   </InputAdornment>
@@ -105,7 +102,7 @@ function Login() {
               <FilledInput
                 name="password"
                 id="filled-adornment-password"
-                type={showPassword.values ? "text" : "password"}
+                type={values.showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -114,7 +111,7 @@ function Login() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword.values ? <Visibility /> : <VisibilityOff />}
+                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
