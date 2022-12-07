@@ -10,6 +10,7 @@ import { chargingArtist } from '../store/thunks/artistThunk';
 import { chargingPodcast } from '../store/thunks/podcastThunk';
 import { chargingSong } from '../store/thunks/songThunk';
 import { login } from '../store/slices/authSlice';
+import { chargingAlbum } from '../store/thunks/albumThunks';
 
 
 const AdmiRoutes = () => {
@@ -18,6 +19,7 @@ const AdmiRoutes = () => {
   const artist = useSelector(state => state.artist);
   const podcast= useSelector(state=> state.podcast);
   const song= useSelector(state=> state.song);
+  const album= useSelector(state=>state.album);
   const [currentPage, setCurrentPage] = useState('');
   const accessToken = localStorage.getItem('accessToken');
 
@@ -31,6 +33,9 @@ const AdmiRoutes = () => {
     }
     if (song.song === null){
       dispatch(chargingSong());
+    }
+    if (album.album === null){
+      dispatch(chargingAlbum());
     }
     dispatch(login({accessToken, isAuthenticathed: true}));
   },[]);

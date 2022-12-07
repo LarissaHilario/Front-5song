@@ -63,19 +63,10 @@ function Login() {
 
     fetch("http://3.143.235.62:8080/user/login", requestOptions)
       .then((response) => response.json())
-      .then((res => {console.log(res),
-      dispatch(
-        login({
-          status: res.success,
-        }),
-        addUser({
-          status: res.data.data
-        })
-      )
+      .then((res => { res!=null? navigate("/home"):alert("alert")
+      
   }))
 
-    if (token != null) {
-    }
   };
   const [email,setEmail]=useState()
   const handleSubmit = (event) => {

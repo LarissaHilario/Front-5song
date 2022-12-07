@@ -22,6 +22,7 @@ export default function DialogSong() {
     const [artista,setArtista]=useState()
     const [albums,setAlbum]=useState()
     const [duration,setDuration]=useState()
+
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -63,8 +64,16 @@ export default function DialogSong() {
   const handleChangeForm=(e)=>{
     console.log(e.target.files[0])
     setFile(e.target.files[0])
-
   }
+
+  
+  const handleChangeName = (event) => {
+    setSong(event.target.value)
+console.log(event.target.value)}
+const handleChangeDuration = (event) => {
+    setDuration(event.target.value)
+console.log(event.target.value)}
+
 
     return (
         <div>
@@ -87,6 +96,7 @@ export default function DialogSong() {
                         variant="standard"
                         color='fifth'
                         value={song}
+                        onChange={handleChangeName}
                         
                     />
                     <TextField
@@ -98,6 +108,7 @@ export default function DialogSong() {
                         variant="standard"
                         color='fifth'
                         value={duration}
+                        onChange={handleChangeDuration}
 
                     />
                      <label htmlFor="File">File: </label> 

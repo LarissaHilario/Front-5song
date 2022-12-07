@@ -9,6 +9,7 @@ import SignUp from '../pages/user/SignUp/SignUp';
 import AdmiRoutes from './AdmiRouters';
 import PublicRoutes from './PublicRouters';
 import PrivateRoutes from './PrivateRouters';
+import DashRoutes from './DashRouters';
 
 
 
@@ -46,8 +47,8 @@ const AppRouters = () => {
           path='/*'
           element={
             <PrivateRoutes>
-            <AdmiRoutes/></PrivateRoutes>
-       
+            <DashRoutes/>
+       </PrivateRoutes>
           }
         />
 

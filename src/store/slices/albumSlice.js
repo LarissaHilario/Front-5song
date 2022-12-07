@@ -9,7 +9,7 @@ export const albumSlice = createSlice({
   reducers: {
     addAlbum: (state, action) => {
       state.album = action.payload.album;
-      state.album = state.album.data.length;
+      state.count = state.album.data.length;
     },
     addAlbums: (state, action) => {
       state.album = [...state.album, action.payload.album];

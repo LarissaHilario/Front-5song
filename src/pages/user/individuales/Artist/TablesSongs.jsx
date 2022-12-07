@@ -14,7 +14,7 @@ const TableSongs =()=>{
     const { id } = useParams();
 
     useEffect(() => {
-       fetch('http://3.19.59.225:8080/artist/'+ id)
+       fetch(`http://3.19.59.225:8080/artist/${id}/songs`)
           .then((response) => response.json())
           .then((data) => {
              console.log(data.data);
