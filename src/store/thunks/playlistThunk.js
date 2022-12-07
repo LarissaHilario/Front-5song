@@ -5,14 +5,14 @@ import axios from 'axios';
 export const chargingPlaylist = () => {
   return async dispatch => {
     
-      axios.get('http://3.19.59.225:8080/playlist/',{
+      axios.get('http://3.19.59.225:8080/playlist',{
       headers: {
         'Content-type': 'application/json',
         'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
       },
   })
       .then(({ data }) => {
-        dispatch(addPlaylists({ playlist: data }));
+        dispatch(addPlaylist({ playlist: data }));
       })
       .catch(err => {
         console.log(err.message);
@@ -27,7 +27,7 @@ export const addNewPlaylist = (body) => {
         body
       )
       .then(resp => {
-        dispatch(addPlaylist({ playlist: resp.data }));
+        dispatch(addPlaylists({ playlist: resp.data }));
         console.log(resp);
       })
       .catch(err => {

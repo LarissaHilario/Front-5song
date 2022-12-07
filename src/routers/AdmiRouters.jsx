@@ -8,6 +8,7 @@ import Songs from '../pages/admi/song/Songs';
 import Home from '../pages/Home';
 import { chargingArtist } from '../store/thunks/artistThunk';
 import { chargingPodcast } from '../store/thunks/podcastThunk';
+import { chargingSong } from '../store/thunks/songThunk';
 
 
 const AdmiRoutes = () => {
@@ -15,8 +16,9 @@ const AdmiRoutes = () => {
  
   const artist = useSelector(state => state.artist);
   const podcast= useSelector(state=> state.podcast);
-
+  const song= useSelector(state=> state.song);
   const [currentPage, setCurrentPage] = useState('');
+
   useEffect(() => {
   
     if (artist.artist === null) {
@@ -25,7 +27,10 @@ const AdmiRoutes = () => {
     if (podcast.podcast === null){
       dispatch(chargingPodcast());
     }
-    
+    if (song.song === null){
+      dispatch(chargingSong());
+    }
+
   },[]);
 
   return (

@@ -16,7 +16,7 @@ export default function DialogArtist() {
     const dispatch=useDispatch();
     const [artist, setArtist] = useState('');
     const [open, setOpen] = useState(false);
-
+    const [url,setUrl]=useState();
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -37,31 +37,33 @@ export default function DialogArtist() {
         console.log(e.target.value)
       };
 
-      const handleSubmit = () => {
+      const handleSubmitAll = () => {
         if (artist !== '') {
-          dispatch(addNewArtist({ name: artist, photoUrl:files}));
+          dispatch(addNewArtist({ name: artist, photoUrl:url}));
           setOpen(false);
           setArtist('');
         } else {
           console.log('No has ingresado nada');
         }
       };
+  
+      const handleSubmit=  (event)=>{
+        event.preventDefault();
+      let formdata= new FormData();
+        formdata.append('file', file);
+        axios.post("http://3.19.59.225:8080/artist/upload/photo",
+        formdata).then((res)=>{
+            console.log(res.data.data)
+            setUrl(res.data.data)
+        },(error)=>{console.log(error)})
+    }
+  
+  const handleChangeForm=(e)=>{
+    console.log(e.target.files[0])
+    setFile(e.target.files[0])
 
-      const NewPhoto= () => {
-            axios.post('http://3.19.59.225:8080/artist/upload/photo',{
-              
-            body:{
-             file
-              }
-            .then(resp => { resp.Json()
-              setFiles(resp.data)
-              console.log(resp);
-            })
-            .catch(err => {
-              console.log(err);
-            })
-        
-              });}
+}
+
     return (
         <div>
            <Button variant="outlined" startIcon={<AddCircleIcon />} color="fifth" size="large" onClick={handleClickOpen}>
@@ -85,15 +87,19 @@ export default function DialogArtist() {
                         value={artist}
                         onChange={handleChangeArtist}
                     />
-                    <Button variant="contained" component="label" color="fifth" sx={{marginTop:2,marginLeft:16}} onClick={NewPhoto}>
-                        Subir imagen
-                        <input hidden accept="image/*" type="file" onChange={handleChange} name="file" value={file}/>
-                    </Button>     
+                  
+                    <div>
+                    <label htmlFor="File">File: </label> 
+                    <input id="file" type="file"  onChange={handleChangeForm}></input>
+                </div>
+
+                        
                 </DialogContent>
                 
                 <DialogActions>
                     <Button onClick={handleClose} color="fifth">Cancel</Button>
-                    <Button color="fifth" disabled={artist === ''} onClick={handleSubmit} >Subir</Button>
+                    <Button color="fifth" disabled={file === ''} onClick={handleSubmit} >Subir imagen</Button>
+                    <Button color="fifth" disabled={artist === ''} onClick={handleSubmitAll} >Subir Artista</Button>
                 </DialogActions>
             </Dialog>
         </div>

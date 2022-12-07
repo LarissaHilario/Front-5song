@@ -14,7 +14,7 @@ const { artist } = useSelector(state => state.artist);
             <div className="containerArtist">
                  <span className="titleartist">Top Artistas</span> 
                  
-                 {artist?.data.map((post)=> {
+                 {artist?.data.slice(0,4).map((post)=> {
                 return (
                     <>
                    <TopArtist

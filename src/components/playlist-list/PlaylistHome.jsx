@@ -2,27 +2,16 @@ import { useState, useEffect } from "react";
 import "./list.css"
 import Playlist from "./Playlist";
 import globos from '../../assets/images/globos.jpg'
+import { useSelector } from "react-redux";
 function PlaylistHome() {
  
-  const [playlist, setPlaylist] = useState([]);
-
-  useEffect(() => {
-     fetch('http://3.137.200.76:8080/playlist?_limit=4')
-        .then((response) => response.json())
-        .then((data) => {
-           console.log(data.data);
-           setPlaylist(data.data);
-        })
-        .catch((err) => {
-           console.log(err.message);
-        });
-  }, []);
+  const {playlist}=useSelector(state=>state.playlist)
     return (
         <>
         
            
            <br></br> <div className="containerPlay">
-            {playlist.map((play)=> {
+            {playlist?.data.slice(0,4).map((play)=> {
                 return (
                     <Playlist
                       key={play.id}

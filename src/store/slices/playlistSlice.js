@@ -9,7 +9,7 @@ export const playlistSlice = createSlice({
   reducers: {
     addPlaylist: (state, action) => {
       state.playlist = action.payload.playlist;
-      state.count = state.artist.data.length;
+      state.count = state.playlist.data.length;
     },
     addplaylists: (state, action) => {
       state.playlist = [...state.playlist, action.payload.playlist];

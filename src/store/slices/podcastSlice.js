@@ -9,7 +9,7 @@ export const podcastSlice = createSlice({
   reducers: {
     addPodcast: (state, action) => {
       state.podcast = action.payload.podcast;
-      state.podcast = state.podcast.data.length;
+      state.count= state.podcast.data.length;
     },
     addPodcasts: (state, action) => {
       state.podcast = [...state.podcast, action.payload.podcast];

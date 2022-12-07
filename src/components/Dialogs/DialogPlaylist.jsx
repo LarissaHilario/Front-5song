@@ -6,13 +6,19 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import "./formDialog.css"
-import ListPlaylist from "../playlist-list/ListPlaylist";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-export default function DialogPlaylist() {
-    const [name, setName] = useState('')
-    const [open, setOpen] = useState(false);
+import {addNewPlaylist} from '../../store/thunks/playlistThunk'
+import { useDispatch } from "react-redux";
 
-    const handleChangeName = (event) => setName(event.target.value)
+
+export default function DialogPlaylist() {
+
+    const dispatch=useDispatch();
+    const [open, setOpen] = useState(false);
+    const [playlist,setPlaylist]=useState('')
+
+    const handleChangeName = (event) => {
+        setPlaylist(event.target.value)
+    console.log(event.target.value)}
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -27,6 +33,17 @@ export default function DialogPlaylist() {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
     }
+
+    const handleSubmit = () => {
+        if (playlist !== '') {
+          dispatch(addNewPlaylist({ name: playlist, photoUrl:file}));
+          setOpen(false);
+          setPlaylist('');
+        } else {
+          console.log('No has ingresado nada');
+        }
+      };
+
     
     return (
         <div>
@@ -45,18 +62,18 @@ export default function DialogPlaylist() {
                         fullWidth
                         variant="standard"
                         color={'primary'}
-                        value={name} 
+                        value={playlist} 
                         onChange={handleChangeName}
                     />
                     <Button variant="contained" component="label" sx={{marginTop:2,marginLeft:16}}>
                         Subir imagen
-                        <input hidden accept="image/*" type="file" onChange={handleChange} />
+                        <input hidden accept="image/*" type="file" onChange={handleChange} value={file} />
                     </Button>     
                 </DialogContent>
                 
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Crear</Button>
+                    <Button disabled={playlist === ''} onClick={handleSubmit} >Crear</Button>
                 </DialogActions>
             </Dialog>
         </div>

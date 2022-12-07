@@ -34,13 +34,12 @@ const Home = () => {
               
                
                     <ListArtist/>
+                    <br></br>
                 <div className="Playlist">
                 <h2 className="namePlaylist">Playlist</h2> 
                     <PlaylistHome/>
                 </div>
-            </div>
-        
-    
+            </div>    
     )
 }
 export default Home

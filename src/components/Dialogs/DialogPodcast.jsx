@@ -17,10 +17,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function DialogPodcast() {
     const dispatch=useDispatch();
-    const {category}= useSelector(state => state.podcast);
+    const {categories}= useSelector(state => state.podcast);
     const [open, setOpen] = useState(false);
     const [song, setSong] = useState(''); // estado de las canciones
-
+    const [description, setDescription] = useState('');
+    const [category, setCategory] = useState('');
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -38,13 +39,23 @@ export default function DialogPodcast() {
 
     const handleChange = (event) => { //codigo del select
         setSong(event.target.value);
+        console.log(event.target.value)
+    };
+
+    const handleChangeD = (event) => { //codigo del select
+        setDescription(event.target.value);
+        console.log(event.target.value)
+    };
+    const handleChangeA= (event) => { //codigo del select
+        setDescription(event.target.value);
+        console.log(event.target.value)
     };
 
     const handleSubmit = () => {
-        if (artist !== '') {
-          dispatch(addNewPodcast({ name: name, photoUrl:files}));
+        if (song !== '') {
+          dispatch(addNewPodcast({ name: song, description:description, category:category, photoUrl:file}));
           setOpen(false);
-          setArtist('');
+          setSong('');
         } else {
           console.log('No has ingresado nada');
         }
@@ -71,65 +82,44 @@ export default function DialogPodcast() {
                         fullWidth
                         variant="standard"
                         color={'fifth'}
+                        value={song}
+                        onChange={handleChange}
                         
                     />
+                
                     <TextField
                         autoFocus
                         margin="dense"
-                        id="name"
-                        label="Autor"
+                        id="description"
+                        label="Descripción"
                         fullWidth
                         variant="standard"
                         color={'fifth'}
-
-                    />
-                    
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        id="name"
-                        label="Descripcion"
-                        fullWidth
-                        variant="standard"
-                        color={'fifth'}
+                        value={description}
+                        onChange={handleChangeD}
 
                     />
                     <FormControl fullWidth sx={{marginTop:1,marginBottom:2}}>
-                        <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
+                        <InputLabel id="demo-simple-select-label">Categoría</InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
-                            id="demo-simple-select"
+                            id="demo-simple-select-label"
                             label="Categoria"
                            
                             color={'fifth'}
-                            value={song}
-                             onChange={e => setSong(e.target.value)}
+                            value={category}
+                             onChange={e => setCategory(e.target.value)}
                         >
-                            {category?.data.map( category=> (
-            <MenuItem key={category.id} value={category.category}>
-              {category.category}
-            </MenuItem>
-          ))}
+                            <MenuItem value={"Comedia"}>Comedia</MenuItem>
+                            <MenuItem value={"Terror"}>Terror</MenuItem>
+                            <MenuItem value={"Salud"}>Salud</MenuItem>
+                            <MenuItem value={"Entretenimiento"}>Entretenimiento</MenuItem>
+                            <MenuItem value={"Deportes"}>Deportes</MenuItem>
+    
                         </Select>
                     </FormControl>
 
-                    <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Año</InputLabel>
-                        <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            
-                            label="Año"
-                            onChange={handleChange}
-                            color={'fifth'}
-                        >
-                            <MenuItem value={20}>2019</MenuItem>
-                            <MenuItem value={20}>2020</MenuItem>
-                            <MenuItem value={20}>2021</MenuItem>
-                            <MenuItem value={20}>2022</MenuItem>
-                            
-                        </Select>
-                    </FormControl>
+                 
                     <Input type="file" multiple accept=".mp3,.mp4,audio/*"  sx={{marginTop:2,width: 388}}/>
 
                     <Button variant="contained" component="label"  color='fifth'sx={{marginLeft:16, marginTop:2}}>

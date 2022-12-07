@@ -15,12 +15,15 @@ import { useSelector } from 'react-redux';
 import { chargingPodcast } from '../store/thunks/podcastThunk';
 import { chargingPlaylist } from '../store/thunks/playlistThunk';
 import { chargingAlbum } from '../store/thunks/albumThunks';
+import { chargingSong } from '../store/thunks/songThunk';
 const DashRoutes = () => {
   const dispatch = useDispatch();
   const artist = useSelector(state => state.artist);
   const podcast=useSelector(state=>state.podcast);
   const playlist=useSelector(state=>state.playlist);
   const album=useSelector(state=>state.album)
+  const song=useSelector(state=>state.song);
+
   const accessToken = localStorage.getItem('accessToken');
   useEffect(() => {
    
@@ -35,6 +38,9 @@ const DashRoutes = () => {
     }
     if (album.album === null) {
       dispatch(chargingAlbum());
+    }
+    if (song.song === null){
+      dispatch(chargingSong());
     }
     //dispatch(login({accessToken, isAuthenticathed: true}));
   },[]);

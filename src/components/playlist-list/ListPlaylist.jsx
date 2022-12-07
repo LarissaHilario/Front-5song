@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import "./list.css"
 import Playlist from "./Playlist";
 function ListPlaylist() {
@@ -9,7 +10,7 @@ function ListPlaylist() {
     return (
         <>           
            <br></br> <div className="containerPlay">
-            {playlist?.map((play)=> {
+            {playlist?.data.map((play)=> {
                 return (
                     <Playlist
                       key={play.id}
