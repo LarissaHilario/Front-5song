@@ -18,6 +18,7 @@ import { login } from "../../../store/slices/authSlice";
 import { setTokens } from "../../../helpers/auth";
 import axios from "axios";
 import './login.css'
+import { addUser } from "../../../store/slices/userSlice";
 
 function Login() {
 
@@ -40,40 +41,70 @@ function Login() {
   const handleClickAdmin = () => {
     navigate("/sing-in-admin");
   };
+  
+
 
   const dispatch = useDispatch();
+  const [token, setToken]=useState();
 
-  const handleSubmit =() => {
-    e.preventDefault();
-    const { email, password } = e.target;
-    
-      axios.post('http://3.144.208.227:8080/login', {
+  const obtainInfoUser = (token) => {
+    token = "Bearer " + token;
+    console.log(token);
+    let requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    };
 
-        headers: {
-          'Content-type': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
-        },
-        body: JSON.stringify({
-          email: email.value,
-          password: password.value,
+    fetch("http://3.143.235.62:8080/user/login", requestOptions)
+      .then((response) => response.json())
+      .then((res => {console.log(res),
+      dispatch(
+        login({
+          status: res.success,
         }),
-      })
-      .then(resp => {
-        const { data } = resp;
-        setTokens(data.token);
-        dispatch(
-          login({
-            accessToken: data.token,
-            status: resp.status,
-          })
-        );
-      })
-      .catch((err) => {
-        console.log(err)
-      });
-  };
+        addUser({
+          status: res.data.data
+        })
+      )
+  }))
 
-  
+    if (token != null) {
+    }
+  };
+  const [email,setEmail]=useState()
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    const [email,password]=event.target
+    let requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value,
+      }),
+    };
+
+    fetch("http://3.143.235.62:8080/user/login/token-generated", requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        setToken(res.token)
+        setTokens(res.token)
+        setEmail(email.value)
+    console.log(token);
+  })
+    if (token != null) {
+      obtainInfoUser(token);
+    }
+  };
 
   return (
     <>
@@ -142,4 +173,4 @@ function Login() {
     </>
   );
 }
-export default Login;
+export default Login

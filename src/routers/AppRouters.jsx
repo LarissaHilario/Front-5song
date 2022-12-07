@@ -9,7 +9,7 @@ import SignUp from '../pages/user/SignUp/SignUp';
 import AdmiRoutes from './AdmiRouters';
 import PublicRoutes from './PublicRouters';
 import PrivateRoutes from './PrivateRouters';
-//import { useCheckAuth } from '../hooks/useCheckAuth';
+
 
 
 const AppRouters = () => {
@@ -44,10 +44,8 @@ const AppRouters = () => {
         <Route
           path='/*'
           element={
-            //<PrivateRoutes>
-            <DashRouters/>
-            //<AdmiRoutes/>
-            //</PrivateRoutes>
+            <PrivateRoutes>
+            <DashRouters/></PrivateRoutes>
        
           }
         />

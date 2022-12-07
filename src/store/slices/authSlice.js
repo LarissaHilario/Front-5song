@@ -5,11 +5,15 @@ export const authSlice = createSlice({
   initialState: {
     accessToken: null,
     isAuthenticathed: false,
+    user:null,
   },
   reducers: {
     login: (state, action) => {
       state.accessToken = action.payload.accessToken;
       state.isAuthenticathed = true;
+    },
+    addUser: (state, action) => {
+      state.user = action.payload.user;
     },
     logout: (state /* action */) => {
       localStorage.removeItem('accessToken');

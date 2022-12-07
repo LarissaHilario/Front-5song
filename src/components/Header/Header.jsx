@@ -35,6 +35,8 @@ const Header = ({ title,alt, avatar,Name}) => {
     setAnchorEl(null);
   };
 
+  
+
   return (
     <>
       <div className={styles.container}>

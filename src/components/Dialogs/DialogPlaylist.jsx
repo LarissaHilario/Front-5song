@@ -10,15 +10,22 @@ import {addNewPlaylist} from '../../store/thunks/playlistThunk'
 import { useDispatch } from "react-redux";
 import AddCircle from "@mui/icons-material/AddCircle";
 import ListPlaylist from "../playlist-list/ListPlaylist";
+import axios from "axios";
 
 export default function DialogPlaylist() {
 
     const dispatch=useDispatch();
     const [open, setOpen] = useState(false);
     const [playlist,setPlaylist]=useState('')
+    const [url,setUrl]=useState('')
+    const [description,setDescription]=useState('')
 
     const handleChangeName = (event) => {
         setPlaylist(event.target.value)
+    console.log(event.target.value)}
+
+    const handleChangeDescription = (event) => {
+        setDescription(event.target.value)
     console.log(event.target.value)}
 
     const handleClickOpen = () => {
@@ -35,16 +42,32 @@ export default function DialogPlaylist() {
         setFile(URL.createObjectURL(e.target.files[0]));
     }
 
-    const handleSubmit = () => {
+      const handleSubmitAll = () => {
         if (playlist !== '') {
-          dispatch(addNewPlaylist({ name: playlist, photoUrl:file}));
+          dispatch(addNewPlaylist({ name: playlist, description:description,duration:0, photoUrl:url}));
           setOpen(false);
           setPlaylist('');
         } else {
           console.log('No has ingresado nada');
         }
       };
+  
+      const handleSubmit=  (event)=>{
+        event.preventDefault();
+      let formdata= new FormData();
+        formdata.append('file', file);
+        axios.post("http://3.19.59.225:8080/playlist/upload/photo",
+        formdata).then((res)=>{
+            console.log(res.data.data)
+            setUrl(res.data.data)
+        },(error)=>{console.log(error)})
+    }
+  
+  const handleChangeForm=(e)=>{
+    console.log(e.target.files[0])
+    setFile(e.target.files[0])
 
+  }
     
     return (
         <div>
@@ -66,15 +89,29 @@ export default function DialogPlaylist() {
                         value={playlist} 
                         onChange={handleChangeName}
                     />
-                    <Button variant="contained" component="label" sx={{marginTop:2,marginLeft:16}}>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="description"
+                        label="Descripción"
+                        fullWidth
+                        variant="standard"
+                        color={'primary'}
+                        value={description}
+                        onChange={handleChangeDescription}
+                    />
+                    <label htmlFor="File">File: </label> 
+                    <input id="file" type="file"  onChange={handleChangeForm}></input>
+                    <Button variant="contained" component="label" sx={{marginTop:2,marginLeft:16}} onClick={handleSubmit}>
                         Subir imagen
-                        <input hidden accept="image/*" type="file" onChange={handleChange} value={file} />
+                        
+
                     </Button>     
                 </DialogContent>
                 
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button disabled={playlist === ''} onClick={handleSubmit} >Crear</Button>
+                    <Button disabled={playlist === ''} onClick={handleSubmitAll} >Crear</Button>
                 </DialogActions>
             </Dialog>
         </div>

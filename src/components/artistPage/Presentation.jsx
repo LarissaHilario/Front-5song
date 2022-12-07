@@ -2,13 +2,13 @@ import { CardMedia, Typography } from '@mui/material'
 import { useParams } from 'react-router-dom';
 import css from '../../assets/styles/artist.module.css'
 
-const Presentation=({id, name,photoUrl})=> {
+const Presentation=()=> {
     const [posts, setPosts] = useState([]);
     const [artists, setArtists] = useState([]);
     const { id } = useParams();
     const { artist } = useSelector(state => state.artist);
     useEffect(() => {
-      axios.get('http://3.19.59.225:8080/artist/' + id)
+      axios.get('http://3.19.59.225:8080/artist/' )
         .then(({ data }) => {
           console.log(data);
           setPosts(data);

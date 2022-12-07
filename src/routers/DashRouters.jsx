@@ -43,7 +43,7 @@ const DashRoutes = () => {
     if (song.song === null){
       dispatch(chargingSong());
     }
-    //dispatch(login({accessToken, isAuthenticathed: true}));
+    dispatch(login({accessToken, isAuthenticathed: true}));
   },[]);
   const [currentPage, setCurrentPage] = useState("");
   return (
