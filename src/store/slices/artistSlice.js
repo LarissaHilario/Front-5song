@@ -9,7 +9,7 @@ export const artistSlice = createSlice({
   reducers: {
     addArtistas: (state, action) => {
       state.artist = action.payload.artist;
-      state.count = state.artist.length;
+      state.count = state.artist.data.length;
     },
     addArtist: (state, action) => {
       state.artist = [...state.artist, action.payload.artist];

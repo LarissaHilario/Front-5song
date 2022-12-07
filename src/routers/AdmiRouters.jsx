@@ -7,17 +7,23 @@ import UploadPodcast from '../pages/admi/podcast/PodcastPage';
 import Songs from '../pages/admi/song/Songs';
 import Home from '../pages/Home';
 import { chargingArtist } from '../store/thunks/artistThunk';
+import { chargingPodcast } from '../store/thunks/podcastThunk';
+
 
 const AdmiRoutes = () => {
   const dispatch = useDispatch();
  
   const artist = useSelector(state => state.artist);
+  const podcast= useSelector(state=> state.podcast);
+
   const [currentPage, setCurrentPage] = useState('');
-  
   useEffect(() => {
   
     if (artist.artist === null) {
       dispatch(chargingArtist());
+    }
+    if (podcast.podcast === null){
+      dispatch(chargingPodcast());
     }
     
   },[]);

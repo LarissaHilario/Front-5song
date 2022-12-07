@@ -1,14 +1,8 @@
-import { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
 
-import { AuthContext } from '../auth';
+const PublicRoutes = ({ children }) => {
+  const authState = localStorage.getItem('accessToken') || null;
+  return authState !== null ? <Navigate to={'/'} /> : children;
+};
 
-
-export const PublicRoute = ({ children }) => {
-
-    const { logged } = useContext( AuthContext );
-
-    return (!logged)
-        ? children
-        : <Navigate to="/" />
-}
+export default PublicRoutes;

@@ -12,8 +12,10 @@ import Select from '@mui/material/Select';
 import Input from '@mui/material/Input';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Tables from "../../pages/admi/song/TableSong";
+import { useSelector } from "react-redux";
 export default function DialogSong() {
-
+    const { artist } = useSelector(state => state.artist);
+    const { album } = useSelector(state => state.album)
     const [open, setOpen] = React.useState(false);
     const [song, setSong] = React.useState(''); // estado de las canciones
 
@@ -78,14 +80,18 @@ export default function DialogSong() {
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={song}
                             label="Artista"
-                            onChange={handleChange}
+                           
                             color='fifth'
-                        >
-                            <MenuItem value={10}>Harry Styles</MenuItem>
-                            <MenuItem value={20}>Juanga</MenuItem>
-                            <MenuItem value={30}>Mon lafert</MenuItem>
+                            value={song}
+                            onChange={e => setSong(e.target.value)}
+                       >
+                        {artist?.data.map( artist=> (
+                    <MenuItem key={artist.id} value={artist.category}>
+                        {artist.name}
+                    </MenuItem>
+                    ))}
+                        
                         </Select>
                     </FormControl>
 
@@ -96,12 +102,16 @@ export default function DialogSong() {
                             id="demo-simple-select"
                             value={song}
                             label="Album"
-                            onChange={handleChange}
+                            
                             color='fifth'
-                        >
-                            <MenuItem value={10}>Harry's House</MenuItem>
-                            <MenuItem value={20}>Bellas Artes Mx</MenuItem>
-                            <MenuItem value={30}>Hasta la raiz</MenuItem>
+                            
+                            onChange={e => setSong(e.target.value)}
+                       >
+                        {album?.data.map( artist=> (
+                    <MenuItem key={album.id} value={album.category}>
+                        {album.name}
+                    </MenuItem>
+                    ))}
                         </Select>
                     </FormControl>
                     <Input type="file" accept=".mp3,.mp4,audio/*" color="fifth" sx={{marginTop:2,width: 386}}/>

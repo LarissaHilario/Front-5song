@@ -1,18 +1,20 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import Login from '.././pages/user/Login/Login';
 import SingInAdmin from '../pages/admi/Login/SingInAdmin';
 import DashRouters from './DashRouters';
 import SignUp from '../pages/user/SignUp/SignUp';
 import AdmiRoutes from './AdmiRouters';
+import PublicRoutes from './PublicRouters';
+import PrivateRoutes from './PrivateRouters';
 //import { useCheckAuth } from '../hooks/useCheckAuth';
 
 
 const AppRouters = () => {
-
-
+  const authState = useSelector(state => state.authState);
+  useEffect(() => {}, [authState]);
   return (
 
 
@@ -22,14 +24,19 @@ const AppRouters = () => {
         <Route
           path='/login'
           element={
+            <PublicRoutes>
               <Login/>
+            </PublicRoutes>
+              
           }
         />
         <Route
           path='/signUp'
           element={
-            
-              <SignUp/>
+            <PublicRoutes>
+               <SignUp/>
+            </PublicRoutes>
+             
             
           }
         />
@@ -44,7 +51,10 @@ const AppRouters = () => {
          <Route
           path='/loginAdmi'
           element={
-             <SingInAdmin/>
+            <PublicRoutes>
+              <SingInAdmin/>
+            </PublicRoutes>
+             
           }
         />
         

@@ -3,7 +3,8 @@ import Header from '../../../components/Header/Header';
 import Navbar from '../../../layouts/Navbar';
 import Playlist from '../../../components/playlist-list/Playlist';
 import TopArtist from '../../../components/artist/TopArtist';
-
+import '../../../assets/styles/library.css'
+import Podcast from '../podcast/Podcast';
 const Library = () => {
   const [dataPlaylist, setDataPlaylist] = useState([]);
   const [dataPodcast, setDataPodcast] = useState([]);
@@ -13,7 +14,7 @@ const Library = () => {
   const [artist] = useState([4]);
 
   useEffect(() => {
-    fetch('http://18.222.203.69:8080/playlist')
+    fetch('http://3.19.59.225:8080/playlist')
       .then((dataPlaylist) => dataPlaylist.json())
       .then(data => {
         setDataPlaylist(data.data);
@@ -33,7 +34,7 @@ const Library = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://18.222.203.69:8080/artist')
+    fetch('http://3.19.59.225:8080/artist')
       .then((dataArtist) => dataArtist.json())
       .then(data => {
         setDataArtist(data.data);
@@ -41,6 +42,7 @@ const Library = () => {
     })
       .catch((e) => {console.log(e)});
   }, []);
+
   return (
     <div className='body'>
     {/* <Navbar/> */}
@@ -64,13 +66,14 @@ const Library = () => {
         })}</div><br />
          <a href='/playlist'>Ver mas</a>
     </section>
+
     <section className='section-2' >
    <h1>Podcast</h1>
         <div className='option-2' id='Playlist'>
           {dataPodcast.map((play, i) => {
           if (i < podcast) {
             return (
-                <Playlist
+                <Podcast
                   key={i}
                   title={play.name}
                   songs={play.duration}
