@@ -22,8 +22,8 @@ import './login.css'
 
 function Login() {
 
-  const [showPassword, setShowPassword]= useState(false);
- 
+  const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
@@ -44,21 +44,21 @@ function Login() {
 
   const dispatch = useDispatch();
 
-  const handleSubmit =() => {
+  const handleSubmit = () => {
     e.preventDefault();
     const { email, password } = e.target;
-    
-      axios.post('http://3.144.208.227:8080/login', {
 
-        headers: {
-          'Content-type': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
-        },
-        body: JSON.stringify({
-          email: email.value,
-          password: password.value,
-        }),
-      })
+    axios.post('http://3.144.208.227:8080/login', {
+
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+      },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value,
+      }),
+    })
       .then(resp => {
         const { data } = resp;
         setTokens(data.token);
@@ -74,7 +74,7 @@ function Login() {
       });
   };
 
-  
+
 
   return (
     <>
@@ -128,15 +128,24 @@ function Login() {
                 }
               />
             </FormControl>
-            <Button color="secondary" 
-            style={{ fontSize: '.79em'}} 
-            sx={ { marginLeft:18, marginRight:0 }} 
-            align='left' textSizeSmall
-            onClick={handleClick}>¿No tienes una cuenta? Regístrate aquí</Button>
-            <Button    sx={{  my:2 }}variant="contained" color="primary" fullWidth type="submit">
+            <div className="botones">
+              <Button color="secondary"
+                style={{ fontSize: '.79em' }}
+                sx={{ marginLeft: 18, marginRight: 0, display:"inline-block"}}
+                 textSizeSmall
+                onClick={handleClick}>¿No tienes una cuenta? Regístrate aquí</Button>
+
+              <Button color="fifth"
+                style={{ fontSize: '.79em' }}
+                sx={{ marginLeft: 0, marginRight: 40,marginTop:-7,  display:"inline-block"}}
+                textSizeSmall
+                onClick={handleClick}>Soy un Admi</Button>
+            </div>
+
+            <Button sx={{ my: 2 }} variant="contained" color="primary" fullWidth type="submit">
               Iniciar Sesión
             </Button>
-           
+
           </form>
         </div>
       </div>
