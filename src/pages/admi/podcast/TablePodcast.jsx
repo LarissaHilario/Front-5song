@@ -118,7 +118,7 @@ const TablePodcast =()=>{
 
   return (
       <div className={styles.tableContainer}>
-        <Paper sx={{ width: '100%' }}>
+        <Paper sx={{ width: '70%' }}>
           <TableContainer>
             <Table
               sx={{ minWidth: 500 }}

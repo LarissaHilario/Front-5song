@@ -106,23 +106,23 @@ const Tables = () => {
 
   return (
       <div className={styles.tableContainer}>
-        <Paper sx={{ width: '100%' }}>
+        <Paper sx={{ width: '71%' }}>
           <TableContainer>
             <Table
               sx={{ minWidth: 500 }}
               localeText={{ RowsPerPage: 'Columnas por página' }}
             >
               <TableHead >
-                <TableRow>
+                <TableRow >
                   <TableCell>ID</TableCell>
-                  <TableCell>Artista</TableCell>
+                  <TableCell  >Artista</TableCell>
                   <TableCell>Oyentes</TableCell>
                   <TableCell>Imagenes</TableCell>
                   <TableCell>.</TableCell>
                 </TableRow>
               </TableHead>
              
-              <TableBody>
+              <TableBody >
                 
                 {artist?.data.map(row => (
                   <TableRow
@@ -132,7 +132,7 @@ const Tables = () => {
                   >
                     <TableCell>{row.id} </TableCell>
                     <TableCell>{row.name} </TableCell>
-                    <TableCell>
+                    <TableCell >
                       {row.listener}
                     </TableCell>
                     <TableCell > 

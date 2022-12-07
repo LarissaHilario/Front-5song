@@ -39,7 +39,7 @@ function Login() {
   };
 
   const handleClickAdmin = () => {
-    navigate("/sing-in-admin");
+    navigate("/loginAdmi");
   };
 
   const dispatch = useDispatch();

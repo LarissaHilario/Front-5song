@@ -3,6 +3,7 @@ import Table from "../Artist/Table"
 import Header from "../Header"
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import DialogPodcast from "../../../components/Dialogs/DialogPodcast";
+import ReactScrollablleFeed from 'react-scrollable-feed'
 const UploadPodcast=()=>{
     return(
         <>
@@ -13,7 +14,10 @@ const UploadPodcast=()=>{
                 </div>
                 </section>
                 <br></br>
+                <ReactScrollablleFeed >
                 <DialogPodcast/>
+                </ReactScrollablleFeed>
+                
                 
             </div>
         </>

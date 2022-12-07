@@ -68,7 +68,8 @@ export default function DialogArtist() {
                 Añadir Artista
                 </Button>
 
-                <br/>
+                <br/><br/>
+                
                 <Tables></Tables>
             <Dialog open={open} sx={{width:500, marginLeft:70, borderRadius:4}} >
                 <DialogTitle>Nuevo Artista</DialogTitle>
