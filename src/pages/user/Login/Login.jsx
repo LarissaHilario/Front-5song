@@ -27,9 +27,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
-    setShowPassword({
-      showPassword: !showPassword,
-    });
+    setShowPassword(!showPassword);
   };
 
   const handleMouseDownPassword = (event) => {
