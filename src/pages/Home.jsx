@@ -35,6 +35,7 @@ const Home = () => {
                
                     <ListArtist/>
                 <div className="Playlist">
+                <br/><br/><br/>
                 <h2 className="namePlaylist">Playlist</h2> 
                     <PlaylistHome/>
                 </div>

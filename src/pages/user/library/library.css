@@ -14,3 +14,6 @@ section{
 .option-3{
     display: flex;
 }
+.artist-section{
+    align-content: flex-start;
+}

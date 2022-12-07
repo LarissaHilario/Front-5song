@@ -3,8 +3,13 @@ import Header from '../../../components/Header/Header';
 import Navbar from '../../../layouts/Navbar';
 import Playlist from '../../../components/playlist-list/Playlist';
 import TopArtist from '../../../components/artist/TopArtist';
-import '../../../assets/styles/library.css'
+import './library.css'
 import Podcast from '../podcast/Podcast';
+import Cards from '../../../components/artist/Cards';
+import CardArtist from '../../../components/artist/cardArtist';
+import ReactScrollablleFeed from 'react-scrollable-feed'
+import Button from '@mui/material/Button';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 const Library = () => {
   const [dataPlaylist, setDataPlaylist] = useState([]);
   const [dataPodcast, setDataPodcast] = useState([]);
@@ -47,8 +52,14 @@ const Library = () => {
     <div className='body'>
     {/* <Navbar/> */}
   <Header title={'Library'}/> <br />
-  <section className='section-1'>
+  <ReactScrollablleFeed>
+    
+    <section className='section-1'>
    <h1>Playlist</h1>
+   <br/>
+   <Button variant="outlined" startIcon={<AddCircleIcon />} size="small"  href='/playlist' sx={{width:110}}>
+                Ver mas
+        </Button>
         <div className='option-1' id='Playlist'>
           {dataPlaylist.map((play, i) => {
           if (i < playlist) {
@@ -64,11 +75,15 @@ const Library = () => {
             return null;
           }
         })}</div><br />
-         <a href='/playlist'>Ver mas</a>
     </section>
-
+    
     <section className='section-2' >
+      
    <h1>Podcast</h1>
+   <br/>
+   <Button variant="outlined" startIcon={<AddCircleIcon />} size="small"  href='/podcast' sx={{width:110}}>
+                Ver mas
+        </Button>
         <div className='option-2' id='Playlist'>
           {dataPodcast.map((play, i) => {
           if (i < podcast) {
@@ -84,15 +99,19 @@ const Library = () => {
             return null;
           }
         })} </div><br />
-         <a href='/playlist'>Ver mas</a>
+
     </section>
     <section className='section-3'>
    <h1>Artistas</h1>
+   <br/>
+   <Button variant="outlined" startIcon={<AddCircleIcon />} size="small"  href='/artist' sx={{width:110}}>
+                Ver mas
+        </Button>
         <div className='option-3' id='TopArtist'>
           {dataArtist.map((art, i) => {
           if (i < artist) {
             return (
-              <TopArtist
+              <Cards
               key={i}
               name={art.name}
               avatar={art.photoUrl}
@@ -102,81 +121,11 @@ const Library = () => {
             return null;
           }
         })}</div><br />
-         <a href='/playlist'>Ver mas</a>
+
     </section>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </ReactScrollablleFeed>
     </div>
   );
 };
-  // return (
-  //   <div className='body'>
-  //     {/* <Navbar/> */}
-  //     <Header title={'Library'}/>
-  //     <section className='section-1'>
-  //       <h1>Playlist</h1>
-  //       <div>
-  //         <option className='option-1'/>
-  //       <img src={globos} alt="" className='img' />
-
-  //       </div>
-
-
-  //     </section>
-  //   </div>
-  // )
-// }
-
 export default Library
-
-// import React, { useState, useEffect } from "react";
-// import { IconContext } from "react-icons";
-// import { AiFillPlayCircle } from "react-icons/ai";
-// // import "./library.css";
-// const Library = () => {
-//   const [playlists, setPlaylists] = useState([]);
-
-//   useEffect(() => {
-//     fetch(`http://3.12.108.156:8080/playlist`)
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log(data.data);
-//         setPlaylists(data.data);
-//       })
-//       .catch((err) => {
-//         console.log(err.message);
-//       });
-//   }, []);
-  
-//   const navigate = useNavigate();
-
-//   const playPlaylist = (id) => {
-//     navigate("/player", { state: { id: id } });
-//   };
-//   return (
-//     <div className="screen-container">
-//       <div className="library-body">
-//         {playlists.map((playlist) => (
-//           <div
-//             className="playlist-card"
-//             key={playlist.id}
-//             onClick={() => playPlaylist(playlist.id)}
-//           >
-//             <img
-//               src={playlist.images[0].url}
-//               className="playlist-image"
-//               alt="Playlist-Art"
-//             />
-//             <p className="playlist-title">{playlist.name}</p>
-//             <p className="playlist-subtitle">{playlist.tracks.total} Songs</p>
-//             <div className="playlist-fade">
-//               <IconContext.Provider value={{ size: "50px", color: "#E99D72" }}>
-//                 <AiFillPlayCircle />
-//               </IconContext.Provider>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Library;
