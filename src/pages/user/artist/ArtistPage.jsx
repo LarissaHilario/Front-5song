@@ -4,7 +4,7 @@ import ListPlaylist from "../../../components/playlist-list/ListPlaylist"
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import ListArtist from "../../../components/artist/ListArtist";
 import CardArtist from "../../../components/artist/cardArtist";
-
+import './artist.css'
 const ArtistPage=()=>{
     return(
         <div className="body">
