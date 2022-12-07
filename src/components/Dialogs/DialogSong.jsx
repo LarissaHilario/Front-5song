@@ -18,7 +18,10 @@ export default function DialogSong() {
     const { album } = useSelector(state => state.album)
     const [open, setOpen] = React.useState(false);
     const [song, setSong] = React.useState(''); // estado de las canciones
-
+    const [songUrl,setSongUrl]=useState()
+    const [artista,setArtista]=useState()
+    const [albums,setAlbum]=useState()
+    const [duration,setDuration]=useState()
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -36,6 +39,32 @@ export default function DialogSong() {
     const handleChange = (event) => { //codigo del select
         setSong(event.target.value);
     };
+    const handleSubmitAll = () => {
+        if (song !== '') {
+          dispatch(addNewPlaylist({ name: song, duration:duration, photoUrl:url,songUrl:songUrl}));
+          setOpen(false);
+          setPlaylist('');
+        } else {
+          console.log('No has ingresado nada');
+        }
+      };
+  
+      const handleSubmit=  (event)=>{
+        event.preventDefault();
+      let formdata= new FormData();
+        formdata.append('file', file);
+        axios.post("http://3.19.59.225:8080/playlist/upload/photo",
+        formdata).then((res)=>{
+            console.log(res.data.data)
+            setUrl(res.data.data)
+        },(error)=>{console.log(error)})
+    }
+  
+  const handleChangeForm=(e)=>{
+    console.log(e.target.files[0])
+    setFile(e.target.files[0])
+
+  }
 
     return (
         <div>
@@ -57,22 +86,27 @@ export default function DialogSong() {
                         fullWidth
                         variant="standard"
                         color='fifth'
+                        value={song}
                         
                     />
                     <TextField
                         autoFocus
                         margin="dense"
-                        id="name"
-                        label="Autor"
+                        id="Duracion"
+                        label="Duracion"
                         fullWidth
                         variant="standard"
                         color='fifth'
+                        value={duration}
 
                     />
-                    <Button variant="contained" component="label"  sx={{marginLeft:16, marginTop:5}} color='fifth'>
+                     <label htmlFor="File">File: </label> 
+                    <input id="file" type="file"  onChange={handleChangeForm}></input>
+                    <Button variant="contained" component="label" sx={{marginTop:2,marginLeft:16}} onClick={handleSubmit}>
                         Subir imagen
-                        <input hidden accept="image/*" type="file" onChange={handleChangeImg} />
-                    </Button>
+                        
+
+                    </Button>     
 
                     <FormControl fullWidth sx={{marginTop:2,marginBottom:2}}>
                         <InputLabel id="demo-simple-select-label " color="fifth">Artista</InputLabel>
@@ -82,11 +116,11 @@ export default function DialogSong() {
                             label="Artista"
                            
                             color='fifth'
-                            value={song}
-                            onChange={e => setSong(e.target.value)}
+                            value={artista}
+                            onChange={e => setArtista(e.target.value)}
                        >
                         {artist?.data.map( artist=> (
-                    <MenuItem key={artist.id} value={artist.category}>
+                    <MenuItem key={artist.id} value={artist.name}>
                         {artist.name}
                     </MenuItem>
                     ))}
@@ -98,22 +132,22 @@ export default function DialogSong() {
                         <InputLabel id="demo-simple-select-label" color="fifth">Album</InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={song}
+                            id="demo-simple-select-Label"
+                            value={albums}
                             label="Album"
                             
                             color='fifth'
                             
-                            onChange={e => setSong(e.target.value)}
+                            onChange={e => setAlbum(e.target.value)}
                        >
-                        {album?.data.map( artist=> (
-                    <MenuItem key={album.id} value={album.category}>
+                        {album?.data.map( album=> (
+                    <MenuItem key={album.id} value={album.name}>
                         {album.name}
                     </MenuItem>
                     ))}
                         </Select>
                     </FormControl>
-                    <Input type="file" accept=".mp3,.mp4,audio/*" color="fifth" sx={{marginTop:2,width: 386}}/>
+                    <Input type="file" accept=".mp3,.mp4,audio/*" color="fifth" sx={{marginTop:2,width: 386}} value={songUrl}/>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color='fifth'>Cancel</Button>

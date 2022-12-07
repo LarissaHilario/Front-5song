@@ -9,19 +9,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from 'react';
 
 import styles from './table.module.css'
+import { useSelector } from 'react-redux';
 const TableSong =()=>{
-    const [posts, setPosts] = useState([]);
-    useEffect(() => {
-       fetch('http://18.222.203.69:8080/song')
-          .then((response) => response.json())
-          .then((data) => {
-             console.log(data.data);
-             setPosts(data.data);
-          })
-          .catch((err) => {
-             console.log(err.message);
-          });
-    }, []);
+    const {song}=useSelector(state=>state.song)
    
     return(
        <div>
@@ -45,7 +35,7 @@ const TableSong =()=>{
                 </TableRow>
               </TableHead>
               <TableBody >
-                {posts.map(row => (
+                {song?.data.map(row => (
                   <TableRow
                     key={row.id}
                     align={row.align}

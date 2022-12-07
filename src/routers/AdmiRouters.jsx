@@ -9,6 +9,7 @@ import Home from '../pages/Home';
 import { chargingArtist } from '../store/thunks/artistThunk';
 import { chargingPodcast } from '../store/thunks/podcastThunk';
 import { chargingSong } from '../store/thunks/songThunk';
+import { login } from '../store/slices/authSlice';
 
 
 const AdmiRoutes = () => {
@@ -18,6 +19,7 @@ const AdmiRoutes = () => {
   const podcast= useSelector(state=> state.podcast);
   const song= useSelector(state=> state.song);
   const [currentPage, setCurrentPage] = useState('');
+  const accessToken = localStorage.getItem('accessToken');
 
   useEffect(() => {
   
@@ -30,7 +32,7 @@ const AdmiRoutes = () => {
     if (song.song === null){
       dispatch(chargingSong());
     }
-
+    dispatch(login({accessToken, isAuthenticathed: true}));
   },[]);
 
   return (
@@ -41,7 +43,7 @@ const AdmiRoutes = () => {
         /<Route path='/uploadPodcast' element={<UploadPodcast onChangeCurrentPage={setCurrentPage} />}/>
         <Route path='/song' element={<Songs onChangeCurrentPage={setCurrentPage} />}/>*/
         <Route
-          path='/*'
+          path='/'
           element={<Navigate to={('/loginAdmi')} />}
         />
       </Routes>
