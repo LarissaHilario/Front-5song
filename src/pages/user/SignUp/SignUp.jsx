@@ -146,7 +146,7 @@ function SignUp() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -168,7 +168,7 @@ function SignUp() {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPasswordConfirm ? <VisibilityOff /> : <Visibility />}
+                      {values.showPasswordConfirm ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 }
