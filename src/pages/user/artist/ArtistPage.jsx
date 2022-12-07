@@ -5,6 +5,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import ListArtist from "../../../components/artist/ListArtist";
 import CardArtist from "../../../components/artist/cardArtist";
 import './artist.css'
+import ReactScrollablleFeed from 'react-scrollable-feed'
 const ArtistPage=()=>{
     return(
         <div className="body">
@@ -13,11 +14,13 @@ const ArtistPage=()=>{
                     <Header title={'Artistas'} Name={"Aylin"}></Header>
                 </div>
                 </section>
-               <br></br>
                
-                <div className="Artist">
+               <ReactScrollablleFeed className="scroll" >
+                <section className="Artist">
                    <CardArtist/>
-                </div>
+                </section>
+                <br/><br/><br/><br/><br/><br/><br/>
+               </ReactScrollablleFeed>
             </div>
             )
    

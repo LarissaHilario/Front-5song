@@ -114,7 +114,7 @@ const Header = ({ title,alt, avatar,Name}) => {
       <TextField
           type="search"
           color='primary'focused
-          sx={{ width: '20%' }}
+          sx={{ width: '26%' }}
           placeholder='Buscar'
           margen='normal'
           InputProps={{

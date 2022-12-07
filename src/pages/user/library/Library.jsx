@@ -14,9 +14,9 @@ const Library = () => {
   const [dataPlaylist, setDataPlaylist] = useState([]);
   const [dataPodcast, setDataPodcast] = useState([]);
   const [dataArtist, setDataArtist] = useState([]);
-  const [playlist] = useState([4]);
-  const [podcast] = useState([4]);
-  const [artist] = useState([4]);
+  const [playlist] = useState([7]);
+  const [podcast] = useState([7]);
+  const [artist] = useState([7]);
 
   useEffect(() => {
     fetch('http://3.19.59.225:8080/playlist')
