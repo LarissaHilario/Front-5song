@@ -48,7 +48,7 @@ function Login() {
     e.preventDefault();
     const { email, password } = e.target;
 
-    axios.post('http://3.144.208.227:8080/login', {
+    axios.post('http://3.19.59.225:8080//login', {
 
       headers: {
         'Content-type': 'application/json',
