@@ -139,7 +139,7 @@ function Login() {
                 style={{ fontSize: '.79em' }}
                 sx={{ marginLeft: 0, marginRight: 40,marginTop:-7,  display:"inline-block"}}
                 textSizeSmall
-                onClick={handleClick}>Soy un Admi</Button>
+                onClick={handleClickAdmin}>Soy un Admi</Button>
             </div>
 
             <Button sx={{ my: 2 }} variant="contained" color="primary" fullWidth type="submit">
