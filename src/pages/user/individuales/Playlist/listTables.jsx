@@ -12,7 +12,7 @@ const listTable= () => {
   const [artistas, setArtistas] = useState([]);
 
   useEffect(() => {
-    fetch('http://3.19.59.225:8080/artist/'+ id)
+    fetch('http://3.19.59.225:8080/playlist/'+ id)
        .then((response) => response.json())
        .then((data) => {
           console.log(data.data);
@@ -31,6 +31,7 @@ const listTable= () => {
           name={posts.name}
           
         />
+        <Form></Form>
       </div>
     );
   }

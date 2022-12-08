@@ -16,6 +16,7 @@ import { chargingPodcast } from '../store/thunks/podcastThunk';
 import { chargingPlaylist } from '../store/thunks/playlistThunk';
 import { chargingAlbum } from '../store/thunks/albumThunks';
 import { chargingSong } from '../store/thunks/songThunk';
+import PlaylistSingle from '../pages/user/individuales/Playlist/Playlist';
 
 const DashRoutes = () => {
   const dispatch = useDispatch();
@@ -56,6 +57,7 @@ const DashRoutes = () => {
         <Route path='/artist' element={<ArtistPage onChangeCurrentPage={setCurrentPage} />}/>
         <Route path='/playlist' element={<PlaylistPage onChangeCurrentPage={setCurrentPage}/>}/>
         <Route path='/artist/:id' element={<Artist/>}/>
+        <Route path='/playlist/:id' element={<PlaylistSingle/>}/>
         <Route path="/*" element={<Navigate to={"/login"} />} />
       </Routes>
     </>

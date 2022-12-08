@@ -46,9 +46,7 @@ const AppRouters = () => {
         <Route
           path='/*'
           element={
-            <PrivateRoutes>
-            <DashRoutes/>
-       </PrivateRoutes>
+            <AdmiRoutes/>
           }
         />
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import "./list.css"
-import "../playlist-list/playlist.css"
+import "./playlist.module.css"
 import Playlist from "./Playlist";
 import { useSelector } from "react-redux";
 function ListPlaylist() {
@@ -17,6 +17,7 @@ function ListPlaylist() {
                       title={play.name}
                       songs={play.duration}
                       image={play.photoUrl}
+                      id={play.id}
                     />
                    
                 )

@@ -31,6 +31,7 @@ const listTable= () => {
           name={posts.name}
           
         />
+        <Form></Form>
       </div>
     );
   }
